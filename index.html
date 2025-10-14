@@ -17,9 +17,10 @@
             --cinza-medio: #6c757d;
             --cinza-escuro: #212529;
             --dourado: #a88c5e;
-            --dourado-escuro: #a88c5e;
+            --dourado-escuro: #8a6f4a;
             --azul-profundo: #1a365d;
             --azul-escuro: #2d3748;
+            --vermelho-escuro: #8b0000;
             --sombra-suave: 0 5px 15px rgba(0, 0, 0, 0.08);
             --sombra-media: 0 10px 25px rgba(0, 0, 0, 0.12);
             --transicao: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -103,7 +104,7 @@
             align-items: center;
             justify-content: center;
             padding: 14px 32px;
-            border-radius: 0;
+            border-radius: 4px;
             font-weight: 600;
             font-size: 0.95rem;
             transition: var(--transicao);
@@ -112,6 +113,23 @@
             gap: 10px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn-primary {
@@ -138,6 +156,18 @@
             transform: translateY(-3px);
         }
 
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--branco);
+            box-shadow: var(--sombra-suave);
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: var(--sombra-media);
+        }
+
         /* Header e Navegação */
         header {
             background-color: var(--branco);
@@ -152,7 +182,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 0;
+            padding: 20px 0;
         }
 
         .logo {
@@ -165,9 +195,10 @@
             color: var(--azul-profundo);
         }
 
-        .logo-icon {
-            font-size: 2rem;
-            color: var(--dourado);
+        .logo img {
+            height: 50px;
+            width: auto;
+            transition: var(--transicao);
         }
 
         .nav-links {
@@ -208,12 +239,65 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--azul-profundo);
+            transition: var(--transicao);
+            z-index: 1001;
+        }
+
+        .mobile-menu.active i::before {
+            content: '\f00d';
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--branco);
+            z-index: 999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transform: translateY(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .mobile-nav.active {
+            transform: translateY(0);
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .mobile-nav-links li {
+            margin-bottom: 25px;
+        }
+
+        .mobile-nav-links a {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--azul-profundo);
+            transition: var(--transicao);
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--dourado);
+        }
+
+        .mobile-nav-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
+            background: linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.8)), url('//images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -223,6 +307,30 @@
             color: var(--branco);
             padding-top: 80px;
             position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
+            background-size: cover;
+            background-position: center;
+            animation: zoomEffect 20s infinite alternate;
+            z-index: -1;
+        }
+
+        @keyframes zoomEffect {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
         }
 
         .hero-content {
@@ -238,6 +346,8 @@
             font-weight: 700;
             margin-bottom: 30px;
             line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
         }
 
         .hero-logo span {
@@ -245,6 +355,7 @@
             display: block;
             font-size: 3.5rem;
             margin-top: 10px;
+            animation: fadeInUp 1.2s ease-out;
         }
 
         .hero-divider {
@@ -252,6 +363,12 @@
             height: 2px;
             background: var(--dourado);
             margin: 30px auto;
+            animation: expandWidth 1.5s ease-out;
+        }
+
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 100px; }
         }
 
         .hero p {
@@ -262,6 +379,8 @@
             margin-right: auto;
             font-weight: 300;
             letter-spacing: 0.5px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.4s ease-out;
         }
 
         .hero-btns {
@@ -269,6 +388,18 @@
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
+            animation: fadeInUp 1.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Cards de Destaque */
@@ -295,6 +426,24 @@
             position: relative;
             box-shadow: var(--sombra-media);
             border-top: 4px solid var(--dourado);
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--azul-profundo) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transicao);
+            z-index: 0;
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.05;
         }
 
         .feature-card:hover {
@@ -312,21 +461,36 @@
             margin-bottom: 25px;
             color: var(--dourado);
             font-size: 2rem;
+            position: relative;
+            z-index: 1;
+            transition: var(--transicao);
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--dourado);
+            color: var(--azul-profundo);
+            transform: rotateY(180deg);
         }
 
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--azul-profundo);
+            position: relative;
+            z-index: 1;
         }
 
         .feature-card p {
             color: var(--cinza-medio);
             margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .feature-card .btn {
             margin-top: auto;
+            position: relative;
+            z-index: 1;
         }
 
         /* Seção de Cursos */
@@ -347,6 +511,7 @@
             transition: var(--transicao);
             position: relative;
             box-shadow: var(--sombra-suave);
+            border-radius: 8px;
         }
 
         .course-card:hover {
@@ -438,6 +603,7 @@
             transition: var(--transicao);
             position: relative;
             border-left: 3px solid var(--dourado);
+            border-radius: 8px;
         }
 
         .testimonial-card:hover {
@@ -515,7 +681,7 @@
         /* Seção de Localização e Contato */
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 50px;
         }
 
@@ -568,8 +734,17 @@
             color: var(--azul-profundo);
         }
 
+        .map-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--sombra-media);
+        }
+
         .map {
-            height: 400px;
+            width: 100%;
+            height: 100%;
             background: var(--cinza-claro);
             display: flex;
             align-items: center;
@@ -588,6 +763,62 @@
             font-size: 3rem;
             margin-bottom: 15px;
             color: var(--azul-profundo);
+        }
+
+        /* Carrossel de palavras */
+        .carousel-section {
+            background: var(--azul-profundo);
+            padding: 40px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+
+        .carousel-reverse {
+            animation: scrollReverse 25s linear infinite;
+        }
+
+        .carousel-item {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            padding: 0 30px;
+            color: var(--branco);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .carousel-item i {
+            margin-right: 10px;
+            color: var(--dourado);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes scrollReverse {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
         }
 
         /* Footer */
@@ -629,30 +860,50 @@
             color: var(--dourado);
         }
 
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .newsletter-form input {
-            padding: 12px 15px;
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--branco);
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .newsletter-form input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
         .copyright {
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0.7;
             font-size: 0.9rem;
+        }
+
+        /* Botão WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366;
+            color: var(--branco);
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+            transition: var(--transicao);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
         }
 
         /* Divisores */
@@ -720,6 +971,14 @@
             .section-title h2 {
                 font-size: 2.2rem;
             }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -744,6 +1003,10 @@
             .testimonials-grid, .courses-grid {
                 grid-template-columns: 1fr;
             }
+
+            .carousel-item {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -752,9 +1015,10 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a imag="image/logosf.png" class="logo">
-                    <i class="fas fa-graduation-cap logo-icon"></i>
-                    <span>INSTITUTO  VIDAS</span>
+                <a href="#inicio" class="logo">
+                    <!-- Substitua o caminho abaixo pela sua logo -->
+                    <img src="image/logosf.png" alt="Instituto Transformar Vidas">
+                    <span>INSTITUTO VIDAS</span>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#inicio">Início</a></li>
@@ -763,25 +1027,57 @@
                     <li><a href="#localizacao">Localização</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
-            
+                <div class="nav-actions">
+                    <a href="#" class="btn btn-primary">Área do Aluno</a>
                 </div>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
         </div>
+        <div class="mobile-nav">
+            <ul class="mobile-nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="mobile-nav-actions">
+                <a href="#" class="btn btn-primary">Área do Aluno</a>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="hero-content fade-in">
+        <div class="hero-content">
             <h1 class="hero-logo"><br><span>INSTITUTO</span> TRANSFORMAR VIDAS</h1>
             <div class="hero-divider"></div>
             <p>Preparar profissionais para orientar pessoas na solução de seus problemas existenciais, tais como: fobias, ansiedades, depressões, obsessões, impulsos auto e heteroagressivos.</p>
-            
+            <div class="hero-btns">
+                <a href="#cursos" class="btn btn-primary"><i class="fas fa-book"></i> Conhecer Cursos</a>
+                <a href="#contato" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Fale Conosco</a>
             </div>
         </div>
     </section>
+
+    <!-- Carrossel de palavras -->
+    <div class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item"><i class="fas fa-star"></i> Melhor Instituto da Região</div>
+                <div class="carousel-item"><i class="fas fa-award"></i> Certificação Reconhecida</div>
+                <div class="carousel-item"><i class="fas fa-graduation-cap"></i> Professores Qualificados</div>
+                <div class="carousel-item"><i class="fas fa-chart-line"></i> Alta Empregabilidade</div>
+                <div class="carousel-item"><i class="fas fa-users"></i> +10.000 Alunos Formados</div>
+                <div class="carousel-item"><i class="fas fa-heart"></i> Educação que Transforma</div>
+                <div class="carousel-item"><i class="fas fa-star"></i> Melhor Instituto da Região</div>
+                <div class="carousel-item"><i class="fas fa-award"></i> Certificação Reconhecida</div>
+                <div class="carousel-item"><i class="fas fa-graduation-cap"></i> Professores Qualificados</div>
+            </div>
+        </div>
+    </div>
 
     <!-- Cards de Destaque -->
     <div class="container">
@@ -937,6 +1233,23 @@
         </div>
     </section>
 
+    <!-- Carrossel de palavras reverso -->
+    <div class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel carousel-reverse">
+                <div class="carousel-item"><i class="fas fa-rocket"></i> Venha Transformar Conosco</div>
+                <div class="carousel-item"><i class="fas fa-lightbulb"></i> Educação Inovadora</div>
+                <div class="carousel-item"><i class="fas fa-handshake"></i> Parceria com o Aluno</div>
+                <div class="carousel-item"><i class="fas fa-medal"></i> Qualidade Garantida</div>
+                <div class="carousel-item"><i class="fas fa-globe"></i> Acesso de Qualquer Lugar</div>
+                <div class="carousel-item"><i class="fas fa-clock"></i> Flexibilidade de Horários</div>
+                <div class="carousel-item"><i class="fas fa-rocket"></i> Venha Transformar Conosco</div>
+                <div class="carousel-item"><i class="fas fa-lightbulb"></i> Educação Inovadora</div>
+                <div class="carousel-item"><i class="fas fa-handshake"></i> Parceria com o Aluno</div>
+            </div>
+        </div>
+    </div>
+
     <!-- Seção de Localização e Contato -->
     <section class="section" id="localizacao">
         <div class="container">
@@ -959,12 +1272,15 @@
                         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="map">
-                    <div class="map-placeholder">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <h3>Nosso Campus</h3>
-                        <p>Av. da Educação, 1234 - Centro</p>
-                        <p>São Paulo - SP</p>
+                <div class="map-container">
+                    <div class="map">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h3>Nosso Campus</h3>
+                            <p>Av. da Educação, 1234 - Centro</p>
+                            <p>São Paulo - SP</p>
+                            <!-- Aqui você pode inserir um iframe do Google Maps -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -999,14 +1315,6 @@
                         <li><a href="#">Psicopatologia</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <p>Receba novidades, ofertas exclusivas e conteúdos educativos.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Seu melhor e-mail" required aria-label="Insira seu e-mail para newsletter">
-                        <button type="submit" class="btn btn-primary">Inscrever</button>
-                    </form>
-                </div>
             </div>
             <div class="copyright">
                 <p>&copy; 2023 Instituto Transformar Vidas EAD. Todos os direitos reservados. CNPJ: 12.345.678/0001-90</p>
@@ -1014,36 +1322,35 @@
         </div>
     </footer>
 
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/551134567890" class="whatsapp-float" target="_blank" aria-label="Entre em contato pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
         // Menu mobile
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            const navActions = document.querySelector('.nav-actions');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        mobileMenu.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileNav.classList.toggle('active');
             
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            navActions.style.display = navActions.style.display === 'flex' ? 'none' : 'flex';
-            
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.backgroundColor = 'var(--branco)';
-                navLinks.style.padding = '20px';
-                navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
-                
-                navActions.style.flexDirection = 'column';
-                navActions.style.position = 'absolute';
-                navActions.style.top = 'calc(100% + 200px)';
-                navActions.style.left = '0';
-                navActions.style.width = '100%';
-                navActions.style.padding = '20px';
-                navActions.style.backgroundColor = 'var(--branco)';
+            // Impede o scroll do body quando o menu está aberto
+            if (mobileNav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
             } else {
-                navLinks.style = '';
-                navActions.style = '';
+                document.body.style.overflow = 'auto';
             }
+        });
+
+        // Fecha o menu ao clicar em um link
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
         });
 
         // Scroll suave para links internos
@@ -1068,7 +1375,7 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.padding = '15px 0';
+                header.style.padding = '10px 0';
                 header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
             } else {
                 header.style.padding = '0';
@@ -1093,6 +1400,18 @@
         document.querySelectorAll('.feature-card, .course-card, .testimonial-card').forEach(el => {
             observer.observe(el);
         });
+
+        // Clonar itens do carrossel para criar loop infinito
+        function cloneCarouselItems() {
+            const carousels = document.querySelectorAll('.carousel');
+            
+            carousels.forEach(carousel => {
+                const items = carousel.innerHTML;
+                carousel.innerHTML += items;
+            });
+        }
+
+        cloneCarouselItems();
     </script>
 </body>
 </html>
