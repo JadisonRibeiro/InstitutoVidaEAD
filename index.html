@@ -6,10 +6,11 @@
     <title>Instituto Transformar Vidas EAD - Educação Premium</title>
     <meta name="description" content="Mais de 100 cursos EAD com metodologia exclusiva. Educação transformadora para mudar vidas e carreiras.">
     <link rel="icon" type="image/png" href="image/logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Meta Tags para SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Instituto Transformar Vidas">
+    <meta name="keywords" content="cursos EAD, psicanálise, psicologia, terapia, formação, certificação MEC">
     <meta property="og:title" content="Instituto Transformar Vidas EAD">
     <meta property="og:description" content="Mais de 100 cursos EAD com metodologia exclusiva. Educação transformadora para mudar vidas e carreiras.">
     <meta property="og:type" content="website">
@@ -17,6 +18,16 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Instituto Transformar Vidas EAD">
     <meta name="twitter:description" content="Mais de 100 cursos EAD com metodologia exclusiva.">
+    
+    <!-- Otimizações de Carregamento -->
+    <link rel="canonical" href="https://institutotransformarvidas.com.br">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- Schema Markup para SEO -->
     <script type="application/ld+json">
@@ -27,6 +38,7 @@
         "description": "Mais de 100 cursos EAD com metodologia exclusiva. Educação transformadora para mudar vidas e carreiras.",
         "url": "https://institutotransformarvidas.com.br",
         "telephone": "+55-11-3456-7890",
+        "email": "contato@transformarvidas.com.br",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Av. da Educação, 1234",
@@ -34,7 +46,27 @@
             "addressRegion": "SP",
             "addressCountry": "BR"
         },
-        "areaServed": "BR"
+        "areaServed": "BR",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Cursos EAD",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Course",
+                        "name": "Psicanálise Clínica Freudiana",
+                        "description": "Formação completa em psicanálise com abordagem freudiana",
+                        "timeToComplete": "P18M"
+                    }
+                }
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127"
+        }
     }
     </script>
     
@@ -146,6 +178,7 @@
             text-transform: uppercase;
             position: relative;
             overflow: hidden;
+            min-height: 44px; /* Melhor toque em mobile */
         }
 
         .btn::before {
@@ -292,6 +325,8 @@
             z-index: 1001;
             background: none;
             border: none;
+            min-height: 44px;
+            min-width: 44px;
         }
 
         .mobile-nav {
@@ -333,6 +368,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            min-height: 44px;
         }
 
         .mobile-nav-links a i {
@@ -352,6 +388,23 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+        }
+
+        /* Skip Link para Acessibilidade */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--vermelho);
+            color: white;
+            padding: 8px;
+            z-index: 10000;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .skip-link:focus {
+            top: 6px;
         }
 
         /* Hero Section */
@@ -480,11 +533,11 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translate3d(0, 30px, 0);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translate3d(0, 0, 0);
             }
         }
 
@@ -516,12 +569,13 @@
             border-radius: 8px;
             border: 1px solid var(--cinza-claro);
             opacity: 0;
-            transform: translateY(50px);
+            transform: translate3d(0, 50px, 0);
+            min-height: 300px;
         }
 
         .feature-card.animate {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
@@ -542,40 +596,13 @@
             z-index: 0;
         }
 
-        .feature-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            transform: rotate(30deg);
-            transition: var(--transicao);
-            z-index: 0;
-            opacity: 0;
-        }
-
         .feature-card:hover::before, .feature-card:focus-within::before {
             opacity: 0.05;
         }
 
-        .feature-card:hover::after, .feature-card:focus-within::after {
-            opacity: 1;
-            animation: shine 3s infinite linear;
-        }
-
-        @keyframes shine {
-            0% {
-                transform: translateX(-100%) translateY(-100%) rotate(30deg);
-            }
-            100% {
-                transform: translateX(100%) translateY(100%) rotate(30deg);
-            }
-        }
-
         .feature-card:hover, .feature-card:focus-within {
-            transform: translateY(-15px) scale(1.02);
+            transform: translate3d(0, -5px, 0) scale(1.02);
+            opacity: 0.95;
             border-color: var(--vermelho);
         }
 
@@ -645,12 +672,13 @@
             border-radius: 8px;
             border: 1px solid var(--cinza-claro);
             opacity: 0;
-            transform: translateY(30px);
+            transform: translate3d(0, 30px, 0);
+            min-height: 300px;
         }
 
         .course-card.animate {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
@@ -658,29 +686,11 @@
         .course-card:nth-child(2) { transition-delay: 0.2s; }
         .course-card:nth-child(3) { transition-delay: 0.3s; }
 
-        .course-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            transform: rotate(30deg);
-            transition: var(--transicao);
-            z-index: 0;
-            opacity: 0;
-        }
-
-        .course-card:hover::after, .course-card:focus-within::after {
-            opacity: 1;
-            animation: shine 3s infinite linear;
-        }
-
         .course-card:hover, .course-card:focus-within {
-            transform: translateY(-10px) scale(1.02);
+            transform: translate3d(0, -10px, 0) scale(1.02);
             box-shadow: var(--sombra-media);
             border-color: var(--vermelho);
+            opacity: 0.95;
         }
 
         .course-img {
@@ -818,6 +828,8 @@
             cursor: pointer;
             transition: var(--transicao);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            min-height: 44px;
+            min-width: 44px;
         }
 
         .step-arrow:hover {
@@ -863,13 +875,16 @@
             position: relative;
             overflow: hidden;
             padding: 20px 0;
+            width: 100%;
         }
 
         .testimonials-container {
             display: flex;
             transition: transform 0.5s ease;
-            gap: 30px;
-            padding: 0 20px;
+            gap: 20px;
+            padding: 0 15px;
+            width: calc(100% + 30px);
+            margin-left: -15px;
         }
 
         .testimonial-card {
@@ -880,33 +895,16 @@
             border-left: 3px solid var(--vermelho);
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 350px;
-            flex-shrink: 0;
+            flex: 0 0 calc(100% - 20px);
+            max-width: calc(100% - 20px);
+            margin: 0 10px;
             box-sizing: border-box;
-        }
-
-        .testimonial-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-            transform: rotate(30deg);
-            transition: var(--transicao);
-            z-index: 0;
-            opacity: 0;
-        }
-
-        .testimonial-card:hover::after, .testimonial-card:focus-within::after {
-            opacity: 1;
-            animation: shine 3s infinite linear;
+            min-height: 350px;
         }
 
         .testimonial-card:hover, .testimonial-card:focus-within {
             background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
+            transform: translate3d(0, -5px, 0);
             border-color: var(--vermelho);
         }
 
@@ -994,8 +992,9 @@
         .carousel-nav {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .carousel-dot {
@@ -1029,6 +1028,8 @@
             color: var(--branco);
             font-size: 1.2rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            min-height: 44px;
+            min-width: 44px;
         }
 
         .carousel-arrow:hover {
@@ -1041,6 +1042,22 @@
 
         .carousel-arrow.next {
             right: 20px;
+        }
+
+        /* Tablet */
+        @media (min-width: 768px) {
+            .testimonial-card {
+                flex: 0 0 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 992px) {
+            .testimonial-card {
+                flex: 0 0 calc(33.333% - 20px);
+                max-width: calc(33.333% - 20px);
+            }
         }
 
         /* Seção de Localização e Contato */
@@ -1220,6 +1237,7 @@
             font-size: 1.1rem;
             color: var(--azul-profundo);
             transition: var(--transicao);
+            min-height: 44px;
         }
 
         .faq-question:hover {
@@ -1355,6 +1373,8 @@
             animation: pulse 2s infinite;
             transition: var(--transicao);
             border: 1px solid rgba(255, 255, 255, 0.3);
+            min-height: 44px;
+            min-width: 44px;
         }
 
         .whatsapp-float:hover, .whatsapp-float:focus {
@@ -1467,10 +1487,6 @@
             .step-description {
                 font-size: 1.1rem;
             }
-            
-            .testimonial-card {
-                width: 300px;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1496,6 +1512,8 @@
 
             .feature-cards {
                 margin-top: -40px;
+                flex-direction: column;
+                align-items: center;
             }
 
             .section {
@@ -1543,8 +1561,12 @@
                 padding: 0 20px;
             }
             
-            .testimonial-card {
-                width: 280px;
+            .video-background video {
+                display: none;
+            }
+            
+            .hero {
+                background: linear-gradient(135deg, var(--azul-profundo), var(--azul-medio));
             }
         }
 
@@ -1603,11 +1625,6 @@
             .step-icon {
                 font-size: 3rem;
             }
-            
-            .testimonial-card {
-                width: 260px;
-                padding: 20px 15px;
-            }
         }
 
         @media (max-width: 400px) {
@@ -1626,16 +1643,23 @@
             .logo span {
                 font-size: 1.3rem;
             }
+            
+            .testimonial-card {
+                padding: 20px 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Skip Link para Acessibilidade -->
+    <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
     <!-- Header e Navegação -->
     <header>
         <div class="container">
             <nav class="navbar" aria-label="Navegação principal">
                 <a href="#inicio" class="logo">
-                    <img src="image/logosf.png" alt="Instituto Transformar Vidas - Logo" width="50" height="50">
+                    <img src="image/logosf.png" alt="Instituto Transformar Vidas - Logo" width="50" height="50" loading="lazy">
                     <span>INSTITUTO VIDAS</span>
                 </a>
                 <ul class="nav-links" role="menubar">
@@ -1663,522 +1687,524 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="video-background" id="videoBackground">
-            <video id="video1" muted>
-                <source src="videos/video2.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-            <video id="video2" muted>
-                <source src="videos/video3.mov" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-            <video id="video3" muted>
-                <source src="videos/video4.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-            <video id="video4" muted>
-                <source src="videos/video1.mov" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-        </div>
-        <div class="hero-content">
-            <h1 class="hero-title"><span>INSTITUTO</span> TRANSFORMAR VIDAS</h1>
-            
-            <div class="hero-premium">
-                <div class="premium-badge">
-                    <i class="fas fa-award"></i>
-                    <span>Educação Premium</span>
-                </div>
-                <div class="premium-badge">
-                    <i class="fas fa-star"></i>
-                    <span>Melhor Instituto da Região</span>
-                </div>
-                <div class="premium-badge">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>Certificação Reconhecida</span>
-                </div>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="video-background" id="videoBackground">
+                <video id="video1" muted playsinline>
+                    <source src="videos/video2.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <video id="video2" muted playsinline>
+                    <source src="videos/video3.mov" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <video id="video3" muted playsinline>
+                    <source src="videos/video4.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <video id="video4" muted playsinline>
+                    <source src="videos/video1.mov" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
             </div>
-            
-            <div class="hero-divider"></div>
-            <p>Preparar profissionais para orientar pessoas na solução de seus problemas existenciais, tais como: fobias, ansiedades, depressões, obsessões, impulsos auto e heteroagressivos.</p>
-            <a href="#cursos" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Conhecer Nossos Cursos</a>
-        </div>
-    </section>
+            <div class="hero-content">
+                <h1 class="hero-title"><span>INSTITUTO</span> TRANSFORMAR VIDAS</h1>
+                
+                <div class="hero-premium">
+                    <div class="premium-badge">
+                        <i class="fas fa-award"></i>
+                        <span>Educação Premium</span>
+                    </div>
+                    <div class="premium-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Melhor Instituto da Região</span>
+                    </div>
+                    <div class="premium-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Certificação Reconhecida</span>
+                    </div>
+                </div>
+                
+                <div class="hero-divider"></div>
+                <p>Preparar profissionais para orientar pessoas na solução de seus problemas existenciais, tais como: fobias, ansiedades, depressões, obsessões, impulsos auto e heteroagressivos.</p>
+                <a href="#cursos" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Conhecer Nossos Cursos</a>
+            </div>
+        </section>
 
-    <!-- Cards de Destaque -->
-    <div class="container">
-        <div class="feature-cards">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                </div>
-                <h3>120 Cursos</h3>
-                <p>Ampla variedade de cursos com certificação reconhecida pelo MEC</p>
-                <a href="#cursos" class="btn btn-primary">Portfólio de Cursos</a>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
-                </div>
-                <h3>Professores</h3>
-                <p>Profissionais capacitados com experiência de mercado</p>
-                <a href="#contato" class="btn btn-primary">Falar com Reitor</a>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-award" aria-hidden="true"></i>
-                </div>
-                <h3>Certificados</h3>
-                <p>Certificações válidas em todo território nacional</p>
-                <a href="#cursos" class="btn btn-primary">Conhecer Cursos</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Carrossel de Etapas -->
-    <section class="steps-carousel">
-        <div class="steps-container">
-            <div class="step-slide active">
-                <div class="step-icon">
-                    <i class="fas fa-user-graduate"></i>
-                </div>
-                <h2 class="step-title">Escolha seu Curso</h2>
-                <p class="step-description">Selecione entre mais de 120 cursos de formação e especialização nas áreas de psicologia, psicanálise e terapias.</p>
-                <a href="#cursos" class="btn btn-primary">Ver Cursos Disponíveis</a>
-            </div>
-            <div class="step-slide">
-                <div class="step-icon">
-                    <i class="fas fa-laptop"></i>
-                </div>
-                <h2 class="step-title">Estude Online</h2>
-                <p class="step-description">Acesse nossa plataforma EAD de qualquer lugar, com videoaulas, materiais exclusivos e suporte especializado.</p>
-                <a href="#cursos" class="btn btn-primary">Conhecer a Plataforma</a>
-            </div>
-            <div class="step-slide">
-                <div class="step-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h2 class="step-title">Certificação</h2>
-                <p class="step-description">Receba seu certificado reconhecido pelo MEC e válido em todo território nacional ao concluir o curso.</p>
-                <a href="#cursos" class="btn btn-primary">Saiba Mais</a>
-            </div>
-            <div class="step-slide">
-                <div class="step-icon">
-                    <i class="fas fa-briefcase"></i>
-                </div>
-                <h2 class="step-title">Transforme sua Carreira</h2>
-                <p class="step-description">Aplique os conhecimentos adquiridos e alcance novos patamares profissionais com nossa formação completa.</p>
-                <a href="#cursos" class="btn btn-primary">Começar Agora</a>
-            </div>
-            <div class="step-nav">
-                <div class="step-arrow prev-step">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="step-dots">
-                    <div class="step-dot active"></div>
-                    <div class="step-dot"></div>
-                    <div class="step-dot"></div>
-                    <div class="step-dot"></div>
-                </div>
-                <div class="step-arrow next-step">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Cursos -->
-    <section class="section courses" id="cursos">
+        <!-- Cards de Destaque -->
         <div class="container">
-            <div class="section-title">
-                <h2>Nossos Cursos</h2>
-                <p>Conheça alguns dos nossos cursos mais procurados e transformadores</p>
-            </div>
-            <div class="courses-grid">
-                <div class="course-card">
-                    <div class="course-img">
-                        Psicanálise Clínica Freudiana
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
                     </div>
-                    <div class="course-content">
-                        <h3>Psicanálise Clínica Freudiana</h3>
-                        <p>Formação completa em psicanálise com abordagem freudiana para atuação clínica profissional.</p>
-                        <div class="course-meta">
-                            <div class="course-duration">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span>18 meses</span>
-                            </div>
-                            <a href="#" class="btn btn-primary">Saiba Mais</a>
-                        </div>
-                    </div>
+                    <h3>120 Cursos</h3>
+                    <p>Ampla variedade de cursos com certificação reconhecida pelo MEC</p>
+                    <a href="#cursos" class="btn btn-primary">Portfólio de Cursos</a>
                 </div>
-                <div class="course-card">
-                    <div class="course-img">
-                        Psicologia Analítica
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
                     </div>
-                    <div class="course-content">
-                        <h3>Psicologia Analítica Junguiana</h3>
-                        <p>Abordagem junguiana para compreensão do inconsciente coletivo e processos de individuação.</p>
-                        <div class="course-meta">
-                            <div class="course-duration">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span>16 meses</span>
-                            </div>
-                            <a href="#" class="btn btn-primary">Saiba Mais</a>
-                        </div>
-                    </div>
+                    <h3>Professores</h3>
+                    <p>Profissionais capacitados com experiência de mercado</p>
+                    <a href="#contato" class="btn btn-primary">Falar com Reitor</a>
                 </div>
-                <div class="course-card">
-                    <div class="course-img">
-                        Terapia Cognitivo-Comportamental
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award" aria-hidden="true"></i>
                     </div>
-                    <div class="course-content">
-                        <h3>Terapia Cognitivo-Comportamental</h3>
-                        <p>Técnicas e estratégias da TCC para tratamento de transtornos emocionais e comportamentais.</p>
-                        <div class="course-meta">
-                            <div class="course-duration">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span>14 meses</span>
-                            </div>
-                            <a href="#" class="btn btn-primary">Saiba Mais</a>
-                        </div>
-                    </div>
+                    <h3>Certificados</h3>
+                    <p>Certificações válidas em todo território nacional</p>
+                    <a href="#cursos" class="btn btn-primary">Conhecer Cursos</a>
                 </div>
-            </div>
-            <div class="btn-center">
-                <a href="#" class="btn btn-secondary"><i class="fas fa-book" aria-hidden="true"></i> Acesse Todos Nossos Cursos</a>
             </div>
         </div>
-    </section>
 
-    <!-- Seção de Depoimentos -->
-    <section class="section testimonials" id="depoimentos">
-        <div class="container">
-            <div class="section-title">
-                <h2>Depoimentos</h2>
-                <p>Veja o que nossos alunos falam sobre a experiência transformadora no Instituto</p>
-            </div>
-            <div class="testimonials-carousel">
-                <div class="carousel-arrow prev">
-                    <i class="fas fa-chevron-left"></i>
+        <!-- Carrossel de Etapas -->
+        <section class="steps-carousel">
+            <div class="steps-container">
+                <div class="step-slide active">
+                    <div class="step-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h2 class="step-title">Escolha seu Curso</h2>
+                    <p class="step-description">Selecione entre mais de 120 cursos de formação e especialização nas áreas de psicologia, psicanálise e terapias.</p>
+                    <a href="#cursos" class="btn btn-primary">Ver Cursos Disponíveis</a>
                 </div>
-                <div class="testimonials-container">
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <i class="fas fa-play-circle" aria-hidden="true"></i>
-                        </div>
-                        <p class="testimonial-text">A formação em Psicanálise Clínica Freudiana mudou completamente minha perspectiva profissional. Hoje atendo em meu consultório com segurança e conhecimento técnico aprofundado.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">MC</div>
-                            <div class="author-info">
-                                <h4>Maria Clara Santos</h4>
-                                <p>Psicanalista Clínica</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                <div class="step-slide">
+                    <div class="step-icon">
+                        <i class="fas fa-laptop"></i>
                     </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <i class="fas fa-play-circle" aria-hidden="true"></i>
-                        </div>
-                        <p class="testimonial-text">O material didático é excelente e os professores estão sempre disponíveis para tirar dúvidas. A flexibilidade do EAD permitiu que eu conciliasse estudos com minha rotina profissional.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">JS</div>
-                            <div class="author-info">
-                                <h4>João Silva</h4>
-                                <p>Terapeuta Cognitivo-Comportamental</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <i class="fas fa-play-circle" aria-hidden="true"></i>
-                        </div>
-                        <p class="testimonial-text">A abordagem junguiana me proporcionou ferramentas valiosas para compreensão dos processos inconscientes. Recomendo o Instituto para quem busca uma formação séria e transformadora.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">AO</div>
-                            <div class="author-info">
-                                <h4>Ana Oliveira</h4>
-                                <p>Analista Junguiana</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <i class="fas fa-play-circle" aria-hidden="true"></i>
-                        </div>
-                        <p class="testimonial-text">A metodologia do Instituto é incrível! Consegui aplicar os conhecimentos adquiridos imediatamente na minha prática clínica. A transformação foi tanto profissional quanto pessoal.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">PR</div>
-                            <div class="author-info">
-                                <h4>Pedro Rocha</h4>
-                                <p>Psicólogo Clínico</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <i class="fas fa-play-circle" aria-hidden="true"></i>
-                        </div>
-                        <p class="testimonial-text">O suporte oferecido durante todo o curso foi excepcional. Os tutores são muito atenciosos e o conteúdo é atualizado com as mais recentes pesquisas da área.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">CS</div>
-                            <div class="author-info">
-                                <h4>Carla Souza</h4>
-                                <p>Neuropsicóloga</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <i class="fas fa-play-circle" aria-hidden="true"></i>
-                        </div>
-                        <p class="testimonial-text">A experiência no Instituto superou minhas expectativas. Em 6 meses já estava aplicando as técnicas aprendidas e obtendo resultados incríveis com meus pacientes.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">RS</div>
-                            <div class="author-info">
-                                <h4>Roberta Silva</h4>
-                                <p>Terapeuta Familiar</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <i class="fas fa-play-circle" aria-hidden="true"></i>
-                        </div>
-                        <p class="testimonial-text">Como profissional da saúde, encontrei no Instituto a formação que precisava para expandir meus conhecimentos. A qualidade do conteúdo é excepcional.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">AM</div>
-                            <div class="author-info">
-                                <h4>André Mendes</h4>
-                                <p>Médico Psiquiatra</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <i class="fas fa-play-circle" aria-hidden="true"></i>
-                        </div>
-                        <p class="testimonial-text">A flexibilidade do EAD me permitiu conciliar trabalho e estudos. O suporte dos professores foi fundamental para meu aprendizado e crescimento profissional.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">LC</div>
-                            <div class="author-info">
-                                <h4>Luiza Costa</h4>
-                                <p>Psicóloga Organizacional</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
+                    <h2 class="step-title">Estude Online</h2>
+                    <p class="step-description">Acesse nossa plataforma EAD de qualquer lugar, com videoaulas, materiais exclusivos e suporte especializado.</p>
+                    <a href="#cursos" class="btn btn-primary">Conhecer a Plataforma</a>
                 </div>
-                <div class="carousel-arrow next">
-                    <i class="fas fa-chevron-right"></i>
+                <div class="step-slide">
+                    <div class="step-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h2 class="step-title">Certificação</h2>
+                    <p class="step-description">Receba seu certificado reconhecido pelo MEC e válido em todo território nacional ao concluir o curso.</p>
+                    <a href="#cursos" class="btn btn-primary">Saiba Mais</a>
                 </div>
-                <div class="carousel-nav">
-                    <div class="carousel-dot active"></div>
-                    <div class="carousel-dot"></div>
-                    <div class="carousel-dot"></div>
-                    <div class="carousel-dot"></div>
-                    <div class="carousel-dot"></div>
-                    <div class="carousel-dot"></div>
-                    <div class="carousel-dot"></div>
-                    <div class="carousel-dot"></div>
+                <div class="step-slide">
+                    <div class="step-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h2 class="step-title">Transforme sua Carreira</h2>
+                    <p class="step-description">Aplique os conhecimentos adquiridos e alcance novos patamares profissionais com nossa formação completa.</p>
+                    <a href="#cursos" class="btn btn-primary">Começar Agora</a>
+                </div>
+                <div class="step-nav">
+                    <div class="step-arrow prev-step">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="step-dots">
+                        <div class="step-dot active"></div>
+                        <div class="step-dot"></div>
+                        <div class="step-dot"></div>
+                        <div class="step-dot"></div>
+                    </div>
+                    <div class="step-arrow next-step">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Carrossel de palavras -->
-    <div class="carousel-section">
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-item"><i class="fas fa-rocket" aria-hidden="true"></i> Venha Transformar Conosco</div>
-                <div class="carousel-item"><i class="fas fa-lightbulb" aria-hidden="true"></i> Educação Inovadora</div>
-                <div class="carousel-item"><i class="fas fa-handshake" aria-hidden="true"></i> Parceria com o Aluno</div>
-                <div class="carousel-item"><i class="fas fa-medal" aria-hidden="true"></i> Qualidade Garantida</div>
-                <div class="carousel-item"><i class="fas fa-globe" aria-hidden="true"></i> Acesso de Qualquer Lugar</div>
-                <div class="carousel-item"><i class="fas fa-clock" aria-hidden="true"></i> Flexibilidade de Horários</div>
-                <div class="carousel-item"><i class="fas fa-star" aria-hidden="true"></i> Melhor Instituto da Região</div>
-                <div class="carousel-item"><i class="fas fa-award" aria-hidden="true"></i> Certificação Reconhecida</div>
-                <div class="carousel-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Professores Qualificados</div>
-                <div class="carousel-item"><i class="fas fa-chart-line" aria-hidden="true"></i> Alta Empregabilidade</div>
-                <div class="carousel-item"><i class="fas fa-users" aria-hidden="true"></i> +10.000 Alunos Formados</div>
-                <div class="carousel-item"><i class="fas fa-heart" aria-hidden="true"></i> Educação que Transforma</div>
-                <!-- Duplicando para criar loop infinito sem pausa -->
-                <div class="carousel-item"><i class="fas fa-rocket" aria-hidden="true"></i> Venha Transformar Conosco</div>
-                <div class="carousel-item"><i class="fas fa-lightbulb" aria-hidden="true"></i> Educação Inovadora</div>
-                <div class="carousel-item"><i class="fas fa-handshake" aria-hidden="true"></i> Parceria com o Aluno</div>
-                <div class="carousel-item"><i class="fas fa-medal" aria-hidden="true"></i> Qualidade Garantida</div>
-                <div class="carousel-item"><i class="fas fa-globe" aria-hidden="true"></i> Acesso de Qualquer Lugar</div>
-                <div class="carousel-item"><i class="fas fa-clock" aria-hidden="true"></i> Flexibilidade de Horários</div>
-                <div class="carousel-item"><i class="fas fa-star" aria-hidden="true"></i> Melhor Instituto da Região</div>
-                <div class="carousel-item"><i class="fas fa-award" aria-hidden="true"></i> Certificação Reconhecida</div>
-                <div class="carousel-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Professores Qualificados</div>
-                <div class="carousel-item"><i class="fas fa-chart-line" aria-hidden="true"></i> Alta Empregabilidade</div>
-                <div class="carousel-item"><i class="fas fa-users" aria-hidden="true"></i> +10.000 Alunos Formados</div>
-                <div class="carousel-item"><i class="fas fa-heart" aria-hidden="true"></i> Educação que Transforma</div>
+        <!-- Seção de Cursos -->
+        <section class="section courses" id="cursos">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nossos Cursos</h2>
+                    <p>Conheça alguns dos nossos cursos mais procurados e transformadores</p>
+                </div>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-img">
+                            Psicanálise Clínica Freudiana
+                        </div>
+                        <div class="course-content">
+                            <h3>Psicanálise Clínica Freudiana</h3>
+                            <p>Formação completa em psicanálise com abordagem freudiana para atuação clínica profissional.</p>
+                            <div class="course-meta">
+                                <div class="course-duration">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span>18 meses</span>
+                                </div>
+                                <a href="#" class="btn btn-primary">Saiba Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-img">
+                            Psicologia Analítica
+                        </div>
+                        <div class="course-content">
+                            <h3>Psicologia Analítica Junguiana</h3>
+                            <p>Abordagem junguiana para compreensão do inconsciente coletivo e processos de individuação.</p>
+                            <div class="course-meta">
+                                <div class="course-duration">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span>16 meses</span>
+                                </div>
+                                <a href="#" class="btn btn-primary">Saiba Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-img">
+                            Terapia Cognitivo-Comportamental
+                        </div>
+                        <div class="course-content">
+                            <h3>Terapia Cognitivo-Comportamental</h3>
+                            <p>Técnicas e estratégias da TCC para tratamento de transtornos emocionais e comportamentais.</p>
+                            <div class="course-meta">
+                                <div class="course-duration">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span>14 meses</span>
+                                </div>
+                                <a href="#" class="btn btn-primary">Saiba Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-center">
+                    <a href="#" class="btn btn-secondary"><i class="fas fa-book" aria-hidden="true"></i> Acesse Todos Nossos Cursos</a>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Seção de Localização e Contato -->
-    <section class="section" id="localizacao">
-        <div class="container">
-            <div class="section-title">
-                <h2>Localização e Contato</h2>
-                <p>Entre em contato conosco e venha nos visitar</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Fale Conosco</h3>
-                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Av. da Educação, 1234 - Centro, São Paulo - SP</p>
-                    <p><i class="fas fa-phone" aria-hidden="true"></i> (11) 3456-7890</p>
-                    <p><i class="fas fa-envelope" aria-hidden="true"></i> contato@transformarvidas.com.br</p>
-                    <p><i class="fas fa-clock" aria-hidden="true"></i> Segunda a Sexta: 8h às 20h | Sábado: 9h às 14h</p>
-                    
-                    <div class="social-links">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        <!-- Seção de Depoimentos -->
+        <section class="section testimonials" id="depoimentos">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Depoimentos</h2>
+                    <p>Veja o que nossos alunos falam sobre a experiência transformadora no Instituto</p>
+                </div>
+                <div class="testimonials-carousel">
+                    <div class="carousel-arrow prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="testimonials-container">
+                        <div class="testimonial-card">
+                            <div class="testimonial-video">
+                                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                            </div>
+                            <p class="testimonial-text">A formação em Psicanálise Clínica Freudiana mudou completamente minha perspectiva profissional. Hoje atendo em meu consultório com segurança e conhecimento técnico aprofundado.</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">MC</div>
+                                <div class="author-info">
+                                    <h4>Maria Clara Santos</h4>
+                                    <p>Psicanalista Clínica</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-video">
+                                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                            </div>
+                            <p class="testimonial-text">O material didático é excelente e os professores estão sempre disponíveis para tirar dúvidas. A flexibilidade do EAD permitiu que eu conciliasse estudos com minha rotina profissional.</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">JS</div>
+                                <div class="author-info">
+                                    <h4>João Silva</h4>
+                                    <p>Terapeuta Cognitivo-Comportamental</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-video">
+                                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                            </div>
+                            <p class="testimonial-text">A abordagem junguiana me proporcionou ferramentas valiosas para compreensão dos processos inconscientes. Recomendo o Instituto para quem busca uma formação séria e transformadora.</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">AO</div>
+                                <div class="author-info">
+                                    <h4>Ana Oliveira</h4>
+                                    <p>Analista Junguiana</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-video">
+                                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                            </div>
+                            <p class="testimonial-text">A metodologia do Instituto é incrível! Consegui aplicar os conhecimentos adquiridos imediatamente na minha prática clínica. A transformação foi tanto profissional quanto pessoal.</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">PR</div>
+                                <div class="author-info">
+                                    <h4>Pedro Rocha</h4>
+                                    <p>Psicólogo Clínico</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-video">
+                                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                            </div>
+                            <p class="testimonial-text">O suporte oferecido durante todo o curso foi excepcional. Os tutores são muito atenciosos e o conteúdo é atualizado com as mais recentes pesquisas da área.</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">CS</div>
+                                <div class="author-info">
+                                    <h4>Carla Souza</h4>
+                                    <p>Neuropsicóloga</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-video">
+                                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                            </div>
+                            <p class="testimonial-text">A experiência no Instituto superou minhas expectativas. Em 6 meses já estava aplicando as técnicas aprendidas e obtendo resultados incríveis com meus pacientes.</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">RS</div>
+                                <div class="author-info">
+                                    <h4>Roberta Silva</h4>
+                                    <p>Terapeuta Familiar</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-video">
+                                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                            </div>
+                            <p class="testimonial-text">Como profissional da saúde, encontrei no Instituto a formação que precisava para expandir meus conhecimentos. A qualidade do conteúdo é excepcional.</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">AM</div>
+                                <div class="author-info">
+                                    <h4>André Mendes</h4>
+                                    <p>Médico Psiquiatra</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-video">
+                                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                            </div>
+                            <p class="testimonial-text">A flexibilidade do EAD me permitiu conciliar trabalho e estudos. O suporte dos professores foi fundamental para meu aprendizado e crescimento profissional.</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">LC</div>
+                                <div class="author-info">
+                                    <h4>Luiza Costa</h4>
+                                    <p>Psicóloga Organizacional</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-arrow next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="carousel-nav">
+                        <div class="carousel-dot active"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
                     </div>
                 </div>
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.097417742502!2d-46.65390528440709!3d-23.56356786735799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1647978283393!5m2!1spt-BR!2sbr" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy"
-                        title="Localização do Instituto Transformar Vidas">
-                    </iframe>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Barra de destaque -->
-    <div class="highlight-bar">
-        <div class="container">
-            <div class="highlight-content">
-                <h2>Venha se Capacitar com a Melhor Formação</h2>
-                <p>Junte-se a mais de 10.000 profissionais que transformaram suas carreiras através da nossa metodologia inovadora e professores especializados.</p>
-                <a href="#cursos" class="btn btn-primary"><i class="fas fa-graduation-cap"></i> Comece Agora</a>
+        <!-- Carrossel de palavras -->
+        <div class="carousel-section">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item"><i class="fas fa-rocket" aria-hidden="true"></i> Venha Transformar Conosco</div>
+                    <div class="carousel-item"><i class="fas fa-lightbulb" aria-hidden="true"></i> Educação Inovadora</div>
+                    <div class="carousel-item"><i class="fas fa-handshake" aria-hidden="true"></i> Parceria com o Aluno</div>
+                    <div class="carousel-item"><i class="fas fa-medal" aria-hidden="true"></i> Qualidade Garantida</div>
+                    <div class="carousel-item"><i class="fas fa-globe" aria-hidden="true"></i> Acesso de Qualquer Lugar</div>
+                    <div class="carousel-item"><i class="fas fa-clock" aria-hidden="true"></i> Flexibilidade de Horários</div>
+                    <div class="carousel-item"><i class="fas fa-star" aria-hidden="true"></i> Melhor Instituto da Região</div>
+                    <div class="carousel-item"><i class="fas fa-award" aria-hidden="true"></i> Certificação Reconhecida</div>
+                    <div class="carousel-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Professores Qualificados</div>
+                    <div class="carousel-item"><i class="fas fa-chart-line" aria-hidden="true"></i> Alta Empregabilidade</div>
+                    <div class="carousel-item"><i class="fas fa-users" aria-hidden="true"></i> +10.000 Alunos Formados</div>
+                    <div class="carousel-item"><i class="fas fa-heart" aria-hidden="true"></i> Educação que Transforma</div>
+                    <!-- Duplicando para criar loop infinito sem pausa -->
+                    <div class="carousel-item"><i class="fas fa-rocket" aria-hidden="true"></i> Venha Transformar Conosco</div>
+                    <div class="carousel-item"><i class="fas fa-lightbulb" aria-hidden="true"></i> Educação Inovadora</div>
+                    <div class="carousel-item"><i class="fas fa-handshake" aria-hidden="true"></i> Parceria com o Aluno</div>
+                    <div class="carousel-item"><i class="fas fa-medal" aria-hidden="true"></i> Qualidade Garantida</div>
+                    <div class="carousel-item"><i class="fas fa-globe" aria-hidden="true"></i> Acesso de Qualquer Lugar</div>
+                    <div class="carousel-item"><i class="fas fa-clock" aria-hidden="true"></i> Flexibilidade de Horários</div>
+                    <div class="carousel-item"><i class="fas fa-star" aria-hidden="true"></i> Melhor Instituto da Região</div>
+                    <div class="carousel-item"><i class="fas fa-award" aria-hidden="true"></i> Certificação Reconhecida</div>
+                    <div class="carousel-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Professores Qualificados</div>
+                    <div class="carousel-item"><i class="fas fa-chart-line" aria-hidden="true"></i> Alta Empregabilidade</div>
+                    <div class="carousel-item"><i class="fas fa-users" aria-hidden="true"></i> +10.000 Alunos Formados</div>
+                    <div class="carousel-item"><i class="fas fa-heart" aria-hidden="true"></i> Educação que Transforma</div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Seção FAQ -->
-    <section class="section faq" id="faq">
-        <div class="container">
-            <div class="section-title">
-                <h2>Perguntas Frequentes</h2>
-                <p>Tire suas dúvidas sobre nossos cursos e metodologia</p>
+        <!-- Seção de Localização e Contato -->
+        <section class="section" id="localizacao">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Localização e Contato</h2>
+                    <p>Entre em contato conosco e venha nos visitar</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Fale Conosco</h3>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Av. da Educação, 1234 - Centro, São Paulo - SP</p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> (11) 3456-7890</p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> contato@transformarvidas.com.br</p>
+                        <p><i class="fas fa-clock" aria-hidden="true"></i> Segunda a Sexta: 8h às 20h | Sábado: 9h às 14h</p>
+                        
+                        <div class="social-links">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.097417742502!2d-46.65390528440709!3d-23.56356786735799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1647978283393!5m2!1spt-BR!2sbr" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            title="Localização do Instituto Transformar Vidas">
+                        </iframe>
+                    </div>
+                </div>
             </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span><i class="fas fa-laptop"></i> Como funciona a modalidade EAD?</span>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Nossos cursos EAD são realizados através de uma plataforma online moderna e intuitiva. Você terá acesso a videoaulas, materiais didáticos, fóruns de discussão e atividades práticas. Todo o conteúdo pode ser acessado 24 horas por dia, permitindo que você estude no seu próprio ritmo, de qualquer lugar.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span><i class="fas fa-graduation-cap"></i> Os certificados são reconhecidos pelo MEC?</span>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sim, todos os nossos cursos são autorizados e reconhecidos pelo Ministério da Educação (MEC). Nossos certificados têm validade em todo território nacional e são aceitos em concursos públicos, processos seletivos e para progressão de carreira.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span><i class="fas fa-clock"></i> Qual é a duração dos cursos?</span>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>A duração varia de acordo com o curso escolhido. Nossas formações têm entre 6 e 24 meses de duração. A carga horária também varia, indo de 360 a 1200 horas. Consulte a página específica de cada curso para obter informações detalhadas sobre duração e carga horária.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span><i class="fas fa-user-graduate"></i> Há algum pré-requisito para me matricular?</span>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Para a maioria dos nossos cursos, o pré-requisito mínimo é ter concluído o ensino médio. Algumas formações mais avançadas podem exigir graduação completa em áreas específicas. Consulte a página do curso de seu interesse para verificar os pré-requisitos específicos.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span><i class="fas fa-headset"></i> Como é o suporte aos alunos?</span>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Oferecemos suporte completo aos nossos alunos através de diversos canais: tutores especializados disponíveis por chat, e-mail e telefone; fóruns de discussão moderados por professores; e plantões de dúvidas semanais via videoconferência. Nosso objetivo é garantir que você tenha toda a assistência necessária durante sua jornada de aprendizado.</p>
-                    </div>
+        </section>
+
+        <!-- Barra de destaque -->
+        <div class="highlight-bar">
+            <div class="container">
+                <div class="highlight-content">
+                    <h2>Venha se Capacitar com a Melhor Formação</h2>
+                    <p>Junte-se a mais de 10.000 profissionais que transformaram suas carreiras através da nossa metodologia inovadora e professores especializados.</p>
+                    <a href="#cursos" class="btn btn-primary"><i class="fas fa-graduation-cap"></i> Comece Agora</a>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Seção FAQ -->
+        <section class="section faq" id="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Perguntas Frequentes</h2>
+                    <p>Tire suas dúvidas sobre nossos cursos e metodologia</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span><i class="fas fa-laptop"></i> Como funciona a modalidade EAD?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Nossos cursos EAD são realizados através de uma plataforma online moderna e intuitiva. Você terá acesso a videoaulas, materiais didáticos, fóruns de discussão e atividades práticas. Todo o conteúdo pode ser acessado 24 horas por dia, permitindo que você estude no seu próprio ritmo, de qualquer lugar.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span><i class="fas fa-graduation-cap"></i> Os certificados são reconhecidos pelo MEC?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sim, todos os nossos cursos são autorizados e reconhecidos pelo Ministério da Educação (MEC). Nossos certificados têm validade em todo território nacional e são aceitos em concursos públicos, processos seletivos e para progressão de carreira.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span><i class="fas fa-clock"></i> Qual é a duração dos cursos?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>A duração varia de acordo com o curso escolhido. Nossas formações têm entre 6 e 24 meses de duração. A carga horária também varia, indo de 360 a 1200 horas. Consulte a página específica de cada curso para obter informações detalhadas sobre duração e carga horária.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span><i class="fas fa-user-graduate"></i> Há algum pré-requisito para me matricular?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Para a maioria dos nossos cursos, o pré-requisito mínimo é ter concluído o ensino médio. Algumas formações mais avançadas podem exigir graduação completa em áreas específicas. Consulte a página do curso de seu interesse para verificar os pré-requisitos específicos.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span><i class="fas fa-headset"></i> Como é o suporte aos alunos?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Oferecemos suporte completo aos nossos alunos através de diversos canais: tutores especializados disponíveis por chat, e-mail e telefone; fóruns de discussão moderados por professores; e plantões de dúvidas semanais via videoconferência. Nosso objetivo é garantir que você tenha toda a assistência necessária durante sua jornada de aprendizado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -2222,6 +2248,19 @@
     </a>
 
     <script>
+        // Debounce para otimização de performance
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
         // Menu mobile
         class MobileMenu {
             constructor() {
@@ -2281,58 +2320,7 @@
             }
         }
 
-        // Inicializar menu mobile
-        const mobileMenu = new MobileMenu();
-
-        // Scroll suave para links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.padding = '10px 0';
-                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
-            } else {
-                header.style.padding = '0';
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
-            }
-        });
-
-        // Animação de entrada dos elementos
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card, .course-card').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Carrossel de depoimentos
+        // Carrossel de Depoimentos Corrigido
         class TestimonialsCarousel {
             constructor() {
                 this.container = document.querySelector('.testimonials-container');
@@ -2341,57 +2329,119 @@
                 this.prevBtn = document.querySelector('.carousel-arrow.prev');
                 this.nextBtn = document.querySelector('.carousel-arrow.next');
                 this.currentIndex = 0;
-                this.cardWidth = 0;
+                this.cardCount = this.cards.length;
+                this.autoRotateInterval = null;
+                
                 this.init();
             }
             
             init() {
-                this.calculateCardWidth();
-                window.addEventListener('resize', this.calculateCardWidth.bind(this));
+                this.setupResponsiveBehavior();
+                this.setupEventListeners();
+                this.startAutoRotate();
+                this.updateCarousel();
                 
-                this.prevBtn.addEventListener('click', this.prev.bind(this));
-                this.nextBtn.addEventListener('click', this.next.bind(this));
+                window.addEventListener('resize', debounce(() => {
+                    this.setupResponsiveBehavior();
+                    this.updateCarousel();
+                }, 250));
+            }
+            
+            setupResponsiveBehavior() {
+                // Configurar cards por view baseado no tamanho da tela
+                if (window.innerWidth < 768) {
+                    this.cardsPerView = 1;
+                    this.cardWidth = 100; // 100% para mobile
+                } else if (window.innerWidth < 992) {
+                    this.cardsPerView = 2;
+                    this.cardWidth = 100 / this.cardsPerView;
+                } else {
+                    this.cardsPerView = 3;
+                    this.cardWidth = 100 / this.cardsPerView;
+                }
+                
+                // Ajustar container width para criar loop infinito
+                this.container.style.width = `${(this.cardCount + this.cardsPerView) * 100}%`;
+            }
+            
+            setupEventListeners() {
+                this.prevBtn.addEventListener('click', () => this.prev());
+                this.nextBtn.addEventListener('click', () => this.next());
                 
                 this.dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
-                        this.goToSlide(index);
-                    });
+                    dot.addEventListener('click', () => this.goToSlide(index));
                 });
                 
-                // Auto-rotate
-                this.startAutoRotate();
+                // Pause on hover
+                this.container.addEventListener('mouseenter', () => this.stopAutoRotate());
+                this.container.addEventListener('mouseleave', () => this.startAutoRotate());
                 
-                // Pause auto-rotate on hover
-                this.container.addEventListener('mouseenter', () => {
-                    this.stopAutoRotate();
+                // Touch events para mobile
+                this.setupTouchEvents();
+            }
+            
+            setupTouchEvents() {
+                let startX = 0;
+                let endX = 0;
+                
+                this.container.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
                 });
                 
-                this.container.addEventListener('mouseleave', () => {
-                    this.startAutoRotate();
+                this.container.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    this.handleSwipe(startX, endX);
                 });
             }
             
-            calculateCardWidth() {
-                // Para o carrossel de depoimentos, vamos usar largura fixa
-                this.cardWidth = 100 / 3; // Mostrar 3 cards por vez
+            handleSwipe(startX, endX) {
+                const swipeThreshold = 50;
+                const diff = startX - endX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        this.next();
+                    } else {
+                        this.prev();
+                    }
+                }
             }
             
             updateCarousel() {
-                this.container.style.transform = `translateX(-${this.currentIndex * this.cardWidth}%)`;
+                const translateX = -this.currentIndex * this.cardWidth;
+                this.container.style.transform = `translateX(${translateX}%)`;
                 
-                // Update dots
+                // Atualizar dots
                 this.dots.forEach((dot, index) => {
                     dot.classList.toggle('active', index === this.currentIndex);
                 });
+                
+                // Reset para criar loop infinito
+                if (this.currentIndex >= this.cardCount) {
+                    setTimeout(() => {
+                        this.currentIndex = 0;
+                        this.container.style.transition = 'none';
+                        this.container.style.transform = `translateX(0)`;
+                        setTimeout(() => {
+                            this.container.style.transition = 'transform 0.5s ease';
+                        }, 50);
+                    }, 500);
+                }
             }
             
             next() {
-                this.currentIndex = (this.currentIndex + 1) % this.dots.length;
+                this.currentIndex = (this.currentIndex + 1) % (this.cardCount + this.cardsPerView);
                 this.updateCarousel();
             }
             
             prev() {
-                this.currentIndex = (this.currentIndex - 1 + this.dots.length) % this.dots.length;
+                this.currentIndex = (this.currentIndex - 1 + (this.cardCount + this.cardsPerView)) % (this.cardCount + this.cardsPerView);
+                
+                // Se for para antes do início, ir para o final
+                if (this.currentIndex < 0) {
+                    this.currentIndex = this.cardCount - 1;
+                }
+                
                 this.updateCarousel();
             }
             
@@ -2401,35 +2451,20 @@
             }
             
             startAutoRotate() {
-                this.autoRotate = setInterval(() => {
+                this.stopAutoRotate();
+                this.autoRotateInterval = setInterval(() => {
                     this.next();
                 }, 5000);
             }
             
             stopAutoRotate() {
-                clearInterval(this.autoRotate);
+                if (this.autoRotateInterval) {
+                    clearInterval(this.autoRotateInterval);
+                }
             }
         }
 
-        // Inicializar carrossel de depoimentos
-        const testimonialsCarousel = new TestimonialsCarousel();
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentNode;
-                item.classList.toggle('active');
-                
-                // Close other items
-                document.querySelectorAll('.faq-item').forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-            });
-        });
-
-        // Sistema de vídeos em loop para o hero
+        // Sistema de vídeos em loop otimizado
         class VideoBackground {
             constructor() {
                 this.videos = [
@@ -2439,42 +2474,87 @@
                     document.getElementById('video4')
                 ];
                 this.currentVideoIndex = 0;
+                this.isMobile = window.innerWidth < 768;
                 this.init();
             }
             
             init() {
-                // Inicia o primeiro vídeo
+                // Em mobile, usar imagem de fallback ou vídeo otimizado
+                if (this.isMobile) {
+                    this.setupMobileSolution();
+                } else {
+                    this.setupDesktopVideos();
+                }
+            }
+            
+            setupMobileSolution() {
+                // Opção 1: Usar apenas um vídeo leve
+                this.videos[0].style.display = 'block';
+                this.videos[0].classList.add('active');
+                
+                // Tentar reproduzir o vídeo
+                const playPromise = this.videos[0].play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.catch(e => {
+                        console.log('Autoplay bloqueado, usando fallback');
+                        this.useImageFallback();
+                    });
+                }
+                
+                // Esconder outros vídeos
+                for (let i = 1; i < this.videos.length; i++) {
+                    this.videos[i].style.display = 'none';
+                }
+            }
+            
+            setupDesktopVideos() {
+                // Configuração original para desktop
                 this.playCurrentVideo();
                 
-                // Adiciona event listeners para quando cada vídeo terminar
                 this.videos.forEach((video, index) => {
                     video.addEventListener('ended', () => {
                         this.nextVideo();
                     });
+                    
+                    // Preload inteligente
+                    if (index === 0 || index === 1) {
+                        video.preload = 'auto';
+                    } else {
+                        video.preload = 'metadata';
+                    }
                 });
+            }
+            
+            useImageFallback() {
+                const videoBackground = document.querySelector('.video-background');
+                videoBackground.innerHTML = '';
+                videoBackground.style.backgroundImage = 'url("images/hero-fallback.jpg")';
+                videoBackground.style.backgroundSize = 'cover';
+                videoBackground.style.backgroundPosition = 'center';
             }
             
             playCurrentVideo() {
-                // Esconde todos os vídeos
                 this.videos.forEach(video => {
                     video.classList.remove('active');
+                    video.style.display = 'none';
                 });
                 
-                // Mostra e reproduz o vídeo atual
                 const currentVideo = this.videos[this.currentVideoIndex];
                 currentVideo.classList.add('active');
-                currentVideo.play().catch(e => console.log('Erro ao reproduzir vídeo:', e));
+                currentVideo.style.display = 'block';
+                
+                currentVideo.play().catch(e => {
+                    console.log('Erro ao reproduzir vídeo:', e);
+                    this.nextVideo();
+                });
             }
             
             nextVideo() {
-                // Avança para o próximo vídeo
                 this.currentVideoIndex = (this.currentVideoIndex + 1) % this.videos.length;
                 this.playCurrentVideo();
             }
         }
-
-        // Inicializar sistema de vídeos
-        const videoBackground = new VideoBackground();
 
         // Carrossel de Etapas
         class StepsCarousel {
@@ -2559,8 +2639,97 @@
             }
         }
 
-        // Inicializar carrossel de etapas
-        const stepsCarousel = new StepsCarousel();
+        // FAQ Accordion
+        function initFAQ() {
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.parentNode;
+                    item.classList.toggle('active');
+                    
+                    // Close other items
+                    document.querySelectorAll('.faq-item').forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        }
+
+        // Scroll suave para links internos
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Header scroll effect
+        function initHeaderScroll() {
+            window.addEventListener('scroll', debounce(function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.padding = '10px 0';
+                    header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                } else {
+                    header.style.padding = '0';
+                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+                }
+            }, 10));
+        }
+
+        // Animação de entrada dos elementos
+        function initAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        // Opcional: unobserve após animação para performance
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.feature-card, .course-card').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Inicialização segura de todos os componentes
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                const mobileMenu = new MobileMenu();
+                const testimonialsCarousel = new TestimonialsCarousel();
+                const videoBackground = new VideoBackground();
+                const stepsCarousel = new StepsCarousel();
+                
+                // Inicializar funcionalidades
+                initSmoothScroll();
+                initHeaderScroll();
+                initAnimations();
+                initFAQ();
+                
+            } catch (error) {
+                console.error('Erro na inicialização:', error);
+            }
+        });
     </script>
 </body>
 </html>
