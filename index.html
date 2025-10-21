@@ -5,9 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instituto Transformar Vidas EAD - Educação Premium</title>
     <meta name="description" content="Mais de 100 cursos EAD com metodologia exclusiva. Educação transformadora para mudar vidas e carreiras.">
-    <link rel="icon" href="image/logosf.png">
+    <link rel="icon" type="image/png" href="image/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Meta Tags para SEO -->
+    <meta property="og:title" content="Instituto Transformar Vidas EAD">
+    <meta property="og:description" content="Mais de 100 cursos EAD com metodologia exclusiva. Educação transformadora para mudar vidas e carreiras.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://institutotransformarvidas.com.br">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Instituto Transformar Vidas EAD">
+    <meta name="twitter:description" content="Mais de 100 cursos EAD com metodologia exclusiva.">
+    
+    <!-- Schema Markup para SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Instituto Transformar Vidas EAD",
+        "description": "Mais de 100 cursos EAD com metodologia exclusiva. Educação transformadora para mudar vidas e carreiras.",
+        "url": "https://institutotransformarvidas.com.br",
+        "telephone": "+55-11-3456-7890",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. da Educação, 1234",
+            "addressLocality": "São Paulo",
+            "addressRegion": "SP",
+            "addressCountry": "BR"
+        },
+        "areaServed": "BR"
+    }
+    </script>
+    
     <style>
         /* Variáveis de cores e temas */
         :root {
@@ -16,11 +46,12 @@
             --cinza-claro: #e9ecef;
             --cinza-medio: #6c757d;
             --cinza-escuro: #212529;
-            --dourado: #a88c5e;
-            --dourado-escuro: #8a6f4a;
+            --vermelho: #ba5959;
+            --vermelho-escuro: #8b0000;
+            --vermelho-claro: #7a192c;
             --azul-profundo: #1a365d;
             --azul-escuro: #2d3748;
-            --vermelho-escuro: #8b0000;
+            --azul-medio: #2c5282;
             --sombra-suave: 0 5px 15px rgba(0, 0, 0, 0.08);
             --sombra-media: 0 10px 25px rgba(0, 0, 0, 0.12);
             --transicao: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -65,12 +96,12 @@
         }
 
         .section {
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: 60px;
         }
 
         .section-title h2 {
@@ -89,7 +120,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: var(--dourado);
+            background: var(--vermelho);
         }
 
         .section-title p {
@@ -133,13 +164,13 @@
         }
 
         .btn-primary {
-            background: var(--dourado);
+            background: var(--vermelho);
             color: var(--branco);
             box-shadow: var(--sombra-suave);
         }
 
-        .btn-primary:hover {
-            background: var(--dourado-escuro);
+        .btn-primary:hover, .btn-primary:focus {
+            background: var(--vermelho-escuro);
             transform: translateY(-3px);
             box-shadow: var(--sombra-media);
         }
@@ -150,7 +181,7 @@
             border: 2px solid var(--azul-profundo);
         }
 
-        .btn-secondary:hover {
+        .btn-secondary:hover, .btn-secondary:focus {
             background: var(--azul-profundo);
             color: var(--branco);
             transform: translateY(-3px);
@@ -162,7 +193,7 @@
             box-shadow: var(--sombra-suave);
         }
 
-        .btn-whatsapp:hover {
+        .btn-whatsapp:hover, .btn-whatsapp:focus {
             background: #128C7E;
             transform: translateY(-3px);
             box-shadow: var(--sombra-media);
@@ -193,6 +224,11 @@
             font-size: 1.6rem;
             font-weight: 700;
             color: var(--azul-profundo);
+            transition: var(--transicao);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .logo img {
@@ -212,6 +248,19 @@
             position: relative;
             padding: 5px 0;
             font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a i {
+            font-size: 0.9rem;
+            transition: var(--transicao);
+        }
+
+        .nav-links a:hover i, .nav-links a:focus i {
+            transform: translateY(-3px);
+            color: var(--vermelho);
         }
 
         .nav-links a:after {
@@ -221,11 +270,11 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background: var(--dourado);
+            background: var(--vermelho);
             transition: var(--transicao);
         }
 
-        .nav-links a:hover:after {
+        .nav-links a:hover:after, .nav-links a:focus:after {
             width: 100%;
         }
 
@@ -241,10 +290,8 @@
             color: var(--azul-profundo);
             transition: var(--transicao);
             z-index: 1001;
-        }
-
-        .mobile-menu.active i::before {
-            content: '\f00d';
+            background: none;
+            border: none;
         }
 
         .mobile-nav {
@@ -266,6 +313,7 @@
 
         .mobile-nav.active {
             transform: translateY(0);
+            display: flex;
         }
 
         .mobile-nav-links {
@@ -282,10 +330,22 @@
             font-weight: 600;
             color: var(--azul-profundo);
             transition: var(--transicao);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .mobile-nav-links a:hover {
-            color: var(--dourado);
+        .mobile-nav-links a i {
+            font-size: 1.2rem;
+            transition: var(--transicao);
+        }
+
+        .mobile-nav-links a:hover, .mobile-nav-links a:focus {
+            color: var(--vermelho);
+        }
+
+        .mobile-nav-links a:hover i, .mobile-nav-links a:focus i {
+            transform: translateY(-3px);
         }
 
         .mobile-nav-actions {
@@ -297,17 +357,38 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.8)), url('//images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
-            background-size: cover;
-            background-position: center;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--branco);
             padding-top: 80px;
-            position: relative;
             overflow: hidden;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .video-background video.active {
+            opacity: 1;
         }
 
         .hero::before {
@@ -317,20 +398,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
-            background-size: cover;
-            background-position: center;
-            animation: zoomEffect 20s infinite alternate;
+            background: linear-gradient(rgba(26, 54, 93, 0.7), rgba(5, 7, 10, 0.8));
             z-index: -1;
-        }
-
-        @keyframes zoomEffect {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.1);
-            }
         }
 
         .hero-content {
@@ -340,9 +409,9 @@
             z-index: 1;
         }
 
-        .hero-logo {
+        .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 4.2rem;
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 30px;
             line-height: 1.2;
@@ -350,18 +419,43 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        .hero-logo span {
-            color: var(--dourado);
+        .hero-title span {
+            color: var(--vermelho);
             display: block;
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             margin-top: 10px;
             animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero-premium {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .premium-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        .premium-badge i {
+            color: var(--vermelho);
+            font-size: 1.2rem;
         }
 
         .hero-divider {
             width: 100px;
             height: 2px;
-            background: var(--dourado);
+            background: var(--vermelho);
             margin: 30px auto;
             animation: expandWidth 1.5s ease-out;
         }
@@ -383,14 +477,6 @@
             animation: fadeInUp 1.4s ease-out;
         }
 
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1.6s ease-out;
-        }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -407,7 +493,7 @@
             display: flex;
             justify-content: center;
             gap: 30px;
-            margin: -80px auto 100px;
+            margin: -60px auto 60px;
             position: relative;
             z-index: 10;
             flex-wrap: wrap;
@@ -425,9 +511,23 @@
             cursor: pointer;
             position: relative;
             box-shadow: var(--sombra-media);
-            border-top: 4px solid var(--dourado);
+            border-top: 4px solid var(--vermelho);
             overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--cinza-claro);
+            opacity: 0;
+            transform: translateY(50px);
         }
+
+        .feature-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .feature-card:nth-child(1) { transition-delay: 0.1s; }
+        .feature-card:nth-child(2) { transition-delay: 0.2s; }
+        .feature-card:nth-child(3) { transition-delay: 0.3s; }
 
         .feature-card::before {
             content: '';
@@ -442,12 +542,41 @@
             z-index: 0;
         }
 
-        .feature-card:hover::before {
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+            transition: var(--transicao);
+            z-index: 0;
+            opacity: 0;
+        }
+
+        .feature-card:hover::before, .feature-card:focus-within::before {
             opacity: 0.05;
         }
 
-        .feature-card:hover {
-            transform: translateY(-15px);
+        .feature-card:hover::after, .feature-card:focus-within::after {
+            opacity: 1;
+            animation: shine 3s infinite linear;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(30deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(30deg);
+            }
+        }
+
+        .feature-card:hover, .feature-card:focus-within {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--vermelho);
         }
 
         .feature-icon {
@@ -459,17 +588,19 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 25px;
-            color: var(--dourado);
+            color: var(--vermelho);
             font-size: 2rem;
             position: relative;
             z-index: 1;
             transition: var(--transicao);
+            border: 1px solid var(--cinza-claro);
         }
 
-        .feature-card:hover .feature-icon {
-            background: var(--dourado);
+        .feature-card:hover .feature-icon, .feature-card:focus-within .feature-icon {
+            background: var(--vermelho);
             color: var(--azul-profundo);
             transform: rotateY(180deg);
+            border-color: var(--azul-profundo);
         }
 
         .feature-card h3 {
@@ -512,11 +643,44 @@
             position: relative;
             box-shadow: var(--sombra-suave);
             border-radius: 8px;
+            border: 1px solid var(--cinza-claro);
+            opacity: 0;
+            transform: translateY(30px);
         }
 
-        .course-card:hover {
-            transform: translateY(-10px);
+        .course-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .course-card:nth-child(1) { transition-delay: 0.1s; }
+        .course-card:nth-child(2) { transition-delay: 0.2s; }
+        .course-card:nth-child(3) { transition-delay: 0.3s; }
+
+        .course-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+            transition: var(--transicao);
+            z-index: 0;
+            opacity: 0;
+        }
+
+        .course-card:hover::after, .course-card:focus-within::after {
+            opacity: 1;
+            animation: shine 3s infinite linear;
+        }
+
+        .course-card:hover, .course-card:focus-within {
+            transform: translateY(-10px) scale(1.02);
             box-shadow: var(--sombra-media);
+            border-color: var(--vermelho);
         }
 
         .course-img {
@@ -530,6 +694,7 @@
             font-weight: 600;
             position: relative;
             overflow: hidden;
+            border-bottom: 1px solid var(--cinza-claro);
         }
 
         .course-img::after {
@@ -576,6 +741,109 @@
             text-align: center;
         }
 
+        /* Carrossel de Etapas */
+        .steps-carousel {
+            background: linear-gradient(135deg, var(--azul-profundo), var(--azul-medio));
+            padding: 80px 0;
+            color: var(--branco);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .steps-carousel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+
+        .steps-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .step-slide {
+            text-align: center;
+            padding: 40px 20px;
+            display: none;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .step-slide.active {
+            display: block;
+        }
+
+        .step-icon {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            color: var(--vermelho);
+        }
+
+        .step-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .step-description {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .step-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .step-arrow {
+            background: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transicao);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .step-arrow:hover {
+            background: var(--vermelho);
+            transform: scale(1.1);
+        }
+
+        .step-dots {
+            display: flex;
+            gap: 15px;
+        }
+
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: var(--transicao);
+        }
+
+        .step-dot.active {
+            background: var(--vermelho);
+            transform: scale(1.2);
+        }
+
         /* Seção de Depoimentos */
         .testimonials {
             position: relative;
@@ -591,61 +859,94 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        .testimonials-carousel {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .testimonials-container {
+            display: flex;
+            transition: transform 0.5s ease;
             gap: 30px;
+            padding: 0 20px;
         }
 
         .testimonial-card {
             background: rgba(255, 255, 255, 0.05);
-            padding: 40px 30px;
+            padding: 30px 25px;
             transition: var(--transicao);
             position: relative;
-            border-left: 3px solid var(--dourado);
+            border-left: 3px solid var(--vermelho);
             border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 350px;
+            flex-shrink: 0;
+            box-sizing: border-box;
         }
 
-        .testimonial-card:hover {
+        .testimonial-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            transform: rotate(30deg);
+            transition: var(--transicao);
+            z-index: 0;
+            opacity: 0;
+        }
+
+        .testimonial-card:hover::after, .testimonial-card:focus-within::after {
+            opacity: 1;
+            animation: shine 3s infinite linear;
+        }
+
+        .testimonial-card:hover, .testimonial-card:focus-within {
             background: rgba(255, 255, 255, 0.1);
             transform: translateY(-5px);
+            border-color: var(--vermelho);
         }
 
         .testimonial-video {
             width: 100%;
-            height: 200px;
+            height: 180px;
             background: rgba(0, 0, 0, 0.3);
             border-radius: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--branco);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .testimonial-video i {
             font-size: 3rem;
             z-index: 2;
-            color: var(--dourado);
+            color: var(--vermelho);
         }
 
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 25px;
-            line-height: 1.8;
+            margin-bottom: 20px;
+            line-height: 1.6;
             position: relative;
+            font-size: 0.95rem;
         }
 
         .testimonial-text::before {
             content: '"';
-            font-size: 4rem;
-            color: var(--dourado);
+            font-size: 3rem;
+            color: var(--vermelho);
             position: absolute;
-            top: -20px;
-            left: -10px;
+            top: -15px;
+            left: -5px;
             font-family: Georgia, serif;
             opacity: 0.3;
         }
@@ -660,17 +961,18 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: var(--dourado);
+            background: var(--vermelho);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--azul-profundo);
             font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .author-info h4 {
             font-size: 1.1rem;
-            color: var(--dourado);
+            color: var(--vermelho);
         }
 
         .author-info p {
@@ -678,11 +980,80 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
+        .testimonial-rating {
+            display: flex;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .testimonial-rating i {
+            color: #FFD700;
+            font-size: 0.9rem;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: var(--transicao);
+        }
+
+        .carousel-dot.active {
+            background: var(--vermelho);
+            transform: scale(1.2);
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transicao);
+            z-index: 10;
+            color: var(--branco);
+            font-size: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .carousel-arrow:hover {
+            background: var(--vermelho);
+        }
+
+        .carousel-arrow.prev {
+            left: 20px;
+        }
+
+        .carousel-arrow.next {
+            right: 20px;
+        }
+
         /* Seção de Localização e Contato */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 50px;
+        }
+
+        @media (min-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         .contact-info h3 {
@@ -706,7 +1077,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--dourado);
+            color: var(--vermelho);
         }
 
         .social-links {
@@ -723,15 +1094,17 @@
             height: 45px;
             background: var(--azul-profundo);
             border-radius: 50%;
-            color: var(--dourado);
+            color: var(--vermelho);
             transition: var(--transicao);
             font-size: 1.1rem;
+            border: 1px solid var(--cinza-claro);
         }
 
-        .social-links a:hover {
+        .social-links a:hover, .social-links a:focus {
             transform: translateY(-5px);
-            background: var(--dourado);
+            background: var(--vermelho);
             color: var(--azul-profundo);
+            border-color: var(--azul-profundo);
         }
 
         .map-container {
@@ -740,6 +1113,7 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--sombra-media);
+            border: 1px solid var(--cinza-claro);
         }
 
         .map {
@@ -768,7 +1142,7 @@
         /* Carrossel de palavras */
         .carousel-section {
             background: var(--azul-profundo);
-            padding: 40px 0;
+            padding: 30px 0;
             overflow: hidden;
             position: relative;
         }
@@ -781,26 +1155,25 @@
 
         .carousel {
             display: flex;
-            animation: scroll 30s linear infinite;
-        }
-
-        .carousel-reverse {
-            animation: scrollReverse 25s linear infinite;
+            animation: scroll 60s linear infinite;
+            white-space: nowrap;
         }
 
         .carousel-item {
             display: flex;
             align-items: center;
             white-space: nowrap;
-            padding: 0 30px;
+            padding: 0 25px;
             color: var(--branco);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
+            flex-shrink: 0;
         }
 
         .carousel-item i {
             margin-right: 10px;
-            color: var(--dourado);
+            color: var(--vermelho);
+            font-size: 1rem;
         }
 
         @keyframes scroll {
@@ -812,13 +1185,107 @@
             }
         }
 
-        @keyframes scrollReverse {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(0);
-            }
+        /* Seção FAQ */
+        .faq {
+            background-color: var(--off-white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--branco);
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            border: 1px solid var(--cinza-claro);
+            transition: var(--transicao);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--sombra-media);
+            border-color: var(--vermelho);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--azul-profundo);
+            transition: var(--transicao);
+        }
+
+        .faq-question:hover {
+            background-color: rgba(186, 89, 89, 0.05);
+        }
+
+        .faq-question i {
+            transition: var(--transicao);
+            color: var(--vermelho);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--cinza-medio);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 30px 25px;
+            max-height: 500px;
+        }
+
+        /* Barra de destaque */
+        .highlight-bar {
+            background: linear-gradient(90deg, var(--azul-profundo), var(--azul-medio));
+            color: var(--branco);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .highlight-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .highlight-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
         }
 
         /* Footer */
@@ -838,7 +1305,7 @@
         .footer-column h3 {
             font-size: 1.3rem;
             margin-bottom: 25px;
-            color: var(--dourado);
+            color: var(--vermelho);
         }
 
         .footer-column ul {
@@ -854,10 +1321,10 @@
             opacity: 0.8;
         }
 
-        .footer-column ul li a:hover {
+        .footer-column ul li a:hover, .footer-column ul li a:focus {
             opacity: 1;
             padding-left: 5px;
-            color: var(--dourado);
+            color: var(--vermelho);
         }
 
         .copyright {
@@ -887,9 +1354,10 @@
             justify-content: center;
             animation: pulse 2s infinite;
             transition: var(--transicao);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .whatsapp-float:hover {
+        .whatsapp-float:hover, .whatsapp-float:focus {
             transform: scale(1.1);
             animation: none;
         }
@@ -924,18 +1392,84 @@
             animation: fadeIn 1s ease forwards;
         }
 
+        /* Melhorias de Acessibilidade */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Foco visível para todos os elementos interativos */
+        a:focus-visible,
+        button:focus-visible,
+        .btn:focus-visible,
+        .feature-card:focus-visible,
+        .course-card:focus-visible,
+        .testimonial-card:focus-visible {
+            outline: 2px solid var(--vermelho);
+            outline-offset: 3px;
+        }
+
         /* Responsividade */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-title span {
+                font-size: 2.5rem;
+            }
+            
+            .highlight-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .step-title {
+                font-size: 2rem;
+            }
+        }
+
         @media (max-width: 992px) {
-            .hero-logo {
-                font-size: 3.5rem;
-            }
-            
-            .hero-logo span {
-                font-size: 2.8rem;
-            }
-            
             .nav-links {
                 gap: 20px;
+            }
+            
+            .feature-cards {
+                gap: 20px;
+            }
+            
+            .feature-card {
+                width: 280px;
+            }
+            
+            .carousel-arrow {
+                display: none;
+            }
+            
+            .highlight-content h2 {
+                font-size: 2rem;
+            }
+            
+            .highlight-content p {
+                font-size: 1.1rem;
+            }
+            
+            .step-title {
+                font-size: 1.8rem;
+            }
+            
+            .step-description {
+                font-size: 1.1rem;
+            }
+            
+            .testimonial-card {
+                width: 300px;
             }
         }
 
@@ -948,12 +1482,12 @@
                 display: block;
             }
 
-            .hero-logo {
-                font-size: 2.8rem;
+            .hero-title {
+                font-size: 2.5rem;
             }
             
-            .hero-logo span {
-                font-size: 2.2rem;
+            .hero-title span {
+                font-size: 2rem;
             }
 
             .hero p {
@@ -965,7 +1499,7 @@
             }
 
             .section {
-                padding: 80px 0;
+                padding: 60px 0;
             }
 
             .section-title h2 {
@@ -979,20 +1513,48 @@
                 right: 20px;
                 font-size: 25px;
             }
-        }
-
-        @media (max-width: 576px) {
-            .hero-logo {
-                font-size: 2.2rem;
+            
+            .carousel-item {
+                font-size: 1rem;
+                padding: 0 15px;
             }
             
-            .hero-logo span {
+            .highlight-bar {
+                padding: 40px 0;
+            }
+            
+            .highlight-content h2 {
                 font-size: 1.8rem;
             }
             
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
+            .highlight-content p {
+                font-size: 1rem;
+            }
+            
+            .step-title {
+                font-size: 1.6rem;
+            }
+            
+            .step-description {
+                font-size: 1rem;
+            }
+            
+            .steps-container {
+                padding: 0 20px;
+            }
+            
+            .testimonial-card {
+                width: 280px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-title span {
+                font-size: 1.6rem;
             }
             
             .feature-card {
@@ -1005,7 +1567,64 @@
             }
 
             .carousel-item {
+                font-size: 0.9rem;
+                padding: 0 10px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .faq-question {
+                padding: 20px;
                 font-size: 1rem;
+            }
+            
+            .faq-answer {
+                padding: 0 20px;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 0 20px 20px;
+            }
+            
+            .highlight-content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .step-title {
+                font-size: 1.4rem;
+            }
+            
+            .step-icon {
+                font-size: 3rem;
+            }
+            
+            .testimonial-card {
+                width: 260px;
+                padding: 20px 15px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title span {
+                font-size: 1.4rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .logo span {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -1014,105 +1633,161 @@
     <!-- Header e Navegação -->
     <header>
         <div class="container">
-            <nav class="navbar">
+            <nav class="navbar" aria-label="Navegação principal">
                 <a href="#inicio" class="logo">
-                    <!-- Substitua o caminho abaixo pela sua logo -->
-                    <img src="image/logosf.png" alt="Instituto Transformar Vidas">
+                    <img src="image/logosf.png" alt="Instituto Transformar Vidas - Logo" width="50" height="50">
                     <span>INSTITUTO VIDAS</span>
                 </a>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#cursos">Cursos</a></li>
-                    <li><a href="#depoimentos">Depoimentos</a></li>
-                    <li><a href="#localizacao">Localização</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="#inicio" role="menuitem"><i class="fas fa-home"></i> Início</a></li>
+                    <li role="none"><a href="#cursos" role="menuitem"><i class="fas fa-book"></i> Cursos</a></li>
+                    <li role="none"><a href="#depoimentos" role="menuitem"><i class="fas fa-comments"></i> Depoimentos</a></li>
+                    <li role="none"><a href="#localizacao" role="menuitem"><i class="fas fa-map-marker-alt"></i> Localização</a></li>
+                    <li role="none"><a href="#faq" role="menuitem"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li role="none"><a href="#contato" role="menuitem"><i class="fas fa-envelope"></i> Contato</a></li>
                 </ul>
-                <div class="nav-actions">
-                    <a href="#" class="btn btn-primary">Área do Aluno</a>
-                </div>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <button class="mobile-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
             </nav>
         </div>
-        <div class="mobile-nav">
-            <ul class="mobile-nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#cursos">Cursos</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#localizacao">Localização</a></li>
-                <li><a href="#contato">Contato</a></li>
+        <div class="mobile-nav" id="mobile-nav">
+            <ul class="mobile-nav-links" role="menubar">
+                <li role="none"><a href="#inicio" role="menuitem"><i class="fas fa-home"></i> Início</a></li>
+                <li role="none"><a href="#cursos" role="menuitem"><i class="fas fa-book"></i> Cursos</a></li>
+                <li role="none"><a href="#depoimentos" role="menuitem"><i class="fas fa-comments"></i> Depoimentos</a></li>
+                <li role="none"><a href="#localizacao" role="menuitem"><i class="fas fa-map-marker-alt"></i> Localização</a></li>
+                <li role="none"><a href="#faq" role="menuitem"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                <li role="none"><a href="#contato" role="menuitem"><i class="fas fa-envelope"></i> Contato</a></li>
             </ul>
-            <div class="mobile-nav-actions">
-                <a href="#" class="btn btn-primary">Área do Aluno</a>
-            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
+        <div class="video-background" id="videoBackground">
+            <video id="video1" muted>
+                <source src="videos/video2.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <video id="video2" muted>
+                <source src="videos/video3.mov" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <video id="video3" muted>
+                <source src="videos/video4.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <video id="video4" muted>
+                <source src="videos/video1.mov" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+        </div>
         <div class="hero-content">
-            <h1 class="hero-logo"><br><span>INSTITUTO</span> TRANSFORMAR VIDAS</h1>
+            <h1 class="hero-title"><span>INSTITUTO</span> TRANSFORMAR VIDAS</h1>
+            
+            <div class="hero-premium">
+                <div class="premium-badge">
+                    <i class="fas fa-award"></i>
+                    <span>Educação Premium</span>
+                </div>
+                <div class="premium-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Melhor Instituto da Região</span>
+                </div>
+                <div class="premium-badge">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Certificação Reconhecida</span>
+                </div>
+            </div>
+            
             <div class="hero-divider"></div>
             <p>Preparar profissionais para orientar pessoas na solução de seus problemas existenciais, tais como: fobias, ansiedades, depressões, obsessões, impulsos auto e heteroagressivos.</p>
-            <div class="hero-btns">
-                <a href="#cursos" class="btn btn-primary"><i class="fas fa-book"></i> Conhecer Cursos</a>
-                <a href="#contato" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Fale Conosco</a>
-            </div>
+            <a href="#cursos" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Conhecer Nossos Cursos</a>
         </div>
     </section>
-
-    <!-- Carrossel de palavras -->
-    <div class="carousel-section">
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-item"><i class="fas fa-star"></i> Melhor Instituto da Região</div>
-                <div class="carousel-item"><i class="fas fa-award"></i> Certificação Reconhecida</div>
-                <div class="carousel-item"><i class="fas fa-graduation-cap"></i> Professores Qualificados</div>
-                <div class="carousel-item"><i class="fas fa-chart-line"></i> Alta Empregabilidade</div>
-                <div class="carousel-item"><i class="fas fa-users"></i> +10.000 Alunos Formados</div>
-                <div class="carousel-item"><i class="fas fa-heart"></i> Educação que Transforma</div>
-                <div class="carousel-item"><i class="fas fa-star"></i> Melhor Instituto da Região</div>
-                <div class="carousel-item"><i class="fas fa-award"></i> Certificação Reconhecida</div>
-                <div class="carousel-item"><i class="fas fa-graduation-cap"></i> Professores Qualificados</div>
-            </div>
-        </div>
-    </div>
 
     <!-- Cards de Destaque -->
     <div class="container">
         <div class="feature-cards">
-            <div class="feature-card fade-in">
+            <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-book"></i>
+                    <i class="fas fa-book" aria-hidden="true"></i>
                 </div>
                 <h3>120 Cursos</h3>
                 <p>Ampla variedade de cursos com certificação reconhecida pelo MEC</p>
-                <a href="#" class="btn btn-primary">Saiba Mais</a>
+                <a href="#cursos" class="btn btn-primary">Portfólio de Cursos</a>
             </div>
-            <div class="feature-card fade-in">
+            <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-chalkboard-teacher"></i>
+                    <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
                 </div>
                 <h3>Professores</h3>
                 <p>Profissionais capacitados com experiência de mercado</p>
-                <a href="#" class="btn btn-primary">Conhecer</a>
+                <a href="#contato" class="btn btn-primary">Falar com Reitor</a>
             </div>
-            <div class="feature-card fade-in">
+            <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-award"></i>
+                    <i class="fas fa-award" aria-hidden="true"></i>
                 </div>
                 <h3>Certificados</h3>
                 <p>Certificações válidas em todo território nacional</p>
-                <a href="#" class="btn btn-primary">Verificar</a>
+                <a href="#cursos" class="btn btn-primary">Conhecer Cursos</a>
             </div>
         </div>
     </div>
 
-    <!-- Divisor -->
-    <div class="container">
-        <div class="divider"></div>
-    </div>
+    <!-- Carrossel de Etapas -->
+    <section class="steps-carousel">
+        <div class="steps-container">
+            <div class="step-slide active">
+                <div class="step-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h2 class="step-title">Escolha seu Curso</h2>
+                <p class="step-description">Selecione entre mais de 120 cursos de formação e especialização nas áreas de psicologia, psicanálise e terapias.</p>
+                <a href="#cursos" class="btn btn-primary">Ver Cursos Disponíveis</a>
+            </div>
+            <div class="step-slide">
+                <div class="step-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h2 class="step-title">Estude Online</h2>
+                <p class="step-description">Acesse nossa plataforma EAD de qualquer lugar, com videoaulas, materiais exclusivos e suporte especializado.</p>
+                <a href="#cursos" class="btn btn-primary">Conhecer a Plataforma</a>
+            </div>
+            <div class="step-slide">
+                <div class="step-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2 class="step-title">Certificação</h2>
+                <p class="step-description">Receba seu certificado reconhecido pelo MEC e válido em todo território nacional ao concluir o curso.</p>
+                <a href="#cursos" class="btn btn-primary">Saiba Mais</a>
+            </div>
+            <div class="step-slide">
+                <div class="step-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h2 class="step-title">Transforme sua Carreira</h2>
+                <p class="step-description">Aplique os conhecimentos adquiridos e alcance novos patamares profissionais com nossa formação completa.</p>
+                <a href="#cursos" class="btn btn-primary">Começar Agora</a>
+            </div>
+            <div class="step-nav">
+                <div class="step-arrow prev-step">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="step-dots">
+                    <div class="step-dot active"></div>
+                    <div class="step-dot"></div>
+                    <div class="step-dot"></div>
+                    <div class="step-dot"></div>
+                </div>
+                <div class="step-arrow next-step">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Seção de Cursos -->
     <section class="section courses" id="cursos">
@@ -1122,7 +1797,7 @@
                 <p>Conheça alguns dos nossos cursos mais procurados e transformadores</p>
             </div>
             <div class="courses-grid">
-                <div class="course-card fade-in">
+                <div class="course-card">
                     <div class="course-img">
                         Psicanálise Clínica Freudiana
                     </div>
@@ -1131,14 +1806,14 @@
                         <p>Formação completa em psicanálise com abordagem freudiana para atuação clínica profissional.</p>
                         <div class="course-meta">
                             <div class="course-duration">
-                                <i class="far fa-clock"></i>
+                                <i class="far fa-clock" aria-hidden="true"></i>
                                 <span>18 meses</span>
                             </div>
                             <a href="#" class="btn btn-primary">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
-                <div class="course-card fade-in">
+                <div class="course-card">
                     <div class="course-img">
                         Psicologia Analítica
                     </div>
@@ -1147,14 +1822,14 @@
                         <p>Abordagem junguiana para compreensão do inconsciente coletivo e processos de individuação.</p>
                         <div class="course-meta">
                             <div class="course-duration">
-                                <i class="far fa-clock"></i>
+                                <i class="far fa-clock" aria-hidden="true"></i>
                                 <span>16 meses</span>
                             </div>
                             <a href="#" class="btn btn-primary">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
-                <div class="course-card fade-in">
+                <div class="course-card">
                     <div class="course-img">
                         Terapia Cognitivo-Comportamental
                     </div>
@@ -1163,7 +1838,7 @@
                         <p>Técnicas e estratégias da TCC para tratamento de transtornos emocionais e comportamentais.</p>
                         <div class="course-meta">
                             <div class="course-duration">
-                                <i class="far fa-clock"></i>
+                                <i class="far fa-clock" aria-hidden="true"></i>
                                 <span>14 meses</span>
                             </div>
                             <a href="#" class="btn btn-primary">Saiba Mais</a>
@@ -1172,15 +1847,10 @@
                 </div>
             </div>
             <div class="btn-center">
-                <a href="#" class="btn btn-secondary"><i class="fas fa-book"></i> Acesse Todos Nossos Cursos</a>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-book" aria-hidden="true"></i> Acesse Todos Nossos Cursos</a>
             </div>
         </div>
     </section>
-
-    <!-- Divisor -->
-    <div class="container">
-        <div class="divider"></div>
-    </div>
 
     <!-- Seção de Depoimentos -->
     <section class="section testimonials" id="depoimentos">
@@ -1189,63 +1859,218 @@
                 <h2>Depoimentos</h2>
                 <p>Veja o que nossos alunos falam sobre a experiência transformadora no Instituto</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-video">
-                        <i class="fas fa-play-circle"></i>
+            <div class="testimonials-carousel">
+                <div class="carousel-arrow prev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="testimonials-container">
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial-text">A formação em Psicanálise Clínica Freudiana mudou completamente minha perspectiva profissional. Hoje atendo em meu consultório com segurança e conhecimento técnico aprofundado.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MC</div>
+                            <div class="author-info">
+                                <h4>Maria Clara Santos</h4>
+                                <p>Psicanalista Clínica</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
-                    <p class="testimonial-text">A formação em Psicanálise Clínica Freudiana mudou completamente minha perspectiva profissional. Hoje atendo em meu consultório com segurança e conhecimento técnico aprofundado.</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MC</div>
-                        <div class="author-info">
-                            <h4>Maria Clara Santos</h4>
-                            <p>Psicanalista Clínica</p>
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial-text">O material didático é excelente e os professores estão sempre disponíveis para tirar dúvidas. A flexibilidade do EAD permitiu que eu conciliasse estudos com minha rotina profissional.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JS</div>
+                            <div class="author-info">
+                                <h4>João Silva</h4>
+                                <p>Terapeuta Cognitivo-Comportamental</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial-text">A abordagem junguiana me proporcionou ferramentas valiosas para compreensão dos processos inconscientes. Recomendo o Instituto para quem busca uma formação séria e transformadora.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AO</div>
+                            <div class="author-info">
+                                <h4>Ana Oliveira</h4>
+                                <p>Analista Junguiana</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial-text">A metodologia do Instituto é incrível! Consegui aplicar os conhecimentos adquiridos imediatamente na minha prática clínica. A transformação foi tanto profissional quanto pessoal.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">PR</div>
+                            <div class="author-info">
+                                <h4>Pedro Rocha</h4>
+                                <p>Psicólogo Clínico</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial-text">O suporte oferecido durante todo o curso foi excepcional. Os tutores são muito atenciosos e o conteúdo é atualizado com as mais recentes pesquisas da área.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">CS</div>
+                            <div class="author-info">
+                                <h4>Carla Souza</h4>
+                                <p>Neuropsicóloga</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial-text">A experiência no Instituto superou minhas expectativas. Em 6 meses já estava aplicando as técnicas aprendidas e obtendo resultados incríveis com meus pacientes.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RS</div>
+                            <div class="author-info">
+                                <h4>Roberta Silva</h4>
+                                <p>Terapeuta Familiar</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial-text">Como profissional da saúde, encontrei no Instituto a formação que precisava para expandir meus conhecimentos. A qualidade do conteúdo é excepcional.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AM</div>
+                            <div class="author-info">
+                                <h4>André Mendes</h4>
+                                <p>Médico Psiquiatra</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial-text">A flexibilidade do EAD me permitiu conciliar trabalho e estudos. O suporte dos professores foi fundamental para meu aprendizado e crescimento profissional.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">LC</div>
+                            <div class="author-info">
+                                <h4>Luiza Costa</h4>
+                                <p>Psicóloga Organizacional</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-video">
-                        <i class="fas fa-play-circle"></i>
-                    </div>
-                    <p class="testimonial-text">O material didático é excelente e os professores estão sempre disponíveis para tirar dúvidas. A flexibilidade do EAD permitiu que eu conciliasse estudos com minha rotina profissional.</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JS</div>
-                        <div class="author-info">
-                            <h4>João Silva</h4>
-                            <p>Terapeuta Cognitivo-Comportamental</p>
-                        </div>
-                    </div>
+                <div class="carousel-arrow next">
+                    <i class="fas fa-chevron-right"></i>
                 </div>
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-video">
-                        <i class="fas fa-play-circle"></i>
-                    </div>
-                    <p class="testimonial-text">A abordagem junguiana me proporcionou ferramentas valiosas para compreensão dos processos inconscientes. Recomendo o Instituto para quem busca uma formação séria e transformadora.</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AO</div>
-                        <div class="author-info">
-                            <h4>Ana Oliveira</h4>
-                            <p>Analista Junguiana</p>
-                        </div>
-                    </div>
+                <div class="carousel-nav">
+                    <div class="carousel-dot active"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Carrossel de palavras reverso -->
+    <!-- Carrossel de palavras -->
     <div class="carousel-section">
         <div class="carousel-container">
-            <div class="carousel carousel-reverse">
-                <div class="carousel-item"><i class="fas fa-rocket"></i> Venha Transformar Conosco</div>
-                <div class="carousel-item"><i class="fas fa-lightbulb"></i> Educação Inovadora</div>
-                <div class="carousel-item"><i class="fas fa-handshake"></i> Parceria com o Aluno</div>
-                <div class="carousel-item"><i class="fas fa-medal"></i> Qualidade Garantida</div>
-                <div class="carousel-item"><i class="fas fa-globe"></i> Acesso de Qualquer Lugar</div>
-                <div class="carousel-item"><i class="fas fa-clock"></i> Flexibilidade de Horários</div>
-                <div class="carousel-item"><i class="fas fa-rocket"></i> Venha Transformar Conosco</div>
-                <div class="carousel-item"><i class="fas fa-lightbulb"></i> Educação Inovadora</div>
-                <div class="carousel-item"><i class="fas fa-handshake"></i> Parceria com o Aluno</div>
+            <div class="carousel">
+                <div class="carousel-item"><i class="fas fa-rocket" aria-hidden="true"></i> Venha Transformar Conosco</div>
+                <div class="carousel-item"><i class="fas fa-lightbulb" aria-hidden="true"></i> Educação Inovadora</div>
+                <div class="carousel-item"><i class="fas fa-handshake" aria-hidden="true"></i> Parceria com o Aluno</div>
+                <div class="carousel-item"><i class="fas fa-medal" aria-hidden="true"></i> Qualidade Garantida</div>
+                <div class="carousel-item"><i class="fas fa-globe" aria-hidden="true"></i> Acesso de Qualquer Lugar</div>
+                <div class="carousel-item"><i class="fas fa-clock" aria-hidden="true"></i> Flexibilidade de Horários</div>
+                <div class="carousel-item"><i class="fas fa-star" aria-hidden="true"></i> Melhor Instituto da Região</div>
+                <div class="carousel-item"><i class="fas fa-award" aria-hidden="true"></i> Certificação Reconhecida</div>
+                <div class="carousel-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Professores Qualificados</div>
+                <div class="carousel-item"><i class="fas fa-chart-line" aria-hidden="true"></i> Alta Empregabilidade</div>
+                <div class="carousel-item"><i class="fas fa-users" aria-hidden="true"></i> +10.000 Alunos Formados</div>
+                <div class="carousel-item"><i class="fas fa-heart" aria-hidden="true"></i> Educação que Transforma</div>
+                <!-- Duplicando para criar loop infinito sem pausa -->
+                <div class="carousel-item"><i class="fas fa-rocket" aria-hidden="true"></i> Venha Transformar Conosco</div>
+                <div class="carousel-item"><i class="fas fa-lightbulb" aria-hidden="true"></i> Educação Inovadora</div>
+                <div class="carousel-item"><i class="fas fa-handshake" aria-hidden="true"></i> Parceria com o Aluno</div>
+                <div class="carousel-item"><i class="fas fa-medal" aria-hidden="true"></i> Qualidade Garantida</div>
+                <div class="carousel-item"><i class="fas fa-globe" aria-hidden="true"></i> Acesso de Qualquer Lugar</div>
+                <div class="carousel-item"><i class="fas fa-clock" aria-hidden="true"></i> Flexibilidade de Horários</div>
+                <div class="carousel-item"><i class="fas fa-star" aria-hidden="true"></i> Melhor Instituto da Região</div>
+                <div class="carousel-item"><i class="fas fa-award" aria-hidden="true"></i> Certificação Reconhecida</div>
+                <div class="carousel-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Professores Qualificados</div>
+                <div class="carousel-item"><i class="fas fa-chart-line" aria-hidden="true"></i> Alta Empregabilidade</div>
+                <div class="carousel-item"><i class="fas fa-users" aria-hidden="true"></i> +10.000 Alunos Formados</div>
+                <div class="carousel-item"><i class="fas fa-heart" aria-hidden="true"></i> Educação que Transforma</div>
             </div>
         </div>
     </div>
@@ -1260,27 +2085,95 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Fale Conosco</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Av. da Educação, 1234 - Centro, São Paulo - SP</p>
-                    <p><i class="fas fa-phone"></i> (11) 3456-7890</p>
-                    <p><i class="fas fa-envelope"></i> contato@transformarvidas.com.br</p>
-                    <p><i class="fas fa-clock"></i> Segunda a Sexta: 8h às 20h | Sábado: 9h às 14h</p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Av. da Educação, 1234 - Centro, São Paulo - SP</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> (11) 3456-7890</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> contato@transformarvidas.com.br</p>
+                    <p><i class="fas fa-clock" aria-hidden="true"></i> Segunda a Sexta: 8h às 20h | Sábado: 9h às 14h</p>
                     
                     <div class="social-links">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="map-container">
-                    <div class="map">
-                        <div class="map-placeholder">
-                            <i class="fas fa-map-marked-alt"></i>
-                            <h3>Nosso Campus</h3>
-                            <p>Av. da Educação, 1234 - Centro</p>
-                            <p>São Paulo - SP</p>
-                            <!-- Aqui você pode inserir um iframe do Google Maps -->
-                        </div>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.097417742502!2d-46.65390528440709!3d-23.56356786735799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1647978283393!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="Localização do Instituto Transformar Vidas">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barra de destaque -->
+    <div class="highlight-bar">
+        <div class="container">
+            <div class="highlight-content">
+                <h2>Venha se Capacitar com a Melhor Formação</h2>
+                <p>Junte-se a mais de 10.000 profissionais que transformaram suas carreiras através da nossa metodologia inovadora e professores especializados.</p>
+                <a href="#cursos" class="btn btn-primary"><i class="fas fa-graduation-cap"></i> Comece Agora</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção FAQ -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+                <p>Tire suas dúvidas sobre nossos cursos e metodologia</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><i class="fas fa-laptop"></i> Como funciona a modalidade EAD?</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nossos cursos EAD são realizados através de uma plataforma online moderna e intuitiva. Você terá acesso a videoaulas, materiais didáticos, fóruns de discussão e atividades práticas. Todo o conteúdo pode ser acessado 24 horas por dia, permitindo que você estude no seu próprio ritmo, de qualquer lugar.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><i class="fas fa-graduation-cap"></i> Os certificados são reconhecidos pelo MEC?</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, todos os nossos cursos são autorizados e reconhecidos pelo Ministério da Educação (MEC). Nossos certificados têm validade em todo território nacional e são aceitos em concursos públicos, processos seletivos e para progressão de carreira.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><i class="fas fa-clock"></i> Qual é a duração dos cursos?</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A duração varia de acordo com o curso escolhido. Nossas formações têm entre 6 e 24 meses de duração. A carga horária também varia, indo de 360 a 1200 horas. Consulte a página específica de cada curso para obter informações detalhadas sobre duração e carga horária.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><i class="fas fa-user-graduate"></i> Há algum pré-requisito para me matricular?</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para a maioria dos nossos cursos, o pré-requisito mínimo é ter concluído o ensino médio. Algumas formações mais avançadas podem exigir graduação completa em áreas específicas. Consulte a página do curso de seu interesse para verificar os pré-requisitos específicos.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><i class="fas fa-headset"></i> Como é o suporte aos alunos?</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oferecemos suporte completo aos nossos alunos através de diversos canais: tutores especializados disponíveis por chat, e-mail e telefone; fóruns de discussão moderados por professores; e plantões de dúvidas semanais via videoconferência. Nosso objetivo é garantir que você tenha toda a assistência necessária durante sua jornada de aprendizado.</p>
                     </div>
                 </div>
             </div>
@@ -1302,7 +2195,8 @@
                         <li><a href="#cursos">Cursos</a></li>
                         <li><a href="#depoimentos">Depoimentos</a></li>
                         <li><a href="#localizacao">Localização</a></li>
-                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1324,34 +2218,71 @@
 
     <!-- Botão WhatsApp Flutuante -->
     <a href="https://wa.me/551134567890" class="whatsapp-float" target="_blank" aria-label="Entre em contato pelo WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
     <script>
         // Menu mobile
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const mobileNav = document.querySelector('.mobile-nav');
-
-        mobileMenu.addEventListener('click', function() {
-            this.classList.toggle('active');
-            mobileNav.classList.toggle('active');
+        class MobileMenu {
+            constructor() {
+                this.menu = document.querySelector('.mobile-menu');
+                this.nav = document.querySelector('.mobile-nav');
+                this.init();
+            }
             
-            // Impede o scroll do body quando o menu está aberto
-            if (mobileNav.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
+            init() {
+                this.menu.addEventListener('click', this.toggle.bind(this));
+                document.addEventListener('keydown', this.handleEscape.bind(this));
+                
+                // Fecha o menu ao clicar em um link
+                document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        this.close();
+                    });
+                });
+            }
+            
+            toggle() {
+                const isExpanded = this.menu.classList.toggle('active');
+                this.nav.classList.toggle('active');
+                this.menu.setAttribute('aria-expanded', isExpanded);
+                
+                // Impede o scroll do body quando o menu está aberto
+                if (isExpanded) {
+                    document.body.style.overflow = 'hidden';
+                    this.trapFocus();
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            }
+            
+            close() {
+                this.menu.classList.remove('active');
+                this.nav.classList.remove('active');
+                this.menu.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = 'auto';
             }
-        });
+            
+            handleEscape(e) {
+                if (e.key === 'Escape' && this.nav.classList.contains('active')) {
+                    this.close();
+                }
+            }
+            
+            trapFocus() {
+                // Implementação básica de trap focus
+                const focusableElements = this.nav.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+                
+                if (firstElement) {
+                    firstElement.focus();
+                }
+            }
+        }
 
-        // Fecha o menu ao clicar em um link
-        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
+        // Inicializar menu mobile
+        const mobileMenu = new MobileMenu();
 
         // Scroll suave para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1392,26 +2323,244 @@
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
+                    entry.target.classList.add('animate');
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .course-card, .testimonial-card').forEach(el => {
+        document.querySelectorAll('.feature-card, .course-card').forEach(el => {
             observer.observe(el);
         });
 
-        // Clonar itens do carrossel para criar loop infinito
-        function cloneCarouselItems() {
-            const carousels = document.querySelectorAll('.carousel');
+        // Carrossel de depoimentos
+        class TestimonialsCarousel {
+            constructor() {
+                this.container = document.querySelector('.testimonials-container');
+                this.cards = document.querySelectorAll('.testimonial-card');
+                this.dots = document.querySelectorAll('.carousel-dot');
+                this.prevBtn = document.querySelector('.carousel-arrow.prev');
+                this.nextBtn = document.querySelector('.carousel-arrow.next');
+                this.currentIndex = 0;
+                this.cardWidth = 0;
+                this.init();
+            }
             
-            carousels.forEach(carousel => {
-                const items = carousel.innerHTML;
-                carousel.innerHTML += items;
-            });
+            init() {
+                this.calculateCardWidth();
+                window.addEventListener('resize', this.calculateCardWidth.bind(this));
+                
+                this.prevBtn.addEventListener('click', this.prev.bind(this));
+                this.nextBtn.addEventListener('click', this.next.bind(this));
+                
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        this.goToSlide(index);
+                    });
+                });
+                
+                // Auto-rotate
+                this.startAutoRotate();
+                
+                // Pause auto-rotate on hover
+                this.container.addEventListener('mouseenter', () => {
+                    this.stopAutoRotate();
+                });
+                
+                this.container.addEventListener('mouseleave', () => {
+                    this.startAutoRotate();
+                });
+            }
+            
+            calculateCardWidth() {
+                // Para o carrossel de depoimentos, vamos usar largura fixa
+                this.cardWidth = 100 / 3; // Mostrar 3 cards por vez
+            }
+            
+            updateCarousel() {
+                this.container.style.transform = `translateX(-${this.currentIndex * this.cardWidth}%)`;
+                
+                // Update dots
+                this.dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentIndex);
+                });
+            }
+            
+            next() {
+                this.currentIndex = (this.currentIndex + 1) % this.dots.length;
+                this.updateCarousel();
+            }
+            
+            prev() {
+                this.currentIndex = (this.currentIndex - 1 + this.dots.length) % this.dots.length;
+                this.updateCarousel();
+            }
+            
+            goToSlide(index) {
+                this.currentIndex = index;
+                this.updateCarousel();
+            }
+            
+            startAutoRotate() {
+                this.autoRotate = setInterval(() => {
+                    this.next();
+                }, 5000);
+            }
+            
+            stopAutoRotate() {
+                clearInterval(this.autoRotate);
+            }
         }
 
-        cloneCarouselItems();
+        // Inicializar carrossel de depoimentos
+        const testimonialsCarousel = new TestimonialsCarousel();
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+                
+                // Close other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Sistema de vídeos em loop para o hero
+        class VideoBackground {
+            constructor() {
+                this.videos = [
+                    document.getElementById('video1'),
+                    document.getElementById('video2'),
+                    document.getElementById('video3'),
+                    document.getElementById('video4')
+                ];
+                this.currentVideoIndex = 0;
+                this.init();
+            }
+            
+            init() {
+                // Inicia o primeiro vídeo
+                this.playCurrentVideo();
+                
+                // Adiciona event listeners para quando cada vídeo terminar
+                this.videos.forEach((video, index) => {
+                    video.addEventListener('ended', () => {
+                        this.nextVideo();
+                    });
+                });
+            }
+            
+            playCurrentVideo() {
+                // Esconde todos os vídeos
+                this.videos.forEach(video => {
+                    video.classList.remove('active');
+                });
+                
+                // Mostra e reproduz o vídeo atual
+                const currentVideo = this.videos[this.currentVideoIndex];
+                currentVideo.classList.add('active');
+                currentVideo.play().catch(e => console.log('Erro ao reproduzir vídeo:', e));
+            }
+            
+            nextVideo() {
+                // Avança para o próximo vídeo
+                this.currentVideoIndex = (this.currentVideoIndex + 1) % this.videos.length;
+                this.playCurrentVideo();
+            }
+        }
+
+        // Inicializar sistema de vídeos
+        const videoBackground = new VideoBackground();
+
+        // Carrossel de Etapas
+        class StepsCarousel {
+            constructor() {
+                this.slides = document.querySelectorAll('.step-slide');
+                this.dots = document.querySelectorAll('.step-dot');
+                this.prevBtn = document.querySelector('.prev-step');
+                this.nextBtn = document.querySelector('.next-step');
+                this.currentIndex = 0;
+                this.init();
+            }
+            
+            init() {
+                this.prevBtn.addEventListener('click', this.prev.bind(this));
+                this.nextBtn.addEventListener('click', this.next.bind(this));
+                
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        this.goToSlide(index);
+                    });
+                });
+                
+                // Auto-rotate
+                this.startAutoRotate();
+                
+                // Pause auto-rotate on hover
+                this.prevBtn.addEventListener('mouseenter', () => {
+                    this.stopAutoRotate();
+                });
+                
+                this.nextBtn.addEventListener('mouseenter', () => {
+                    this.stopAutoRotate();
+                });
+                
+                this.prevBtn.addEventListener('mouseleave', () => {
+                    this.startAutoRotate();
+                });
+                
+                this.nextBtn.addEventListener('mouseleave', () => {
+                    this.startAutoRotate();
+                });
+            }
+            
+            updateCarousel() {
+                // Hide all slides
+                this.slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Show current slide
+                this.slides[this.currentIndex].classList.add('active');
+                
+                // Update dots
+                this.dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentIndex);
+                });
+            }
+            
+            next() {
+                this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+                this.updateCarousel();
+            }
+            
+            prev() {
+                this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+                this.updateCarousel();
+            }
+            
+            goToSlide(index) {
+                this.currentIndex = index;
+                this.updateCarousel();
+            }
+            
+            startAutoRotate() {
+                this.autoRotate = setInterval(() => {
+                    this.next();
+                }, 6000);
+            }
+            
+            stopAutoRotate() {
+                clearInterval(this.autoRotate);
+            }
+        }
+
+        // Inicializar carrossel de etapas
+        const stepsCarousel = new StepsCarousel();
     </script>
 </body>
 </html>
