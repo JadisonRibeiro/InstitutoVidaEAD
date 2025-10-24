@@ -29,8 +29,8 @@
             --primary: #FFFFFF;
             --secondary: #000000;
             --accent: #a70b0b;
-            --accent-dark: #a70b0b;
-            --accent-light: #a70b0b;
+            --accent-dark: #8a0909;
+            --accent-light: #c50f0f;
             --accent-yellow: #a70b0b;
             --dark-gray: #F5F5F5;
             --medium-gray: #EEEEEE;
@@ -371,24 +371,43 @@
             border: none;
         }
 
-        /* Carrossel de Motivação - VELOCIDADE AUMENTADA */
+        /* Carrossel de Motivação */
         .carousel-section {
             padding: 60px 0;
             background-color: var(--dark-gray);
             overflow: hidden;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .carousel-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                rgba(167, 11, 11, 0.05) 0%, 
+                rgba(167, 11, 11, 0.1) 25%, 
+                rgba(167, 11, 11, 0.15) 50%, 
+                rgba(167, 11, 11, 0.1) 75%, 
+                rgba(167, 11, 11, 0.05) 100%);
+            animation: wave 15s ease-in-out infinite;
+            z-index: 0;
         }
 
         .carousel-container {
             position: relative;
             width: 100%;
             overflow: hidden;
+            z-index: 1;
         }
 
         .carousel-track {
             display: flex;
             width: max-content;
-            animation: carousel-scroll 25s linear infinite; /* Velocidade aumentada de 40s para 25s */
+            animation: carousel-scroll 25s linear infinite;
         }
 
         .carousel-item {
@@ -401,16 +420,14 @@
             text-align: center;
             transition: transform 0.3s ease;
             padding: 20px;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
-            box-shadow: var(--shadow);
-            border: 2px solid var(--secondary);
+            backdrop-filter: blur(5px);
         }
 
         .carousel-item:hover {
             transform: scale(1.05);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent);
+            background-color: white;
         }
 
         .carousel-icon {
@@ -425,41 +442,65 @@
             color: var(--text-dark);
         }
 
-        /* Carrossel de Depoimentos */
+        /* MELHORIA 2: Depoimentos - Seção mais elegante */
         .testimonials-section {
             padding: 80px 0;
-            background-color: var(--dark-gray);
+            background: linear-gradient(135deg, var(--secondary) 0%, #333333 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
         }
-
+        
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><path fill="rgba(167,11,11,0.05)" d="M0,0 L1000,0 L1000,1000 L0,1000 Z"></path></svg>');
+            background-size: cover;
+            z-index: 0;
+        }
+        
+        .testimonials-section .section-title h2 {
+            color: white;
+        }
+        
+        .testimonials-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
         .testimonials-container {
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
             overflow: hidden;
+            z-index: 1;
         }
-
+        
         .testimonials-track {
             display: flex;
             transition: transform 0.5s ease;
             gap: 30px;
         }
-
+        
         .testimonial-card {
             flex: 0 0 calc(25% - 23px);
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 2px solid var(--secondary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
+        
         .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
-
+        
         .testimonial-video {
             width: 100%;
             height: 200px;
@@ -468,72 +509,81 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            overflow: hidden;
         }
-
-        .testimonial-video iframe {
+        
+        .testimonial-video video {
             width: 100%;
             height: 100%;
-            border: none;
+            object-fit: cover;
         }
-
-        .testimonial-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--secondary) 0%, #333333 100%);
-            color: white;
-        }
-
-        .testimonial-placeholder i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            color: var(--accent);
-        }
-
+        
         .testimonial-info {
-            padding: 20px;
+            padding: 25px;
+            text-align: center;
         }
-
+        
         .testimonial-name {
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 5px;
             color: var(--text-dark);
+            font-size: 1.2rem;
         }
-
+        
         .testimonial-course {
             color: var(--accent);
             font-size: 0.9rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
-
+        
         .testimonial-text {
             color: var(--text-light);
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.6;
+            font-style: italic;
+            position: relative;
+            padding: 0 10px;
         }
-
+        
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 1.5rem;
+            color: var(--accent);
+            position: absolute;
+        }
+        
+        .testimonial-text::before {
+            top: -5px;
+            left: -5px;
+        }
+        
+        .testimonial-text::after {
+            bottom: -10px;
+            right: -5px;
+        }
+        
         .testimonials-nav {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
-
+        
         .testimonial-nav-btn {
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background-color: var(--light-gray);
+            background-color: rgba(255, 255, 255, 0.5);
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
-
+        
         .testimonial-nav-btn.active {
             background-color: var(--accent);
+            transform: scale(1.2);
         }
 
         /* Seções comuns */
@@ -661,7 +711,7 @@
             color: var(--secondary);
         }
 
-        /* Diferenciais - IMAGEM OCUPANDO TODO O TOPO DO CARTÃO */
+        /* Diferenciais */
         .floating-differentials {
             position: relative;
             margin-top: 40px;
@@ -789,17 +839,17 @@
             justify-content: center;
         }
         
-        /* Serviços (Cursos) */
+        /* MELHORIA 1: Cursos Presenciais - 4 cartões lado a lado com botão padronizado */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
         
         .service-card {
             background-color: white;
             border-radius: 15px;
-            padding: 30px;
+            padding: 25px;
             text-align: center;
             transition: all 0.3s ease;
             box-shadow: var(--shadow);
@@ -807,6 +857,9 @@
             border: 2px solid var(--secondary);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .service-card:hover {
@@ -816,7 +869,7 @@
         }
         
         .service-image {
-            height: 150px;
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -829,16 +882,38 @@
             object-fit: contain;
         }
         
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+        }
+        
+        .service-card p {
             margin-bottom: 20px;
+            color: var(--text-light);
+            flex-grow: 1;
+        }
+        
+        .service-card .btn {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: white;
+            font-weight: 600;
+            margin-top: auto;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .service-card .btn:hover,
+        .service-card .btn:focus {
+            background-color: transparent;
+            color: var(--accent);
         }
         
         /* Produtos (Cursos) */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
         
@@ -924,6 +999,28 @@
         
         .product-action {
             flex: 1;
+        }
+        
+        /* Botão PDF */
+        .pdf-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .btn-pdf {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: white;
+            font-weight: 700;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+        }
+        
+        .btn-pdf:hover,
+        .btn-pdf:focus {
+            background-color: transparent;
+            color: var(--accent);
         }
         
         /* Mapa */
@@ -1172,60 +1269,216 @@
             font-size: 30px;
         }
         
-        /* Animações */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes float {
+        /* MELHORIA 3: NOVA SEÇÃO DE ALUNOS CONCLUINTES - ATUALIZADA */
+.certificates-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.certificates-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(167, 11, 11, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(167, 11, 11, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(167, 11, 11, 0.03) 0%, transparent 50%);
+    z-index: 0;
+}
+
+.certificates-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.certificates-track {
+    display: flex;
+    width: max-content;
+    animation: certificates-scroll 40s linear infinite;
+}
+
+.certificate-item {
+    flex: 0 0 auto;
+    width: 280px;
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s ease;
+    padding: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+.certificate-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    padding: 10px;
+}
+
+.certificate-image img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.certificate-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 3px 10px rgba(167, 11, 11, 0.3);
+    z-index: 2;
+}
+
+.certificate-content {
+    padding: 20px 15px;
+    width: 100%;
+}
+
+.certificate-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.certificate-text i {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+/* Responsividade para as imagens */
+@media (max-width: 768px) {
+    .certificate-item {
+        width: 250px;
+    }
+    
+    .certificate-image {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-item {
+        width: 220px;
+    }
+    
+    .certificate-image {
+        height: 200px;
+        padding: 8px;
+    }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+@keyframes carousel-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes certificates-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+        /* Nova animação para o carrossel */
+        @keyframes wave {
             0% {
-                transform: translateY(0px);
+                background-position: 0% 50%;
             }
             50% {
-                transform: translateY(-15px);
+                background-position: 100% 50%;
             }
             100% {
-                transform: translateY(0px);
-            }
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%);
-            }
-            40% {
-                transform: translateY(-10px) translateX(-50%);
-            }
-            60% {
-                transform: translateY(-5px) translateX(-50%);
-            }
-        }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-        
-        @keyframes carousel-scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
+                background-position: 0% 50%;
             }
         }
         
@@ -1242,8 +1495,12 @@
         
         /* Responsividade */
         @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
             .testimonial-card {
-                flex: 0 0 calc(33.333% - 20px);
+                flex: 0 0 calc(50% - 15px);
             }
         }
         
@@ -1467,6 +1724,14 @@
             .testimonial-card {
                 flex: 0 0 100%;
             }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .certificate-item {
+                width: 240px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -1545,6 +1810,10 @@
             .carousel-item {
                 width: 220px;
             }
+            
+            .certificate-item {
+                width: 200px;
+            }
         }
     </style>
 </head>
@@ -1611,122 +1880,122 @@
     <div class="section-divider"></div>
 
     <!-- Carrossel de Motivação -->
-<section class="carousel-section" aria-labelledby="carousel-title">
-  <div class="container">
-    <div class="section-title">
-      <h2 id="carousel-title">Inspiração para seu Aprendizado</h2>
-      <div class="section-subtitle">
-        <i class="fas fa-lightbulb" aria-hidden="true"></i>
-        <span>Mensagens motivacionais para sua jornada educacional</span>
-      </div>
-    </div>
-  </div>
+    <section class="carousel-section" aria-labelledby="carousel-title">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="carousel-title">Inspiração para seu Aprendizado</h2>
+                <div class="section-subtitle">
+                    <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                    <span>Mensagens motivacionais para sua jornada educacional</span>
+                </div>
+            </div>
+        </div>
 
-  <div class="carousel-container">
-    <div class="carousel-track" aria-live="polite">
+        <div class="carousel-container">
+            <div class="carousel-track" aria-live="polite">
 
-      <!-- Itens do carrossel - frases motivacionais -->
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">A educação é a arma mais poderosa para mudar o mundo</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-rocket" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">O conhecimento te leva a lugares incríveis</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-brain" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">Aprender é a única coisa que a mente nunca se cansa</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-seedling" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">Investir em conhecimento sempre traz os melhores juros</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-chart-line" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">Seu futuro começa com a decisão de aprender hoje</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-trophy" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">Cada aula é um passo em direção ao seu sucesso</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">O conhecimento é a peça que falta no seu quebra-cabeça</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-compass" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">A educação é o mapa para o futuro que você deseja</div>
-      </div>
+                <!-- Itens do carrossel - frases motivacionais -->
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">A educação é a arma mais poderosa para mudar o mundo</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-rocket" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">O conhecimento te leva a lugares incríveis</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-brain" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">Aprender é a única coisa que a mente nunca se cansa</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-seedling" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">Investir em conhecimento sempre traz os melhores juros</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">Seu futuro começa com a decisão de aprender hoje</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">Cada aula é um passo em direção ao seu sucesso</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">O conhecimento é a peça que falta no seu quebra-cabeça</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-compass" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">A educação é o mapa para o futuro que você deseja</div>
+                </div>
 
-      <!-- Duplicação dos itens para criar loop infinito -->
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <!-- Duplicação dos itens para criar loop infinito -->
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">A educação é a arma mais poderosa para mudar o mundo</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-rocket" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">O conhecimento te leva a lugares incríveis</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-brain" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">Aprender é a única coisa que a mente nunca se cansa</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-seedling" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">Investir em conhecimento sempre traz os melhores juros</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">Seu futuro começa com a decisão de aprender hoje</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">Cada aula é um passo em direção ao seu sucesso</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">O conhecimento é a peça que falta no seu quebra-cabeça</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-icon">
+                        <i class="fas fa-compass" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-text">A educação é o mapa para o futuro que você deseja</div>
+                </div>
+            </div>
         </div>
-        <div class="carousel-text">A educação é a arma mais poderosa para mudar o mundo</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-rocket" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">O conhecimento te leva a lugares incríveis</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-brain" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">Aprender é a única coisa que a mente nunca se cansa</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-seedling" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">Investir em conhecimento sempre traz os melhores juros</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-chart-line" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">Seu futuro começa com a decisão de aprender hoje</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-trophy" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">Cada aula é um passo em direção ao seu sucesso</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">O conhecimento é a peça que falta no seu quebra-cabeça</div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-icon">
-          <i class="fas fa-compass" aria-hidden="true"></i>
-        </div>
-        <div class="carousel-text">A educação é o mapa para o futuro que você deseja</div>
-      </div>
-     </div>
-  </div>
-</section>
+    </section>
 
     <div class="section-divider"></div>
 
@@ -1792,7 +2061,7 @@
                     <p>Atuamos com cursos online e presenciais, sempre com foco no desenvolvimento integral do aluno, preparando-o não apenas para o mercado de trabalho, mas para a vida.</p>
                     <p>Nossa equipe é formada por educadores apaixonados pelo que fazem, comprometidos com a excelência no ensino e com o sucesso de cada aluno.</p>
                     <div class="about-buttons">
-                        <a href="https://www.instagram.com/itvidas" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Visitar nosso Instagram">
+                        <a href="https://www.instagram.com/institutotransformarvidas?igsh=MXBmNDk2N3k3eTBvMA==" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Visitar nosso Instagram">
                             <i class="fab fa-instagram" aria-hidden="true"></i>Instagram
                         </a>
                     </div>
@@ -1803,78 +2072,57 @@
 
     <div class="section-divider"></div>
 
+    <!-- MELHORIA 1: Cursos Presenciais - 4 cartões lado a lado com botão padronizado -->
     <section class="services section-dark" id="services" aria-labelledby="services-title">
         <div class="container">
             <div class="section-title">
-                <h2 id="services-title">Nossos Cursos</h2>
+                <h2 id="services-title">Nossos Cursos Presenciais</h2>
                 <div class="section-subtitle">
                     <i class="fas fa-book-open" aria-hidden="true"></i>
-                    <span>Conheça nossa variedade de cursos e formações</span>
+                    <span>Conheça nossos cursos na modalidade presencial</span>
                 </div>
             </div>
             <div class="services-grid fade-in">
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="image-cursos/tecnologia.jpg" alt="Cursos de Tecnologia" loading="lazy">
+                        <img src="image/capelania.png" alt="Capelania" loading="lazy">
                     </div>
-                    <h3>Tecnologia e Programação</h3>
-                    <p>Cursos de desenvolvimento web, programação, análise de dados e mais. Aprenda as habilidades mais demandadas do mercado digital.</p>
-                    <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre cursos de tecnologia" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre cursos de tecnologia via WhatsApp">
+                    <h3>Capelania</h3>
+                    <p>Curso completo de Capelania com abordagem teórica e prática, preparando profissionais para atuação em diversos contextos institucionais e comunitários.</p>
+                    <a href="https://wa.me/559384062978?text=Olá! Gostaria de informações sobre o curso de Capelania" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre curso de Capelania via WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Saiba Mais
                     </a>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="image-cursos/gestao.jpg" alt="Cursos de Gestão" loading="lazy">
+                        <img src="image/juizpaz.png" alt="Juiz de Paz" loading="lazy">
                     </div>
-                    <h3>Gestão e Negócios</h3>
-                    <p>Formação em administração, gestão de projetos, empreendedorismo e outras áreas de negócio para impulsionar sua carreira.</p>
-                    <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre cursos de gestão" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre cursos de gestão via WhatsApp">
+                    <h3>Juiz de Paz</h3>
+                    <p>Formação especializada para atuação como Juiz de Paz, capacitando para a realização de casamentos civis e outras atribuições legais conforme a legislação vigente.</p>
+                    <a href="https://wa.me/559384062978?text=Olá! Gostaria de informações sobre o curso de Juiz de Paz" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre curso de Juiz de Paz via WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Saiba Mais
                     </a>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="image-cursos/saude.jpg" alt="Cursos de Saúde" loading="lazy">
+                        <img src="image/profetas.png" alt="Escola de Profetas" loading="lazy">
                     </div>
-                    <h3>Saúde e Bem-estar</h3>
-                    <p>Cursos na área da saúde, nutrição, educação física e bem-estar para quem busca cuidar de si mesmo e dos outros.</p>
-                    <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre cursos de saúde" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre cursos de saúde via WhatsApp">
+                    <h3>Escola de Profetas</h3>
+                    <p>Formação teológica e ministerial com foco no desenvolvimento de lideranças espirituais, estudo bíblico aprofundado e capacitação para o ministério profético.</p>
+                    <a href="https://wa.me/559384062978?text=Olá! Gostaria de informações sobre a Escola de Profetas" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Escola de Profetas via WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Saiba Mais
                     </a>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="image-cursos/idiomas.jpg" alt="Cursos de Idiomas" loading="lazy">
+                        <img src="image/lideres.png" alt="Escola de Líderes" loading="lazy">
                     </div>
-                    <h3>Idiomas</h3>
-                    <p>Aprenda inglês, espanhol, francês e outros idiomas com metodologia comunicativa e professores experientes.</p>
-                    <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre cursos de idiomas" class="btn btn-premium" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre cursos de idiomas via WhatsApp">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Saiba Mais
-                    </a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="image-cursos/preparatorio.jpg" alt="Cursos Preparatórios" loading="lazy">
-                    </div>
-                    <h3>Cursos Preparatórios</h3>
-                    <p>Preparação para concursos, ENEM, vestibulares e exames específicos com material atualizado e professores especializados.</p>
-                    <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre cursos preparatórios" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre cursos preparatórios via WhatsApp">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Saiba Mais
-                    </a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="image-cursos/personalizado.jpg" alt="Cursos Personalizados" loading="lazy">
-                    </div>
-                    <h3>Cursos Personalizados</h3>
-                    <p>Desenvolvemos cursos sob medida para empresas e grupos específicos, atendendo necessidades particulares de aprendizado.</p>
-                    <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre cursos personalizados" class="btn btn-premium" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre cursos personalizados via WhatsApp">
+                    <h3>Escola de Líderes</h3>
+                    <p>Capacitação para liderança em diferentes contextos, desenvolvendo habilidades em comunicação, tomada de decisão e influência positiva em equipes, comunidades e ministerios.</p>
+                    <a href="https://wa.me/559384062978?text=Olá! Gostaria de informações sobre a Escola de Líderes" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Escola de Líderes via WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Saiba Mais
                     </a>
                 </div>
@@ -1900,14 +2148,14 @@
                         <div class="class-badge class-presencial">P</div>
                     </div>
                     <div class="product-image">
-                        <img src="image-cursos/formacao-tecnologia.jpg" alt="Formação em Tecnologia" loading="lazy">
+                        <img src="image/eja.png" alt="Cursos Livres" loading="lazy">
                     </div>
                     <div class="product-info">
-                        <h3>Formação em Tecnologia</h3>
-                        <p>Programa completo com duração de 6 meses, preparando para as principais vagas do mercado de TI.</p>
+                        <h3>Supletivo EJA - EAD</h3>
+                        <p>Conclua seu Ensino Fundamental e Médio através da Educação de Jovens e Adultos (EJA) na modalidade EAD. Certificação reconhecida nacionalmente, com flexibilidade de horários e material didático completo para você estudar de qualquer lugar.</p>
                         <div class="product-actions">
                             <div class="product-action">
-                                <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre a Formação em Tecnologia" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formação em Tecnologia via WhatsApp">
+                                <a href="https://wa.me/559384062978?text=Olá! Gostaria de informações sobre os Cursos Livres" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Cursos Livres via WhatsApp">
                                     <i class="fab fa-whatsapp" aria-hidden="true"></i> Informações
                                 </a>
                             </div>
@@ -1918,56 +2166,17 @@
                 <div class="product-card fade-in">
                     <div class="product-class">
                         <div class="class-badge class-online">O</div>
-                    </div>
-                    <div class="product-image">
-                        <img src="image-cursos/formacao-gestao.jpg" alt="Formação em Gestão" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <h3>Formação em Gestão</h3>
-                        <p>Curso completo para gestores e empreendedores com foco em resultados e liderança.</p>
-                        <div class="product-actions">
-                            <div class="product-action">
-                                <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre a Formação em Gestão" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formação em Gestão via WhatsApp">
-                                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Informações
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card fade-in">
-                    <div class="product-class">
                         <div class="class-badge class-presencial">P</div>
                     </div>
                     <div class="product-image">
-                        <img src="image-cursos/formacao-saude.jpg" alt="Formação em Saúde" loading="lazy">
+                        <img src="image/graduação.png" alt="Graduações" loading="lazy">
                     </div>
                     <div class="product-info">
-                        <h3>Formação em Saúde</h3>
-                        <p>Programa para profissionais da saúde que desejam se especializar e ampliar conhecimentos.</p>
+                        <h3>Graduações</h3>
+                        <p>Cursos de nível superior com titulação de tecnólogo, bacharelado ou licenciatura, preparando para o mercado de trabalho com excelência acadêmica.</p>
                         <div class="product-actions">
                             <div class="product-action">
-                                <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre a Formação em Saúde" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formação em Saúde via WhatsApp">
-                                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Informações
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card fade-in">
-                    <div class="product-class">
-                        <div class="class-badge class-hybrid">H</div>
-                    </div>
-                    <div class="product-image">
-                        <img src="image-cursos/formacao-idiomas.jpg" alt="Formação em Idiomas" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <h3>Formação em Idiomas</h3>
-                        <p>Programa intensivo para alcançar fluência em menos tempo com método comprovado.</p>
-                        <div class="product-actions">
-                            <div class="product-action">
-                                <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre a Formação em Idiomas" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formação em Idiomas via WhatsApp">
+                                <a href="https://wa.me/559384062978?text=Olá! Gostaria de informações sobre as Graduações" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Graduações via WhatsApp">
                                     <i class="fab fa-whatsapp" aria-hidden="true"></i> Informações
                                 </a>
                             </div>
@@ -1978,36 +2187,17 @@
                 <div class="product-card fade-in">
                     <div class="product-class">
                         <div class="class-badge class-online">O</div>
-                    </div>
-                    <div class="product-image">
-                        <img src="image-cursos/formacao-preparatoria.jpg" alt="Formação Preparatória" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <h3>Formação Preparatória</h3>
-                        <p>Preparação completa para os principais concursos e exames do país.</p>
-                        <div class="product-actions">
-                            <div class="product-action">
-                                <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre a Formação Preparatória" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formação Preparatória via WhatsApp">
-                                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Informações
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card fade-in">
-                    <div class="product-class">
                         <div class="class-badge class-presencial">P</div>
                     </div>
                     <div class="product-image">
-                        <img src="image-cursos/formacao-profissional.jpg" alt="Formação Profissional" loading="lazy">
+                        <img src="image/tecnico.jpg" alt="Formações Profissionais" loading="lazy">
                     </div>
                     <div class="product-info">
-                        <h3>Formação Profissional</h3>
-                        <p>Cursos técnicos e profissionalizantes para ingresso rápido no mercado de trabalho.</p>
+                        <h3>Formações Profissionais</h3>
+                        <p>Programas completos de qualificação profissional com foco no desenvolvimento de habilidades específicas para ingresso e crescimento no mercado de trabalho.</p>
                         <div class="product-actions">
                             <div class="product-action">
-                                <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre a Formação Profissional" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formação Profissional via WhatsApp">
+                                <a href="https://wa.me/559384062978?text=Olá! Gostaria de informações sobre as Formações Profissionais" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formações Profissionais via WhatsApp">
                                     <i class="fab fa-whatsapp" aria-hidden="true"></i> Informações
                                 </a>
                             </div>
@@ -2015,12 +2205,19 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Botão para PDF -->
+            <div class="pdf-button-container fade-in">
+                <a href="pdf/PORTFÓLIO_CURSOS.pdf" class="btn btn-pdf" target="_blank" rel="noopener noreferrer" aria-label="Baixar catálogo completo de cursos em PDF">
+                    <i class="fas fa-file-pdf" aria-hidden="true"></i> Baixar Catálogo Completo de Cursos
+                </a>
+            </div>
         </div>
     </section>
 
     <div class="section-divider"></div>
 
-    <!-- Carrossel de Depoimentos - VÍDEOS INSERIDOS -->
+    <!-- MELHORIA 2: Depoimentos - Seção mais elegante -->
     <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
         <div class="container">
             <div class="section-title">
@@ -2041,8 +2238,8 @@
                         </div>
                         <div class="testimonial-info">
                             <div class="testimonial-name">Maria Silva</div>
-                            <div class="testimonial-course">Curso de Tecnologia</div>
-                            <div class="testimonial-text">"O ITvidas transformou minha carreira. Em 6 meses já consegui meu primeiro emprego na área de TI!"</div>
+                            <div class="testimonial-course">Curso de Capelania</div>
+                            <div class="testimonial-text">"O ITvidas transformou minha carreira. Em 6 meses já consegui meu primeiro emprego na área de Capelania!"</div>
                         </div>
                     </div>
                     <div class="testimonial-card">
@@ -2054,8 +2251,8 @@
                         </div>
                         <div class="testimonial-info">
                             <div class="testimonial-name">João Santos</div>
-                            <div class="testimonial-course">Formação em Gestão</div>
-                            <div class="testimonial-text">"A metodologia do ITvidas é incrível. Consegui aplicar os conhecimentos no meu negócio desde as primeiras aulas."</div>
+                            <div class="testimonial-course">Formação em Juiz de Paz</div>
+                            <div class="testimonial-text">"A metodologia do ITvidas é incrível. Consegui aplicar os conhecimentos no meu trabalho desde as primeiras aulas."</div>
                         </div>
                     </div>
                     <div class="testimonial-card">
@@ -2067,8 +2264,8 @@
                         </div>
                         <div class="testimonial-info">
                             <div class="testimonial-name">Ana Costa</div>
-                            <div class="testimonial-course">Curso de Idiomas</div>
-                            <div class="testimonial-text">"Em apenas 4 meses já consigo me comunicar em inglês. Os professores são excelentes e a plataforma muito intuitiva."</div>
+                            <div class="testimonial-course">Escola de Profetas</div>
+                            <div class="testimonial-text">"Em apenas 4 meses já consigo aplicar os ensinamentos no meu ministério. Os professores são excelentes!"</div>
                         </div>
                     </div>
                     <div class="testimonial-card">
@@ -2080,7 +2277,7 @@
                         </div>
                         <div class="testimonial-info">
                             <div class="testimonial-name">Pedro Oliveira</div>
-                            <div class="testimonial-course">Formação em Saúde</div>
+                            <div class="testimonial-course">Escola de Líderes</div>
                             <div class="testimonial-text">"O ITvidas me proporcionou conhecimento prático que uso diariamente no meu trabalho. Recomendo muito!"</div>
                         </div>
                     </div>
@@ -2090,6 +2287,421 @@
                     <button class="testimonial-nav-btn" data-index="1" aria-label="Ver depoimento 2"></button>
                     <button class="testimonial-nav-btn" data-index="2" aria-label="Ver depoimento 3"></button>
                     <button class="testimonial-nav-btn" data-index="3" aria-label="Ver depoimento 4"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- MELHORIA 3: NOVA SEÇÃO DE ALUNOS CONCLUINTES - ATUALIZADA -->
+    <section class="certificates-section" id="certificates" aria-labelledby="certificates-title">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="certificates-title">Nossos Alunos Concluintes</h2>
+                <div class="section-subtitle">
+                    <i class="fas fa-award" aria-hidden="true"></i>
+                    <span>Conheça alguns dos nossos alunos que concluíram com sucesso nossos cursos</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="certificates-container">
+            <div class="certificates-track" aria-live="polite">
+                <!-- Imagens dos alunos com certificados -->
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem1.jpeg" alt="Aluno 1 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formado com Honras</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem2.jpeg" alt="Aluno 2 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-medal"></i>
+                            <span>Concluinte Destaque</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem3.jpeg" alt="Aluno 3 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-award"></i>
+                            <span>Top do Curso</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem4.jpeg" alt="Aluno 4 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formado com Excelência</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem5.jpeg" alt="Aluno 5 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-medal"></i>
+                            <span>Concluinte Nota 10</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem6.jpeg" alt="Aluno 6 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-award"></i>
+                            <span>Top Performance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem7.jpeg" alt="Aluno 7 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formado com Mérito</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem8.jpeg" alt="Aluno 8 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-medal"></i>
+                            <span>Concluinte Exemplar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem9.jpeg" alt="Aluno 9 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-award"></i>
+                            <span>Aluno Destaque</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem10.jpeg" alt="Aluno 10 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formado com Honra</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem11.jpeg" alt="Aluno 11 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-medal"></i>
+                            <span>Concluinte Excelente</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem12.jpeg" alt="Aluno 12 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-award"></i>
+                            <span>Top do Semestre</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem13.jpeg" alt="Aluno 13 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formado com Louvor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem14.jpeg" alt="Aluno 14 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-medal"></i>
+                            <span>Concluinte Brilhante</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem15.jpeg" alt="Aluno 15 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-award"></i>
+                            <span>Aluno Exemplar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem16.jpeg" alt="Aluno 16 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formado com Distinção</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem17.jpeg" alt="Aluno 17 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-medal"></i>
+                            <span>Concluinte Notável</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem18.jpeg" alt="Aluno 18 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-award"></i>
+                            <span>Top da Turma</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem19.jpeg" alt="Aluno 19 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formado com Mérito</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Duplicação para criar loop infinito -->
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem1.jpeg" alt="Aluno 1 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formado com Honras</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem2.jpeg" alt="Aluno 2 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-medal"></i>
+                            <span>Concluinte Destaque</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem3.jpeg" alt="Aluno 3 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-award"></i>
+                            <span>Top do Curso</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem4.jpeg" alt="Aluno 4 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formado com Excelência</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem5.jpeg" alt="Aluno 5 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-medal"></i>
+                            <span>Concluinte Nota 10</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem6.jpeg" alt="Aluno 6 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-award"></i>
+                            <span>Top Performance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem7.jpeg" alt="Aluno 7 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formado com Mérito</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem8.jpeg" alt="Aluno 8 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-medal"></i>
+                            <span>Concluinte Exemplar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-badge">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="certificate-image">
+                        <img src="image/imagem9.jpeg" alt="Aluno 9 com certificado ITvidas" loading="lazy">
+                    </div>
+                    <div class="certificate-content">
+                        <div class="certificate-text">
+                            <i class="fas fa-award"></i>
+                            <span>Aluno Destaque</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2108,15 +2720,15 @@
             </div>
             <div class="map-container fade-in">
                 <div class="map-frame">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.123456789012!2d-47.352008738403036!3d-2.977304552245123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92d3a2e3b3b3b3b3%3A0x3b3b3b3b3b3b3b3b!2sAv.%20Porto%20Alegre%2C%20204%20-%20Jardim%20Bela%20Vista%2C%20Paragominas%20-%20PA%2C%2068628-300!5e0!3m2!1spt-BR!2sbr!4v1689876543210" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização do ITvidas em Paragominas"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.123456789012!2d-47.47839715137139!3d-1.6146505395650503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMzYnNTIuOCJTIDQ3wrAyOCczOC4yIlc!5e0!3m2!1spt-BR!2sbr!4v1689876543210" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização do ITvidas em Paragominas"></iframe>
                 </div>
                 <div class="map-info">
                     <h3>ITvidas - Instituto Transformar Vidas</h3>
-                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Av. Porto Alegre, 204 - Jardim Bela Vista, Paragominas - PA</p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rua Sete de Janeiro, São Miguel do Guamá – Pará</p>
                     <p><i class="fas fa-clock" aria-hidden="true"></i> Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h</p>
-                    <p><i class="fas fa-phone" aria-hidden="true"></i> (94) 98439-4383 | (91) 99291-1531</p>
-                    <p><i class="fas fa-envelope" aria-hidden="true"></i> contato@itvidas.com.br</p>
-                    <a href="https://maps.app.goo.gl/gDepZbrivDiZnC1m9" class="btn btn-premium" target="_blank" rel="noopener noreferrer" aria-label="Ver rotas no Google Maps">
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> (93) 8406-2978</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> aderleyfeitoza2015@hotmail.com</p>
+                    <a href="https://maps.app.goo.gl/KgqKYJ9ee3GqFd6TA" class="btn btn-premium" target="_blank" rel="noopener noreferrer" aria-label="Ver rotas no Google Maps">
                         <i class="fas fa-directions" aria-hidden="true"></i> Como Chegar
                     </a>
                 </div>
@@ -2204,9 +2816,9 @@
                     <div class="contact-icon">
                         <i class="fas fa-phone" aria-hidden="true"></i>
                     </div>
-                    <h3>Telefones</h3>
-                    <p>(94) 98439-4383<br>(91) 99291-1531</p>
-                    <a href="tel:94984394383" class="btn" aria-label="Ligar para (94) 98439-4383">Ligar Agora</a>
+                    <h3>Telefone</h3>
+                    <p>(93) 8406-2978</p>
+                    <a href="tel:939384062978" class="btn" aria-label="Ligar para (93) 8406-2978">Ligar Agora</a>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">
@@ -2214,7 +2826,7 @@
                     </div>
                     <h3>WhatsApp</h3>
                     <p>Atendimento rápido via WhatsApp</p>
-                    <a href="https://wa.me/55949984394383" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensagem no WhatsApp">
+                    <a href="https://wa.me/559384062978" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensagem no WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar Mensagem
                     </a>
                 </div>
@@ -2223,8 +2835,8 @@
                         <i class="fas fa-envelope" aria-hidden="true"></i>
                     </div>
                     <h3>E-mail</h3>
-                    <p>contato@itvidas.com.br</p>
-                    <a href="mailto:contato@itvidas.com.br" class="btn" aria-label="Enviar e-mail para contato@itvidas.com.br">Enviar E-mail</a>
+                    <p>aderleyfeitoza2015@hotmail.com</p>
+                    <a href="mailto:aderleyfeitoza2015@hotmail.com" class="btn" aria-label="Enviar e-mail para aderleyfeitoza2015@hotmail.com">Enviar E-mail</a>
                 </div>
             </div>
         </div>
@@ -2237,13 +2849,7 @@
                     <h3>ITvidas</h3>
                     <p>Educação que transforma vidas. Cursos online e presenciais com qualidade e acessibilidade.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.instagram.com/itvidas" class="social-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/institutotransformarvidas?igsh=MXBmNDk2N3k3eTBvMA==" class="social-link" aria-label="Instagram">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -2256,6 +2862,7 @@
                         <li><a href="#services">Cursos</a></li>
                         <li><a href="#products">Formações</a></li>
                         <li><a href="#testimonials">Depoimentos</a></li>
+                        <li><a href="#certificates">Certificados</a></li>
                         <li><a href="#differentials">Diferenciais</a></li>
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Contato</a></li>
@@ -2264,10 +2871,9 @@
                 <div class="footer-column">
                     <h3>Contato</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-phone" aria-hidden="true"></i> (94) 98439-4383</li>
-                        <li><i class="fas fa-phone" aria-hidden="true"></i> (91) 99291-1531</li>
-                        <li><i class="fas fa-envelope" aria-hidden="true"></i> contato@itvidas.com.br</li>
-                        <li><i class="fab fa-instagram" aria-hidden="true"></i> @itvidas</li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> (93) 8406-2978</li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> aderleyfeitoza2015@hotmail.com</li>
+                        <li><i class="fab fa-instagram" aria-hidden="true"></i> institutotransformarvidas</li>
                     </ul>
                 </div>
             </div>
@@ -2288,7 +2894,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/55949984394383" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar conosco no WhatsApp">
+    <a href="https://wa.me/559384062978" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar conosco no WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
@@ -2476,6 +3082,19 @@
             
             // Atualizar na redimensionamento da tela
             window.addEventListener('resize', updateTestimonialsDisplay);
+            
+            // Adicionar funcionalidade para pausar o carrossel ao passar o mouse
+            const certificatesTrack = document.querySelector('.certificates-track');
+            
+            if (certificatesTrack) {
+                certificatesTrack.addEventListener('mouseenter', function() {
+                    this.style.animationPlayState = 'paused';
+                });
+                
+                certificatesTrack.addEventListener('mouseleave', function() {
+                    this.style.animationPlayState = 'running';
+                });
+            }
         });
     </script>
 </body>
