@@ -3,1240 +3,1075 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituto Transformar Vidas EAD - Educação Premium</title>
-    <meta name="description" content="Mais de 100 cursos EAD com metodologia exclusiva. Educação transformadora para mudar vidas e carreiras.">
-    <link rel="icon" type="image/png" href="image/logo.png">
+    <title>ITvidas - Instituto Transformar Vidas</title>
+    <meta name="description" content="ITvidas: Educação que transforma vidas. Cursos online e presenciais com qualidade e acessibilidade.">
+    <meta name="keywords" content="educação, cursos, ensino, transformação, ITvidas, online, presencial">
+    <meta name="author" content="ITvidas">
     
-    <!-- Meta Tags para SEO -->
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Instituto Transformar Vidas">
-    <meta name="keywords" content="cursos EAD, psicanálise, psicologia, terapia, formação, certificação MEC">
-    <meta property="og:title" content="Instituto Transformar Vidas EAD">
-    <meta property="og:description" content="Mais de 100 cursos EAD com metodologia exclusiva. Educação transformadora para mudar vidas e carreiras.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/ITVidaslogo.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ITvidas - Instituto Transformar Vidas">
+    <meta property="og:description" content="Educação que transforma vidas. Cursos online e presenciais com qualidade e acessibilidade.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://institutotransformarvidas.com.br">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Instituto Transformar Vidas EAD">
-    <meta name="twitter:description" content="Mais de 100 cursos EAD com metodologia exclusiva.">
     
-    <!-- Otimizações de Carregamento -->
-    <link rel="canonical" href="https://institutotransformarvidas.com.br">
+    <!-- Preload de fontes críticas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS Externo -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    
-    <!-- Schema Markup para SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "Instituto Transformar Vidas EAD",
-        "description": "Mais de 100 cursos EAD com metodologia exclusiva. Educação transformadora para mudar vidas e carreiras.",
-        "url": "https://institutotransformarvidas.com.br",
-        "telephone": "+55-11-3456-7890",
-        "email": "contato@transformarvidas.com.br",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Av. da Educação, 1234",
-            "addressLocality": "São Paulo",
-            "addressRegion": "SP",
-            "addressCountry": "BR"
-        },
-        "areaServed": "BR",
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Cursos EAD",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Course",
-                        "name": "Psicanálise Clínica Freudiana",
-                        "description": "Formação completa em psicanálise com abordagem freudiana",
-                        "timeToComplete": "P18M"
-                    }
-                }
-            ]
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "127"
-        }
-    }
-    </script>
-    
-    <style>
-        /* Variáveis de cores e temas - Atualizadas */
-        :root {
-            --branco: #ffffff;
-            --off-white: #f8f9fa;
-            --cinza-claro: #e9ecef;
-            --cinza-medio: #6c757d;
-            --cinza-escuro: #a7b4c2;
-            --preto: #000000;
-            --preto-suave: #1a1a1a;
-            --vermelho: #c62828;
-            --vermelho-escuro: #b71c1c;
-            --vermelho-claro: #ff5252;
-            --sombra-suave: 0 5px 15px rgba(0, 0, 0, 0.08);
-            --sombra-media: 0 10px 25px rgba(0, 0, 0, 0.12);
-            --sombra-intensa: 0 15px 35px rgba(0, 0, 0, 0.15);
-            --transicao: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --borda-radius: 8px;
-            --espacamento-xs: 0.5rem;
-            --espacamento-sm: 1rem;
-            --espacamento-md: 1.5rem;
-            --espacamento-lg: 2rem;
-            --espacamento-xl: 3rem;
-        }
+    <!-- Font Awesome apenas com ícones necessários -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-        /* Reset e estilos gerais */
+    <style>
+        :root {
+            --primary: #FFFFFF;
+            --secondary: #000000;
+            --accent: #a70b0b;
+            --accent-dark: #a70b0b;
+            --accent-light: #a70b0b;
+            --accent-yellow: #a70b0b;
+            --dark-gray: #F5F5F5;
+            --medium-gray: #EEEEEE;
+            --light-gray: #9E9E9E;
+            --text-dark: #000000;
+            --text-light: #555555;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         html {
             scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--branco);
-            color: var(--preto-suave);
-            line-height: 1.7;
             overflow-x: hidden;
-            font-weight: 400;
         }
-
-        h1, h2, h3, h4, h5 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
+        
+        body {
+            background-color: var(--primary);
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             line-height: 1.3;
-            color: var(--preto-suave);
         }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transicao);
+        
+        /* Header e Navegação */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--secondary);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-
+        
+        .header-scrolled {
+            padding: 10px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
-
-        .section {
-            padding: var(--espacamento-xl) 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: var(--espacamento-xl);
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: var(--espacamento-sm);
-            color: var(--preto-suave);
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--vermelho);
-        }
-
-        .section-title p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--cinza-medio);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 32px;
-            border-radius: var(--borda-radius);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: var(--transicao);
-            cursor: pointer;
-            border: none;
-            gap: 10px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            min-height: 44px; /* Melhor toque em mobile */
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary {
-            background: var(--vermelho);
-            color: var(--branco);
-            box-shadow: var(--sombra-suave);
-        }
-
-        .btn-primary:hover, .btn-primary:focus {
-            background: var(--vermelho-escuro);
-            transform: translateY(-3px);
-            box-shadow: var(--sombra-media);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--preto-suave);
-            border: 2px solid var(--preto-suave);
-        }
-
-        .btn-secondary:hover, .btn-secondary:focus {
-            background: var(--preto-suave);
-            color: var(--branco);
-            transform: translateY(-3px);
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: var(--branco);
-            box-shadow: var(--sombra-suave);
-        }
-
-        .btn-whatsapp:hover, .btn-whatsapp:focus {
-            background: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: var(--sombra-media);
-        }
-
-        /* Header e Navegação - Atualizado */
-        header {
-            background-color: var(--branco);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: var(--transicao);
-        }
-
-        .navbar {
+        
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
         }
-
+        
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--preto-suave);
-            transition: var(--transicao);
         }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .logo img {
+        
+        .logo-img {
             height: 50px;
             width: auto;
-            transition: var(--transicao);
         }
-
-        .nav-links {
+        
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: var(--accent);
+        }
+        
+        .nav-menu {
             display: flex;
             list-style: none;
-            gap: 35px;
         }
-
-        .nav-links a {
+        
+        .nav-item {
+            margin-left: 25px;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
             font-weight: 500;
+            transition: all 0.3s ease;
             position: relative;
-            padding: 5px 0;
-            font-size: 0.95rem;
             display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--preto-suave);
+            min-height: 44px;
+            min-width: 44px;
+            font-size: 0.95rem;
         }
-
-        .nav-links a i {
-            font-size: 0.9rem;
-            transition: var(--transicao);
+        
+        .nav-link:hover,
+        .nav-link:focus {
+            color: var(--accent);
+            outline: none;
         }
-
-        .nav-links a:hover i, .nav-links a:focus i {
-            transform: translateY(-3px);
-            color: var(--vermelho);
-        }
-
-        .nav-links a:after {
+        
+        .nav-link::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
-            background: var(--vermelho);
-            transition: var(--transicao);
+            background-color: var(--accent);
+            transition: width 0.3s ease;
         }
-
-        .nav-links a:hover:after, .nav-links a:focus:after {
+        
+        .nav-link:hover::after,
+        .nav-link:focus::after {
             width: 100%;
         }
-
-        .mobile-menu {
+        
+        .nav-link.active {
+            color: var(--accent);
+        }
+        
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .hamburger {
             display: none;
-            font-size: 1.5rem;
             cursor: pointer;
-            color: var(--preto-suave);
-            transition: var(--transicao);
+            min-height: 44px;
+            min-width: 44px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
             z-index: 1001;
             background: none;
             border: none;
-            min-height: 44px;
-            min-width: 44px;
         }
-
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: var(--branco);
-            z-index: 999;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            transform: translateY(-100%);
-            transition: transform 0.5s ease;
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            background-color: white;
         }
-
-        .mobile-nav.active {
-            transform: translateY(0);
-            display: flex;
+        
+        /* Divisor de Seção */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+            margin: 0 auto;
+            width: 80%;
+            max-width: 800px;
         }
-
-        .mobile-nav-links {
-            list-style: none;
-            margin-bottom: 40px;
-        }
-
-        .mobile-nav-links li {
-            margin-bottom: 25px;
-        }
-
-        .mobile-nav-links a {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--preto-suave);
-            transition: var(--transicao);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            min-height: 44px;
-        }
-
-        .mobile-nav-links a i {
-            font-size: 1.2rem;
-            transition: var(--transicao);
-        }
-
-        .mobile-nav-links a:hover, .mobile-nav-links a:focus {
-            color: var(--vermelho);
-        }
-
-        .mobile-nav-links a:hover i, .mobile-nav-links a:focus i {
-            transform: translateY(-3px);
-        }
-
-        /* Hero Section - Atualizada */
+        
+        /* Hero Section Melhorada */
         .hero {
-            min-height: 100vh;
-            position: relative;
+            height: 100vh;
+            min-height: 600px;
             display: flex;
             align-items: center;
-            color: var(--branco);
-            padding-top: 80px;
+            position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--preto-suave) 0%, var(--preto) 100%);
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--secondary) 0%, #333333 100%);
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .hero-container {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
             width: 100%;
         }
 
         .hero-content {
-            flex: 1;
             padding: 0 20px;
-            position: relative;
-            z-index: 1;
+            animation: fadeInUp 1s ease;
         }
 
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: var(--sombra-intensa);
-        }
-
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 30px;
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
             line-height: 1.2;
-            text-shadow: 2px 2px 8px rgba(46, 44, 44, 0.356);
-            animation: fadeInUp 1s ease-out;
+            color: white;
+            font-weight: 700;
         }
 
-        .hero-title span {
-            color: var(--vermelho); /* Alterado para vermelho conforme solicitado */
-            display: block;
-            font-size: 2.8rem;
-            margin-top: 10px;
-            animation: fadeInUp 1.2s ease-out;
+        .hero h1 span {
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+            white-space: nowrap;
         }
 
-        .hero-title .transformar-vidas {
-            color: var(--branco); /* Alterado para branco conforme solicitado */
+        .hero h1 span::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.5s ease;
         }
 
-        .hero-premium {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .premium-badge {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px 20px;
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: fadeInUp 1.4s ease-out;
-        }
-
-        .premium-badge i {
-            color: var(--vermelho);
-            font-size: 1.2rem;
-        }
-
-        .hero-divider {
-            width: 100px;
-            height: 2px;
-            background: var(--vermelho);
-            margin: 30px 0;
-            animation: expandWidth 1.5s ease-out;
-        }
-
-        @keyframes expandWidth {
-            from { width: 0; }
-            to { width: 100px; }
+        .hero h1 span.animate::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            max-width: 700px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1.4s ease-out;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-weight: 400;
+            max-width: 600px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translate3d(0, 30px, 0);
-            }
-            to {
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
-            }
-        }
-
-        /* Cards de Destaque - Atualizados */
-        .feature-cards {
+        .hero-features {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: -20px auto 60px;
-            position: relative;
-            z-index: 10;
             flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
-        .feature-card {
-            background-color: var(--branco);
-            width: 320px;
+        .feature-item {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            text-align: center;
-            padding: 40px 30px;
-            transition: var(--transicao);
-            cursor: pointer;
-            position: relative;
-            box-shadow: var(--sombra-media);
-            border-top: 4px solid var(--vermelho);
-            overflow: hidden;
-            border-radius: var(--borda-radius);
-            border: 1px solid var(--cinza-claro);
-            opacity: 0;
-            transform: translate3d(0, 50px, 0);
-            min-height: 300px;
+            gap: 10px;
+            color: white;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 5px;
+            backdrop-filter: blur(5px);
         }
 
-        .feature-card.animate {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .feature-card:nth-child(1) { transition-delay: 0.1s; }
-        .feature-card:nth-child(2) { transition-delay: 0.2s; }
-        .feature-card:nth-child(3) { transition-delay: 0.3s; }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--preto-suave) 0%, transparent 70%);
-            opacity: 0;
-            transition: var(--transicao);
-            z-index: 0;
-        }
-
-        .feature-card:hover::before, .feature-card:focus-within::before {
-            opacity: 0.05;
-        }
-
-        .feature-card:hover, .feature-card:focus-within {
-            transform: translate3d(0, -5px, 0) scale(1.02);
-            box-shadow: var(--sombra-intensa);
-            border-color: var(--vermelho);
+        .feature-item:hover {
+            transform: translateX(5px);
         }
 
         .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--preto-suave);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
-            color: var(--vermelho);
-            font-size: 2rem;
-            position: relative;
-            z-index: 1;
-            transition: var(--transicao);
-            border: 1px solid var(--cinza-claro);
-        }
-
-        .feature-card:hover .feature-icon, .feature-card:focus-within .feature-icon {
-            background: var(--vermelho);
-            color: var(--branco);
-            transform: rotateY(180deg);
-            border-color: var(--vermelho);
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--preto-suave);
-            position: relative;
-            z-index: 1;
-        }
-
-        .feature-card p {
-            color: var(--cinza-medio);
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .feature-card .btn {
-            margin-top: auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Seção Motivacional */
-        .motivational-section {
-            background: linear-gradient(135deg, var(--preto-suave), var(--preto));
-            padding: 80px 0;
-            color: var(--branco);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .motivational-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: cover;
-        }
-
-        .motivational-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .motivational-icon {
-            font-size: 4rem;
-            margin-bottom: 30px;
-            color: var(--vermelho);
-            animation: pulse 2s infinite;
-        }
-
-        .motivational-text {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            line-height: 1.3;
-            color: var(--branco); /* Alterado para branco conforme solicitado */
-        }
-
-        .motivational-subtext {
+            color: var(--accent);
             font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
+            transition: transform 0.3s ease;
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
+        .feature-item:hover .feature-icon {
+            transform: scale(1.2);
         }
 
-        /* Seção de Cursos - Atualizada */
-        .courses {
-            background-color: var(--off-white);
-        }
-
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .course-card {
-            background-color: var(--branco);
-            overflow: hidden;
-            transition: var(--transicao);
-            position: relative;
-            box-shadow: var(--sombra-suave);
-            border-radius: var(--borda-radius);
-            border: 1px solid var(--cinza-claro);
-            opacity: 0;
-            transform: translate3d(0, 30px, 0);
-            min-height: 300px;
-        }
-
-        .course-card.animate {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .course-card:nth-child(1) { transition-delay: 0.1s; }
-        .course-card:nth-child(2) { transition-delay: 0.2s; }
-        .course-card:nth-child(3) { transition-delay: 0.3s; }
-
-        .course-card:hover, .course-card:focus-within {
-            transform: translate3d(0, -10px, 0) scale(1.02);
-            box-shadow: var(--sombra-media);
-            border-color: var(--vermelho);
-        }
-
-        .course-img {
-            height: 220px;
-            background: var(--preto-suave);
+        .hero-image {
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: var(--branco);
-            font-size: 1.8rem;
-            font-weight: 600;
+            align-items: center;
+            padding: 30px;
             position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid var(--cinza-claro);
         }
 
-        .course-img::after {
+        .hero-image img {
+            width: 80%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 10px;
+            background: transparent;
+            border: none;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+        }
+
+        .hero-image::before {
             content: '';
             position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
-        }
-
-        .course-content {
-            padding: 30px;
-        }
-
-        .course-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--preto-suave);
-        }
-
-        .course-content p {
-            margin-bottom: 20px;
-            color: var(--cinza-medio);
-        }
-
-        .course-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid var(--cinza-claro);
-        }
-
-        .course-duration {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            color: var(--cinza-medio);
-        }
-
-        .btn-center {
-            text-align: center;
-        }
-
-        /* Seção de Depoimentos - Atualizada */
-        .testimonials {
-            position: relative;
-            background: var(--preto-suave);
-            color: var(--branco);
-        }
-
-        .testimonials .section-title h2 {
-            color: var(--branco);
-        }
-
-        .testimonials .section-title p {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .testimonials-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px 25px;
-            transition: var(--transicao);
-            position: relative;
-            border-left: 3px solid var(--vermelho);
-            border-radius: var(--borda-radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            min-height: 350px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .testimonial-card:hover, .testimonial-card:focus-within {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translate3d(0, -5px, 0);
-            border-color: var(--vermelho);
-        }
-
-        .testimonial-video {
-            width: 100%;
-            height: 180px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--branco);
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .testimonial-video video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .testimonial-video i {
-            font-size: 3rem;
-            z-index: 2;
-            color: var(--vermelho);
-            position: absolute;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            position: relative;
-            font-size: 0.95rem;
-            flex-grow: 1;
-        }
-
-        .testimonial-text::before {
-            content: '"';
-            font-size: 3rem;
-            color: var(--vermelho);
-            position: absolute;
-            top: -15px;
-            left: -5px;
-            font-family: Georgia, serif;
-            opacity: 0.3;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: auto;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background: var(--vermelho);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--branco);
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: var(--accent);
+            opacity: 0.1;
+            top: 10%;
+            left: 10%;
+            animation: pulse 4s ease-in-out infinite;
         }
 
-        .author-info h4 {
-            font-size: 1.1rem;
-            color: var(--vermelho);
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            opacity: 0.1;
+            bottom: 10%;
+            right: 10%;
+            animation: pulse 4s ease-in-out infinite reverse;
         }
 
-        .author-info p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .testimonial-rating {
-            display: flex;
-            gap: 5px;
-            margin-top: 10px;
-        }
-
-        .testimonial-rating i {
-            color: #FFD700;
-            font-size: 0.9rem;
-        }
-
-        /* Seção de Localização e Contato - Atualizada */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 50px;
-        }
-
-        @media (min-width: 992px) {
-            .contact-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .contact-info h3 {
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
             font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: var(--preto-suave);
-        }
-
-        .contact-info p {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .contact-info i {
-            width: 40px;
-            height: 40px;
-            background: var(--preto-suave);
-            border-radius: 50%;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            z-index: 1;
+            min-height: 44px;
+            min-width: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--vermelho);
+            background: none;
+            border: none;
         }
 
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: var(--preto-suave);
-            border-radius: 50%;
-            color: var(--vermelho);
-            transition: var(--transicao);
-            font-size: 1.1rem;
-            border: 1px solid var(--cinza-claro);
-        }
-
-        .social-links a:hover, .social-links a:focus {
-            transform: translateY(-5px);
-            background: var(--vermelho);
-            color: var(--branco);
-            border-color: var(--vermelho);
-        }
-
-        .map-container {
-            width: 100%;
-            height: 500px;
-            border-radius: var(--borda-radius);
-            overflow: hidden;
-            box-shadow: var(--sombra-media);
-            border: 1px solid var(--cinza-claro);
-        }
-
-        .map {
-            width: 100%;
-            height: 100%;
-            background: var(--cinza-claro);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--cinza-escuro);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .map-placeholder {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .map-placeholder i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            color: var(--preto-suave);
-        }
-
-        /* Carrossel de palavras - Atualizado */
+        /* Carrossel de Motivação */
         .carousel-section {
-            background: var(--preto-suave);
-            padding: 30px 0;
+            padding: 60px 0;
+            background-color: var(--dark-gray);
             overflow: hidden;
-            position: relative;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .carousel-container {
-            display: flex;
-            overflow: hidden;
             position: relative;
+            width: 100vw;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
         }
 
-        .carousel {
+        .carousel-track {
             display: flex;
-            animation: scroll 60s linear infinite;
-            white-space: nowrap;
+            animation: carousel-scroll 40s linear infinite;
+            width: max-content;
         }
 
         .carousel-item {
+            flex: 0 0 auto;
+            width: 300px;
+            margin: 0 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--secondary);
+        }
+
+        .carousel-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent);
+        }
+
+        .carousel-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .carousel-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        /* Seções comuns */
+        section {
+            padding: 80px 0;
+            position: relative;
+            background-color: var(--primary);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .section-dark {
+            background-color: var(--dark-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            bottom: 0;
+            left: 15%;
+            border-radius: 3px;
+        }
+
+        .section-subtitle {
             display: flex;
             align-items: center;
-            white-space: nowrap;
-            padding: 0 25px;
-            color: var(--branco);
-            font-size: 1.1rem;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+            color: var(--text-light);
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .section-subtitle i {
+            color: var(--accent);
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
             font-weight: 600;
-            flex-shrink: 0;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary);
+            text-align: center;
+            justify-content: center;
+            min-width: 160px;
+            min-height: 44px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .carousel-item i {
-            margin-right: 10px;
-            color: var(--vermelho);
-            font-size: 1rem;
+        .btn:hover,
+        .btn:focus {
+            background-color: transparent;
+            color: var(--secondary);
+            outline: none;
         }
 
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+        .btn-premium {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: white;
+            font-weight: 700;
         }
 
-        /* Seção FAQ - Atualizada */
-        .faq {
-            background-color: var(--off-white);
+        .btn-premium:hover,
+        .btn-premium:focus {
+            background-color: transparent;
+            color: var(--accent);
         }
 
+        .btn-whatsapp {
+            background-color: #25D366;
+            border-color: #25D366;
+        }
+
+        .btn-whatsapp:hover,
+        .btn-whatsapp:focus {
+            background-color: transparent;
+            color: #25D366;
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            min-width: auto;
+        }
+
+        /* Botão Nossos Serviços Personalizado */
+        .btn-services {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-services:hover,
+        .btn-services:focus {
+            background-color: white;
+            color: var(--secondary);
+        }
+
+        /* Diferenciais */
+        .floating-differentials {
+            position: relative;
+            margin-top: 40px;
+            z-index: 10;
+            padding: 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .differentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .differential-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            animation: float 6s ease-in-out infinite;
+            border: 2px solid var(--secondary);
+        }
+        
+        .differential-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .differential-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        .differential-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            animation-play-state: paused;
+            border-color: var(--accent);
+        }
+        
+        .differential-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        /* Sobre */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: float 3s ease-in-out infinite;
+            max-width: 400px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            display: block;
+            background: transparent;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+        
+        .about-text {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .about-text h3 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .about-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            justify-content: center;
+        }
+        
+        /* Serviços (Cursos) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent);
+            border: 2px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent);
+        }
+        
+        .service-image {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .service-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        /* Produtos (Cursos) */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--secondary);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent);
+        }
+        
+        .product-image {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #FFFFFF;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-class {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 5px;
+        }
+        
+        .class-badge {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+            color: white;
+            border-radius: 50%;
+        }
+        
+        .class-online {
+            background-color: var(--accent);
+        }
+        
+        .class-presencial {
+            background-color: var(--secondary);
+        }
+        
+        .class-hybrid {
+            background-color: var(--text-light);
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+        
+        .product-action {
+            flex: 1;
+        }
+        
+        /* Mapa */
+        .map-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .map-frame {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            height: 400px;
+            min-height: 300px;
+        }
+        
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-info {
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--secondary);
+        }
+        
+        /* FAQ */
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
-
+        
         .faq-item {
-            background: var(--branco);
-            margin-bottom: 20px;
-            border-radius: var(--borda-radius);
+            margin-bottom: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--sombra-suave);
-            border: 1px solid var(--cinza-claro);
-            transition: var(--transicao);
+            background-color: white;
+            transition: transform 0.3s ease;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--secondary);
         }
-
+        
         .faq-item:hover {
-            box-shadow: var(--sombra-media);
-            border-color: var(--vermelho);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent);
         }
-
+        
         .faq-question {
-            padding: 25px 30px;
+            padding: 20px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--preto-suave);
-            transition: var(--transicao);
+            transition: background-color 0.3s ease;
             min-height: 44px;
+            color: var(--text-dark);
         }
-
-        .faq-question:hover {
-            background-color: rgba(198, 40, 40, 0.05);
+        
+        .faq-question:hover,
+        .faq-question:focus {
+            background-color: rgba(0, 0, 0, 0.02);
         }
-
-        .faq-question i {
-            transition: var(--transicao);
-            color: var(--vermelho);
+        
+        .faq-icon {
+            color: var(--accent);
+            margin-right: 15px;
+            font-size: 1.2rem;
         }
-
-        .faq-item.active .faq-question i {
+        
+        .faq-arrow {
+            transition: transform 0.3s ease;
+            color: var(--accent);
+        }
+        
+        .faq-item.active .faq-arrow {
             transform: rotate(180deg);
         }
-
+        
         .faq-answer {
-            padding: 0 30px;
+            padding: 0 20px;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
-            color: var(--cinza-medio);
-            line-height: 1.7;
+            color: var(--text-light);
         }
-
+        
         .faq-item.active .faq-answer {
-            padding: 0 30px 25px;
+            padding: 20px;
             max-height: 500px;
         }
-
-        /* Barra de destaque - Atualizada */
-        .highlight-bar {
-            background: linear-gradient(90deg, var(--preto-suave), var(--preto));
-            color: var(--branco);
-            padding: 60px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .highlight-bar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: cover;
-        }
-
-        .highlight-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .highlight-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            color: var(--branco); /* Alterado para branco conforme solicitado */
-        }
-
-        .highlight-content p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
-        /* Footer - Atualizado */
-        footer {
-            background: var(--preto);
-            color: var(--branco);
-            padding: 80px 0 30px;
-        }
-
-        .footer-content {
+        
+        /* Contato */
+        .contact-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
-
+        
+        .contact-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--secondary);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            padding: 50px 0 20px;
+            color: white;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            margin-right: 30px;
+        }
+        
+        .footer-column:last-child {
+            margin-right: 0;
+        }
+        
         .footer-column h3 {
             font-size: 1.3rem;
-            margin-bottom: 25px;
-            color: var(--vermelho);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
         }
-
-        .footer-column ul {
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
             list-style: none;
         }
-
-        .footer-column ul li {
-            margin-bottom: 12px;
+        
+        .footer-links li {
+            margin-bottom: 10px;
         }
-
-        .footer-column ul li a {
-            transition: var(--transicao);
-            opacity: 0.8;
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-
-        .footer-column ul li a:hover, .footer-column ul li a:focus {
-            opacity: 1;
-            padding-left: 5px;
-            color: var(--vermelho);
+        
+        .footer-links a:hover,
+        .footer-links a:focus {
+            color: var(--accent);
         }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.7;
-            font-size: 0.9rem;
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
         }
-
-        /* Botão WhatsApp Flutuante */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25D366;
-            color: var(--branco);
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 100;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-link:hover,
+        .social-link:focus {
+            background-color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25ca61;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
             animation: pulse 2s infinite;
-            transition: var(--transicao);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            min-height: 44px;
-            min-width: 44px;
+            transition: all 0.3s ease;
+            text-decoration: none;
         }
 
-        .whatsapp-float:hover, .whatsapp-float:focus {
+        .whatsapp-float:hover,
+        .whatsapp-float:focus {
             transform: scale(1.1);
-            animation: none;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+            outline: none;
         }
 
+        .whatsapp-float i {
+            color: white;
+            font-size: 30px;
+        }
+        
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+        
         @keyframes pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
@@ -1248,900 +1083,1055 @@
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
-
-        /* Divisores */
-        .divider {
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--cinza-claro), transparent);
-            margin: 60px 0;
+        
+        @keyframes carousel-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-300px * 16));
+            }
         }
-
-        /* Animações */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        
         .fade-in {
-            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
-
-        /* Melhorias de Acessibilidade */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        /* Foco visível para todos os elementos interativos */
-        a:focus-visible,
-        button:focus-visible,
-        .btn:focus-visible,
-        .feature-card:focus-visible,
-        .course-card:focus-visible,
-        .testimonial-card:focus-visible {
-            outline: 2px solid var(--vermelho);
-            outline-offset: 3px;
-        }
-
-        /* Responsividade - Melhorada */
-        @media (max-width: 1200px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-            
-            .hero-title span {
-                font-size: 2.5rem;
-            }
-            
-            .highlight-content h2 {
-                font-size: 2.2rem;
-            }
-            
-            .motivational-text {
-                font-size: 2rem;
-            }
-        }
-
+        
+        /* Responsividade */
         @media (max-width: 992px) {
-            .nav-links {
-                gap: 20px;
+            .footer-content {
+                flex-direction: column;
             }
             
-            .feature-cards {
-                gap: 20px;
-            }
-            
-            .feature-card {
-                width: 280px;
-            }
-            
-            .highlight-content h2 {
-                font-size: 2rem;
-            }
-            
-            .highlight-content p {
-                font-size: 1.1rem;
-            }
-            
-            .motivational-text {
-                font-size: 1.8rem;
-            }
-            
-            .motivational-subtext {
-                font-size: 1.1rem;
-            }
-
-            .hero-container {
-                flex-direction: column-reverse; /* Imagem em cima, conteúdo embaixo */
-                text-align: center;
-            }
-
-            .hero-content, .hero-image {
-                flex: none;
-                width: 100%;
-            }
-            
-            .hero-image {
+            .footer-column {
+                margin-right: 0;
                 margin-bottom: 30px;
             }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
             
-            .hero-title span {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .feature-cards {
-                margin-top: -40px;
+            .about-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 25px;
+            
+            .about-buttons .btn {
+                text-align: center;
+                width: 100%;
+                max-width: 280px;
             }
             
-            .carousel-item {
-                font-size: 1rem;
-                padding: 0 15px;
+            .map-container {
+                grid-template-columns: 1fr;
             }
             
-            .highlight-bar {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-features {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                gap: 0;
+                flex-direction: column;
+                background-color: var(--secondary);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                height: calc(100vh - 70px);
+                overflow-y: auto;
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                margin: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-link {
+                padding: 15px;
+                display: block;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero {
+                margin-top: 70px;
+                height: auto;
+                min-height: 100vh;
                 padding: 40px 0;
             }
             
-            .highlight-content h2 {
-                font-size: 1.8rem;
-            }
-            
-            .highlight-content p {
-                font-size: 1rem;
-            }
-            
-            .motivational-text {
-                font-size: 1.6rem;
-            }
-            
-            .motivational-subtext {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-title span {
-                font-size: 1.6rem;
-            }
-            
-            .feature-card {
+            .btn {
                 width: 100%;
-                max-width: 320px;
+                max-width: 280px;
             }
             
-            .testimonials-container, .courses-grid {
+            .contact-cards {
                 grid-template-columns: 1fr;
             }
-
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+            
+            .map-frame {
+                height: 300px;
+            }
+            
+            .map-container {
+                gap: 20px;
+            }
+            
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 25px;
+            }
+            
+            .about-image img {
+                max-width: 250px;
+            }
+            
+            .logo-text {
+                font-size: 1.0rem;
+            }
+            
+            .differentials-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .hero-image img {
+                max-width: 300px;
+            }
+            
             .carousel-item {
-                font-size: 0.9rem;
-                padding: 0 10px;
+                width: 250px;
             }
             
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .section {
-                padding: 50px 0;
-            }
-            
-            .faq-question {
-                padding: 20px;
-                font-size: 1rem;
-            }
-            
-            .faq-answer {
-                padding: 0 20px;
-            }
-            
-            .faq-item.active .faq-answer {
-                padding: 0 20px 20px;
-            }
-            
-            .highlight-content h2 {
-                font-size: 1.6rem;
-            }
-            
-            .motivational-text {
-                font-size: 1.4rem;
-            }
-            
-            .motivational-icon {
-                font-size: 3rem;
+            .about-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
-
-        @media (max-width: 400px) {
-            .hero-title {
-                font-size: 1.8rem;
+        
+        @media (max-width: 480px) {
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                padding: 20px 0;
+                margin-top: 70px;
             }
             
-            .hero-title span {
-                font-size: 1.4rem;
+            .logo-img {
+                height: 40px;
             }
             
-            .hero p {
-                font-size: 1rem;
+            .logo-text {
+                font-size: 1.0rem;
             }
             
-            .logo span {
-                font-size: 1.3rem;
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
             
-            .testimonial-card {
-                padding: 20px 15px;
+            .product-card {
+                margin: 0 10px;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .product-action {
+                width: 100%;
+            }
+            
+            .nav-menu {
+                top: 70px;
+                height: calc(100vh - 70px);
+            }
+            
+            .about-image img {
+                max-width: 200px;
+            }
+            
+            .about-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature-item {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .carousel-item {
+                width: 220px;
+            }
+            
+            .about-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- Header e Navegação -->
-    <header>
+    <header id="header" role="banner">
         <div class="container">
-            <nav class="navbar" aria-label="Navegação principal">
-                <a href="#inicio" class="logo">
-                    <img src="image/logosf.png" alt="Instituto Transformar Vidas - Logo" width="50" height="50" loading="lazy">
-                    <span>INSTITUTO VIDAS</span>
-                </a>
-                <ul class="nav-links" role="menubar">
-                    <li role="none"><a href="#inicio" role="menuitem"><i class="fas fa-home"></i> Início</a></li>
-                    <li role="none"><a href="#cursos" role="menuitem"><i class="fas fa-book"></i> Cursos</a></li>
-                    <li role="none"><a href="#depoimentos" role="menuitem"><i class="fas fa-comments"></i> Depoimentos</a></li>
-                    <li role="none"><a href="#localizacao" role="menuitem"><i class="fas fa-map-marker-alt"></i> Localização</a></li>
-                    <li role="none"><a href="#faq" role="menuitem"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                    <li role="none"><a href="#contato" role="menuitem"><i class="fas fa-envelope"></i> Contato</a></li>
+            <nav class="nav-container" aria-label="Navegação principal">
+                <div class="logo">
+                    <img src="image/graduate.png" alt="ITvidas - Instituto Transformar Vidas" class="logo-img" width="50" height="50" loading="lazy">
+                    <div class="logo-text">Instituto<span> transformar vidas</span></div>
+                </div>
+                <ul class="nav-menu" role="menubar">
+                    <li class="nav-item" role="none"><a href="#home" class="nav-link" role="menuitem"><i class="fas fa-home" aria-hidden="true"></i> <span>Início</span></a></li>
+                    <li class="nav-item" role="none"><a href="#differentials" class="nav-link" role="menuitem"></i> <span>Diferenciais</span></a></li>
+                    <li class="nav-item" role="none"><a href="#about" class="nav-link" role="menuitem"></i> <span>Sobre</span></a></li>
+                    <li class="nav-item" role="none"><a href="#services" class="nav-link" role="menuitem"></i> <span>Cursos</span></a></li>
+                    <li class="nav-item" role="none"><a href="#products" class="nav-link" role="menuitem"></i> <span>Formações</span></a></li>
+                    <li class="nav-item" role="none"><a href="#map" class="nav-link" role="menuitem"></i> <span>Localização</span></a></li>
+                    <li class="nav-item" role="none"><a href="#contact" class="nav-link" role="menuitem"></i> <span>Contato</span></a></li>
                 </ul>
-                <button class="mobile-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
-                    <i class="fas fa-bars" aria-hidden="true"></i>
+                <button class="hamburger" aria-label="Menu mobile" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </button>
             </nav>
         </div>
-        <div class="mobile-nav" id="mobile-nav">
-            <ul class="mobile-nav-links" role="menubar">
-                <li role="none"><a href="#inicio" role="menuitem"><i class="fas fa-home"></i> Início</a></li>
-                <li role="none"><a href="#cursos" role="menuitem"><i class="fas fa-book"></i> Cursos</a></li>
-                <li role="none"><a href="#depoimentos" role="menuitem"><i class="fas fa-comments"></i> Depoimentos</a></li>
-                <li role="none"><a href="#localizacao" role="menuitem"><i class="fas fa-map-marker-alt"></i> Localização</a></li>
-                <li role="none"><a href="#faq" role="menuitem"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                <li role="none"><a href="#contato" role="menuitem"><i class="fas fa-envelope"></i> Contato</a></li>
-            </ul>
-        </div>
     </header>
 
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero" id="inicio">
-            <div class="container">
-                <div class="hero-container">
-                    <div class="hero-content">
-                        <h1 class="hero-title"><span>INSTITUTO</span><span class="transformar-vidas">Transformar VIDAS</span></h1>
-                        
-                        <div class="hero-premium">
-                            <div class="premium-badge">
-                                <i class="fas fa-award"></i>
-                                <span>Educação de Qualidade</span>
-                            </div>
-                            <div class="premium-badge">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span>Certificação Reconhecida</span>
-                            </div>
+    <section class="hero" id="home" aria-label="Seção principal">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Instituto <span>Transformar Vidas</span></h1>
+                    <p>Educação de qualidade que transforma vidas através do conhecimento. Cursos online e presenciais com metodologia inovadora.</p>
+                    
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <i class="fas fa-graduation-cap feature-icon" aria-hidden="true"></i>
+                            <span>Certificação Reconhecida</span>
                         </div>
-                        
-                        <div class="hero-divider"></div>
-                        <p>Preparar profissionais para orientar pessoas na solução de seus problemas existenciais, tais como: fobias, ansiedades, depressões, obsessões, impulsos auto e heteroagressivos.</p>
-                    </div>
-                    <div class="hero-image">
-                        <img src="image/ITVidaslogo.png" alt="Logo do Instituto Transformar Vidas" width="400" height="400" loading="eager">
-                    </div>
+                        <div class="feature-item">
+                            <i class="fas fa-users feature-icon" aria-hidden="true"></i>
+                            <span>Professores Qualificados</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-laptop feature-icon" aria-hidden="true"></i>
+                            <span>Modalidade Online e Presencial</span>
+                        </div>
+                     </div>
+                </div>
+                <div class="hero-image">
+                    <img src="image/ITVidaslogo.png" alt="ITvidas - Educação que Transforma" loading="lazy" width="700" height="400">
                 </div>
             </div>
-        </section>
+        </div>
+        
+        <button class="scroll-down" onclick="document.getElementById('differentials').scrollIntoView({behavior: 'smooth'})" aria-label="Rolar para baixo">
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+    </section>
 
-        <!-- Cards de Destaque -->
+    <div class="section-divider"></div>
+
+    <!-- Carrossel de Motivação -->
+<section class="carousel-section" aria-labelledby="carousel-title">
+  <div class="container">
+    <div class="section-title">
+      <h2 id="carousel-title">Inspiração para seu Aprendizado</h2>
+      <div class="section-subtitle">
+        <i class="fas fa-lightbulb" aria-hidden="true"></i>
+        <span>Mensagens motivacionais para sua jornada educacional</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-container">
+    <div class="carousel-track" aria-live="polite">
+
+      <!-- Itens do carrossel - frases motivacionais -->
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">A educação é a arma mais poderosa para mudar o mundo</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-rocket" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">O conhecimento te leva a lugares incríveis</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-brain" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">Aprender é a única coisa que a mente nunca se cansa</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-seedling" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">Investir em conhecimento sempre traz os melhores juros</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-chart-line" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">Seu futuro começa com a decisão de aprender hoje</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-trophy" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">Cada aula é um passo em direção ao seu sucesso</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">O conhecimento é a peça que falta no seu quebra-cabeça</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-compass" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">A educação é o mapa para o futuro que você deseja</div>
+      </div>
+
+      <!-- Duplicação dos itens para criar loop infinito -->
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">A educação é a arma mais poderosa para mudar o mundo</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-rocket" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">O conhecimento te leva a lugares incríveis</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-brain" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">Aprender é a única coisa que a mente nunca se cansa</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-seedling" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">Investir em conhecimento sempre traz os melhores juros</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-chart-line" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">Seu futuro começa com a decisão de aprender hoje</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-trophy" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">Cada aula é um passo em direção ao seu sucesso</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">O conhecimento é a peça que falta no seu quebra-cabeça</div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-icon">
+          <i class="fas fa-compass" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-text">A educação é o mapa para o futuro que você deseja</div>
+      </div>
+     </div>
+  </div>
+</section>
+
+    <div class="section-divider"></div>
+
+    <section class="floating-differentials" id="differentials" aria-labelledby="differentials-title">
         <div class="container">
-            <div class="feature-cards">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-book" aria-hidden="true"></i>
-                    </div>
-                    <h3>120 Cursos</h3>
-                    <p>Ampla variedade de cursos com certificação reconhecida pelo MEC</p>
-                    <a href="#cursos" class="btn btn-primary">Portfólio</a>
+            <div class="section-title">
+                <h2 id="differentials-title">Por que Escolher o ITvidas?</h2>
+                <div class="section-subtitle">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <span>Conheça nossos diferenciais exclusivos</span>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+            </div>
+            <div class="differentials-grid">
+                <div class="differential-card fade-in">
+                    <div class="differential-icon">
+                        <i class="fas fa-user-graduate" aria-hidden="true"></i>
+                    </div>
+                    <h3>Metodologia Inovadora</h3>
+                    <p>Utilizamos metodologias ativas que colocam o aluno no centro do processo de aprendizagem, garantindo melhor absorção do conhecimento.</p>
+                </div>
+                <div class="differential-card fade-in">
+                    <div class="differential-icon">
                         <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
                     </div>
-                    <h3>Professores</h3>
-                    <p>Profissionais capacitados com experiência de mercado</p>
-                    <a href="#contato" class="btn btn-primary">Falar com Reitor</a>
+                    <h3>Professores Qualificados</h3>
+                    <p>Nossa equipe é composta por profissionais experientes e com formação acadêmica sólida, preparados para oferecer o melhor ensino.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-award" aria-hidden="true"></i>
+                <div class="differential-card fade-in">
+                    <div class="differential-icon">
+                        <i class="fas fa-laptop-house" aria-hidden="true"></i>
                     </div>
-                    <h3>Certificados</h3>
-                    <p>Certificações válidas em todo território nacional</p>
-                    <a href="#cursos" class="btn btn-primary">Conhecer Cursos</a>
+                    <h3>Flexibilidade de Horários</h3>
+                    <p>Oferecemos cursos online e presenciais com horários flexíveis para se adaptar à sua rotina e necessidades.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Seção Motivacional -->
-        <section class="motivational-section">
-            <div class="motivational-content">
-                <div class="motivational-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h2 class="motivational-text">Transforme sua carreira com educação de qualidade</h2>
-                <p class="motivational-subtext">Junte-se a milhares de profissionais que já transformaram suas vidas através do conhecimento</p>
-                <a href="#cursos" class="btn btn-primary">Começar Agora</a>
-            </div>
-        </section>
+    <div class="section-divider"></div>
 
-        <!-- Seção de Cursos -->
-        <section class="section courses" id="cursos">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Nossos Cursos</h2>
-                    <p>Conheça alguns dos nossos cursos mais procurados e transformadores</p>
-                </div>
-                <div class="courses-grid">
-                    <div class="course-card">
-                        <div class="course-img">
-                            Psicanálise Clínica Freudiana
-                        </div>
-                        <div class="course-content">
-                            <h3>Psicanálise Clínica Freudiana</h3>
-                            <p>Formação completa em psicanálise com abordagem freudiana para atuação clínica profissional.</p>
-                            <div class="course-meta">
-                                <div class="course-duration">
-                                    <i class="far fa-clock" aria-hidden="true"></i>
-                                    <span>18 meses</span>
-                                </div>
-                                <a href="#" class="btn btn-primary">Saiba Mais</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-img">
-                            Psicologia Analítica
-                        </div>
-                        <div class="course-content">
-                            <h3>Psicologia Analítica Junguiana</h3>
-                            <p>Abordagem junguiana para compreensão do inconsciente coletivo e processos de individuação.</p>
-                            <div class="course-meta">
-                                <div class="course-duration">
-                                    <i class="far fa-clock" aria-hidden="true"></i>
-                                    <span>16 meses</span>
-                                </div>
-                                <a href="#" class="btn btn-primary">Saiba Mais</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-img">
-                            Terapia Cognitivo-Comportamental
-                        </div>
-                        <div class="course-content">
-                            <h3>Terapia Cognitivo-Comportamental</h3>
-                            <p>Técnicas e estratégias da TCC para tratamento de transtornos emocionais e comportamentais.</p>
-                            <div class="course-meta">
-                                <div class="course-duration">
-                                    <i class="far fa-clock" aria-hidden="true"></i>
-                                    <span>14 meses</span>
-                                </div>
-                                <a href="#" class="btn btn-primary">Saiba Mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="btn-center">
-                    <a href="#" class="btn btn-secondary"><i class="fas fa-book" aria-hidden="true"></i> Acesse Todos Nossos Cursos</a>
+    <section class="about" id="about" aria-labelledby="about-title">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="about-title">Sobre Nós</h2>
+                <div class="section-subtitle">
+                    <i class="fas fa-university" aria-hidden="true"></i>
+                    <span>Conheça nossa história e missão</span>
                 </div>
             </div>
-        </section>
-
-        <!-- Seção de Depoimentos -->
-        <section class="section testimonials" id="depoimentos">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Depoimentos</h2>
-                    <p>Veja o que nossos alunos falam sobre a experiência transformadora no Instituto</p>
+            <div class="about-content fade-in">
+                <div class="about-image">
+                    <img src="image/ITVidaslogo.png" alt="ITvidas - Instituto Transformar Vidas" width="350" height="350" loading="lazy">
                 </div>
-                <div class="testimonials-container">
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <video controls poster="video/video2.mp4">
-                                <source src="video/video2.mp4" type="video/mp4">
-                                Seu navegador não suporta o elemento de vídeo.
-                            </video>
-                            
-                        </div>
-                        <p class="testimonial-text">A formação em Psicanálise Clínica Freudiana mudou completamente minha perspectiva profissional. Hoje atendo em meu consultório com segurança e conhecimento técnico aprofundado.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">MC</div>
-                            <div class="author-info">
-                                <h4>Maria Clara Santos</h4>
-                                <p>Psicanalista Clínica</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                <div class="about-text">
+                    <h3>Transformando Vidas Através da Educação</h3>
+                    <p>O ITvidas nasceu da crença de que a educação é a ferramenta mais poderosa para transformar realidades. Nossa missão é oferecer ensino de qualidade, acessível e transformador.</p>
+                    <p>Atuamos com cursos online e presenciais, sempre com foco no desenvolvimento integral do aluno, preparando-o não apenas para o mercado de trabalho, mas para a vida.</p>
+                    <p>Nossa equipe é formada por educadores apaixonados pelo que fazem, comprometidos com a excelência no ensino e com o sucesso de cada aluno.</p>
+                    <div class="about-buttons">
+                        <a href="https://www.instagram.com/itvidas" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Visitar nosso Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>Instagram
+                        </a>
                     </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <video controls poster="video/video1.mp4">
-                                <source src="video/video1.mp4" type="video/mp4">
-                                Seu navegador não suporta o elemento de vídeo.
-                            </video>
-                           
-                        </div>
-                        <p class="testimonial-text">O material didático é excelente e os professores estão sempre disponíveis para tirar dúvidas. A flexibilidade do EAD permitiu que eu conciliasse estudos com minha rotina profissional.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">JS</div>
-                            <div class="author-info">
-                                <h4>João Silva</h4>
-                                <p>Terapeuta Cognitivo-Comportamental</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <video controls poster="video/video3.mp4">
-                                <source src="video/video3.mp4" type="video/mp4">
-                                Seu navegador não suporta o elemento de vídeo.
-                            </video>
-                           
-                        </div>
-                        <p class="testimonial-text">A abordagem junguiana me proporcionou ferramentas valiosas para compreensão dos processos inconscientes. Recomendo o Instituto para quem busca uma formação séria e transformadora.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">AO</div>
-                            <div class="author-info">
-                                <h4>Ana Oliveira</h4>
-                                <p>Analista Junguiana</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                    <!-- Novos depoimentos adicionados -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <video controls poster="video/video4.mp4">
-                                <source src="video/video4.mp4" type="video/mp4">
-                                Seu navegador não suporta o elemento de vídeo.
-                            </video>
-                            
-                        </div>
-                        <p class="testimonial-text">A experiência no Instituto superou minhas expectativas. Em 6 meses já estava aplicando as técnicas aprendidas e obtendo resultados incríveis com meus pacientes.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">RS</div>
-                            <div class="author-info">
-                                <h4>Roberta Silva</h4>
-                                <p>Terapeuta Familiar</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <video controls poster="videos/poster5.jpg">
-                                <source src="videos/video5.mp4" type="video/mp4">
-                                Seu navegador não suporta o elemento de vídeo.
-                            </video>
-                            <i class="fas fa-play-circle" aria-hidden="true"></i>
-                        </div>
-                        <p class="testimonial-text">Como profissional da saúde, encontrei no Instituto a formação que precisava para expandir meus conhecimentos. A qualidade do conteúdo é excepcional.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">AM</div>
-                            <div class="author-info">
-                                <h4>André Mendes</h4>
-                                <p>Médico Psiquiatra</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-video">
-                            <video controls poster="videos/poster6.jpg">
-                                <source src="videos/video6.mp4" type="video/mp4">
-                                Seu navegador não suporta o elemento de vídeo.
-                            </video>
-                            <i class="fas fa-play-circle" aria-hidden="true"></i>
-                        </div>
-                        <p class="testimonial-text">A flexibilidade do EAD me permitiu conciliar trabalho e estudos. O suporte dos professores foi fundamental para meu aprendizado e crescimento profissional.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">LC</div>
-                            <div class="author-info">
-                                <h4>Luiza Costa</h4>
-                                <p>Psicóloga Organizacional</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Carrossel de palavras -->
-        <div class="carousel-section">
-            <div class="carousel-container">
-                <div class="carousel">
-                    <div class="carousel-item"><i class="fas fa-rocket" aria-hidden="true"></i> Venha Transformar Conosco</div>
-                    <div class="carousel-item"><i class="fas fa-lightbulb" aria-hidden="true"></i> Educação Inovadora</div>
-                    <div class="carousel-item"><i class="fas fa-handshake" aria-hidden="true"></i> Parceria com o Aluno</div>
-                    <div class="carousel-item"><i class="fas fa-medal" aria-hidden="true"></i> Qualidade Garantida</div>
-                    <div class="carousel-item"><i class="fas fa-globe" aria-hidden="true"></i> Acesso de Qualquer Lugar</div>
-                    <div class="carousel-item"><i class="fas fa-clock" aria-hidden="true"></i> Flexibilidade de Horários</div>
-                    <div class="carousel-item"><i class="fas fa-star" aria-hidden="true"></i> Melhor Instituto da Região</div>
-                    <div class="carousel-item"><i class="fas fa-award" aria-hidden="true"></i> Certificação Reconhecida</div>
-                    <div class="carousel-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Professores Qualificados</div>
-                    <div class="carousel-item"><i class="fas fa-chart-line" aria-hidden="true"></i> Alta Empregabilidade</div>
-                    <div class="carousel-item"><i class="fas fa-users" aria-hidden="true"></i> +10.000 Alunos Formados</div>
-                    <div class="carousel-item"><i class="fas fa-heart" aria-hidden="true"></i> Educação que Transforma</div>
-                    <!-- Duplicando para criar loop infinito sem pausa -->
-                    <div class="carousel-item"><i class="fas fa-rocket" aria-hidden="true"></i> Venha Transformar Conosco</div>
-                    <div class="carousel-item"><i class="fas fa-lightbulb" aria-hidden="true"></i> Educação Inovadora</div>
-                    <div class="carousel-item"><i class="fas fa-handshake" aria-hidden="true"></i> Parceria com o Aluno</div>
-                    <div class="carousel-item"><i class="fas fa-medal" aria-hidden="true"></i> Qualidade Garantida</div>
-                    <div class="carousel-item"><i class="fas fa-globe" aria-hidden="true"></i> Acesso de Qualquer Lugar</div>
-                    <div class="carousel-item"><i class="fas fa-clock" aria-hidden="true"></i> Flexibilidade de Horários</div>
-                    <div class="carousel-item"><i class="fas fa-star" aria-hidden="true"></i> Melhor Instituto da Região</div>
-                    <div class="carousel-item"><i class="fas fa-award" aria-hidden="true"></i> Certificação Reconhecida</div>
-                    <div class="carousel-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Professores Qualificados</div>
-                    <div class="carousel-item"><i class="fas fa-chart-line" aria-hidden="true"></i> Alta Empregabilidade</div>
-                    <div class="carousel-item"><i class="fas fa-users" aria-hidden="true"></i> +10.000 Alunos Formados</div>
-                    <div class="carousel-item"><i class="fas fa-heart" aria-hidden="true"></i> Educação que Transforma</div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Seção de Localização e Contato -->
-        <section class="section" id="localizacao">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Localização e Contato</h2>
-                    <p>Entre em contato conosco e venha nos visitar</p>
-                </div>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Fale Conosco</h3>
-                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Av. da Educação, 1234 - Centro, São Paulo - SP</p>
-                        <p><i class="fas fa-phone" aria-hidden="true"></i> (11) 3456-7890</p>
-                        <p><i class="fas fa-envelope" aria-hidden="true"></i> contato@transformarvidas.com.br</p>
-                        <p><i class="fas fa-clock" aria-hidden="true"></i> Segunda a Sexta: 8h às 20h | Sábado: 9h às 14h</p>
-                        
-                        <div class="social-links">
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.097417742502!2d-46.65390528440709!3d-23.56356786735799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1647978283393!5m2!1spt-BR!2sbr" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy"
-                            title="Localização do Instituto Transformar Vidas">
-                        </iframe>
-                    </div>
+    <div class="section-divider"></div>
+
+    <section class="services section-dark" id="services" aria-labelledby="services-title">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="services-title">Nossos Cursos</h2>
+                <div class="section-subtitle">
+                    <i class="fas fa-book-open" aria-hidden="true"></i>
+                    <span>Conheça nossa variedade de cursos e formações</span>
                 </div>
             </div>
-        </section>
+            <div class="services-grid fade-in">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="image-cursos/tecnologia.jpg" alt="Cursos de Tecnologia" loading="lazy">
+                    </div>
+                    <h3>Tecnologia e Programação</h3>
+                    <p>Cursos de desenvolvimento web, programação, análise de dados e mais. Aprenda as habilidades mais demandadas do mercado digital.</p>
+                    <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre cursos de tecnologia" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre cursos de tecnologia via WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Saiba Mais
+                    </a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="image-cursos/gestao.jpg" alt="Cursos de Gestão" loading="lazy">
+                    </div>
+                    <h3>Gestão e Negócios</h3>
+                    <p>Formação em administração, gestão de projetos, empreendedorismo e outras áreas de negócio para impulsionar sua carreira.</p>
+                    <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre cursos de gestão" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre cursos de gestão via WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Saiba Mais
+                    </a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="image-cursos/saude.jpg" alt="Cursos de Saúde" loading="lazy">
+                    </div>
+                    <h3>Saúde e Bem-estar</h3>
+                    <p>Cursos na área da saúde, nutrição, educação física e bem-estar para quem busca cuidar de si mesmo e dos outros.</p>
+                    <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre cursos de saúde" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre cursos de saúde via WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Saiba Mais
+                    </a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="image-cursos/idiomas.jpg" alt="Cursos de Idiomas" loading="lazy">
+                    </div>
+                    <h3>Idiomas</h3>
+                    <p>Aprenda inglês, espanhol, francês e outros idiomas com metodologia comunicativa e professores experientes.</p>
+                    <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre cursos de idiomas" class="btn btn-premium" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre cursos de idiomas via WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Saiba Mais
+                    </a>
+                </div>
 
-        <!-- Barra de destaque -->
-        <div class="highlight-bar">
-            <div class="container">
-                <div class="highlight-content">
-                    <h2>Venha se Capacitar com a Melhor Formação</h2>
-                    <p>Junte-se a mais de 10.000 profissionais que transformaram suas carreiras através da nossa metodologia inovadora e professores especializados.</p>
-                    <a href="#cursos" class="btn btn-primary"><i class="fas fa-graduation-cap"></i> Comece Agora</a>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="image-cursos/preparatorio.jpg" alt="Cursos Preparatórios" loading="lazy">
+                    </div>
+                    <h3>Cursos Preparatórios</h3>
+                    <p>Preparação para concursos, ENEM, vestibulares e exames específicos com material atualizado e professores especializados.</p>
+                    <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre cursos preparatórios" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre cursos preparatórios via WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Saiba Mais
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="image-cursos/personalizado.jpg" alt="Cursos Personalizados" loading="lazy">
+                    </div>
+                    <h3>Cursos Personalizados</h3>
+                    <p>Desenvolvemos cursos sob medida para empresas e grupos específicos, atendendo necessidades particulares de aprendizado.</p>
+                    <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre cursos personalizados" class="btn btn-premium" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre cursos personalizados via WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Saiba Mais
+                    </a>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Seção FAQ -->
-        <section class="section faq" id="faq">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Perguntas Frequentes</h2>
-                    <p>Tire suas dúvidas sobre nossos cursos e metodologia</p>
+    <div class="section-divider"></div>
+
+    <section class="products" id="products" aria-labelledby="products-title">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="products-title">Nossas Formações</h2>
+                <div class="section-subtitle">
+                    <i class="fas fa-certificate" aria-hidden="true"></i>
+                    <span>Programas completos de formação profissional</span>
                 </div>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span><i class="fas fa-laptop"></i> Como funciona a modalidade EAD?</span>
-                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Nossos cursos EAD são realizados através de uma plataforma online moderna e intuitiva. Você terá acesso a videoaulas, materiais didáticos, fóruns de discussão e atividades práticas. Todo o conteúdo pode ser acessado 24 horas por dia, permitindo que você estude no seu próprio ritmo, de qualquer lugar.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-class">
+                        <div class="class-badge class-online">O</div>
+                        <div class="class-badge class-presencial">P</div>
+                    </div>
+                    <div class="product-image">
+                        <img src="image-cursos/formacao-tecnologia.jpg" alt="Formação em Tecnologia" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Formação em Tecnologia</h3>
+                        <p>Programa completo com duração de 6 meses, preparando para as principais vagas do mercado de TI.</p>
+                        <div class="product-actions">
+                            <div class="product-action">
+                                <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre a Formação em Tecnologia" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formação em Tecnologia via WhatsApp">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Informações
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span><i class="fas fa-graduation-cap"></i> Os certificados são reconhecidos pelo MEC?</span>
-                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Sim, todos os nossos cursos são autorizados e reconhecidos pelo Ministério da Educação (MEC). Nossos certificados têm validade em todo território nacional e são aceitos em concursos públicos, processos seletivos e para progressão de carreira.</p>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-class">
+                        <div class="class-badge class-online">O</div>
+                    </div>
+                    <div class="product-image">
+                        <img src="image-cursos/formacao-gestao.jpg" alt="Formação em Gestão" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Formação em Gestão</h3>
+                        <p>Curso completo para gestores e empreendedores com foco em resultados e liderança.</p>
+                        <div class="product-actions">
+                            <div class="product-action">
+                                <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre a Formação em Gestão" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formação em Gestão via WhatsApp">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Informações
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span><i class="fas fa-clock"></i> Qual é a duração dos cursos?</span>
-                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>A duração varia de acordo com o curso escolhido. Nossas formações têm entre 6 e 24 meses de duração. A carga horária também varia, indo de 360 a 1200 horas. Consulte a página específica de cada curso para obter informações detalhadas sobre duração e carga horária.</p>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-class">
+                        <div class="class-badge class-presencial">P</div>
+                    </div>
+                    <div class="product-image">
+                        <img src="image-cursos/formacao-saude.jpg" alt="Formação em Saúde" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Formação em Saúde</h3>
+                        <p>Programa para profissionais da saúde que desejam se especializar e ampliar conhecimentos.</p>
+                        <div class="product-actions">
+                            <div class="product-action">
+                                <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre a Formação em Saúde" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formação em Saúde via WhatsApp">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Informações
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span><i class="fas fa-user-graduate"></i> Há algum pré-requisito para me matricular?</span>
-                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Para a maioria dos nossos cursos, o pré-requisito mínimo é ter concluído o ensino médio. Algumas formações mais avançadas podem exigir graduação completa em áreas específicas. Consulte a página do curso de seu interesse para verificar os pré-requisitos específicos.</p>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-class">
+                        <div class="class-badge class-hybrid">H</div>
+                    </div>
+                    <div class="product-image">
+                        <img src="image-cursos/formacao-idiomas.jpg" alt="Formação em Idiomas" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Formação em Idiomas</h3>
+                        <p>Programa intensivo para alcançar fluência em menos tempo com método comprovado.</p>
+                        <div class="product-actions">
+                            <div class="product-action">
+                                <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre a Formação em Idiomas" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formação em Idiomas via WhatsApp">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Informações
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span><i class="fas fa-headset"></i> Como é o suporte aos alunos?</span>
-                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-class">
+                        <div class="class-badge class-online">O</div>
+                    </div>
+                    <div class="product-image">
+                        <img src="image-cursos/formacao-preparatoria.jpg" alt="Formação Preparatória" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Formação Preparatória</h3>
+                        <p>Preparação completa para os principais concursos e exames do país.</p>
+                        <div class="product-actions">
+                            <div class="product-action">
+                                <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre a Formação Preparatória" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formação Preparatória via WhatsApp">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Informações
+                                </a>
+                            </div>
                         </div>
-                        <div class="faq-answer">
-                            <p>Oferecemos suporte completo aos nossos alunos através de diversos canais: tutores especializados disponíveis por chat, e-mail e telefone; fóruns de discussão moderados por professores; e plantões de dúvidas semanais via videoconferência. Nosso objetivo é garantir que você tenha toda a assistência necessária durante sua jornada de aprendizado.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-class">
+                        <div class="class-badge class-presencial">P</div>
+                    </div>
+                    <div class="product-image">
+                        <img src="image-cursos/formacao-profissional.jpg" alt="Formação Profissional" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Formação Profissional</h3>
+                        <p>Cursos técnicos e profissionalizantes para ingresso rápido no mercado de trabalho.</p>
+                        <div class="product-actions">
+                            <div class="product-action">
+                                <a href="https://wa.me/55949984394383?text=Olá! Gostaria de informações sobre a Formação Profissional" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer" aria-label="Solicitar informações sobre Formação Profissional via WhatsApp">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Informações
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer>
+    <div class="section-divider"></div>
+
+    <section class="map" id="map" aria-labelledby="map-title">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="map-title">Nossa Localização</h2>
+                <div class="section-subtitle">
+                    <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                    <span>Encontre-nos facilmente em Paragominas</span>
+                </div>
+            </div>
+            <div class="map-container fade-in">
+                <div class="map-frame">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.123456789012!2d-47.352008738403036!3d-2.977304552245123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92d3a2e3b3b3b3b3%3A0x3b3b3b3b3b3b3b3b!2sAv.%20Porto%20Alegre%2C%20204%20-%20Jardim%20Bela%20Vista%2C%20Paragominas%20-%20PA%2C%2068628-300!5e0!3m2!1spt-BR!2sbr!4v1689876543210" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização do ITvidas em Paragominas"></iframe>
+                </div>
+                <div class="map-info">
+                    <h3>ITvidas - Instituto Transformar Vidas</h3>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Av. Porto Alegre, 204 - Jardim Bela Vista, Paragominas - PA</p>
+                    <p><i class="fas fa-clock" aria-hidden="true"></i> Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> (94) 98439-4383 | (91) 99291-1531</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> contato@itvidas.com.br</p>
+                    <a href="https://maps.app.goo.gl/gDepZbrivDiZnC1m9" class="btn btn-premium" target="_blank" rel="noopener noreferrer" aria-label="Ver rotas no Google Maps">
+                        <i class="fas fa-directions" aria-hidden="true"></i> Como Chegar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="faq section-dark" id="faq" aria-labelledby="faq-title">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="faq-title">Perguntas Frequentes</h2>
+                <div class="section-subtitle">
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
+                    <span>Tire suas dúvidas sobre nossos cursos e formações</span>
+                </div>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-laptop faq-icon" aria-hidden="true"></i>
+                            <span>Como funcionam os cursos online?</span>
+                        </div>
+                        <i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-1">
+                        <p>Nossos cursos online são realizados através de uma plataforma moderna e intuitiva, com videoaulas, materiais complementares, fóruns de discussão e suporte dos professores. Você pode assistir às aulas no seu próprio ritmo, com flexibilidade de horários, mas com prazos para entrega de atividades para manter o engajamento.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-certificate faq-icon" aria-hidden="true"></i>
+                            <span>Os certificados são reconhecidos?</span>
+                        </div>
+                        <i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-2">
+                        <p>Sim, todos os nossos cursos emitem certificados válidos em todo território nacional. Nossos certificados são registrados e podem ser verificados online através de um código QR. Eles são aceitos para comprovação de horas complementares em faculdades, progressão funcional e enriquecimento de currículo.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-credit-card faq-icon" aria-hidden="true"></i>
+                            <span>Quais são as formas de pagamento?</span>
+                        </div>
+                        <i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-3">
+                        <p>Aceitamos diversas formas de pagamento para facilitar seu acesso à educação: cartão de crédito (em até 12x), débito, PIX, boleto bancário e transferência. Para cursos presenciais, também aceitamos pagamento em dinheiro. Oferecemos condições especiais para pagamento à vista.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-4">
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-user-clock faq-icon" aria-hidden="true"></i>
+                            <span>Posso fazer mais de um curso ao mesmo tempo?</span>
+                        </div>
+                        <i class="fas fa-chevron-down faq-arrow" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-4">
+                        <p>Sim, é possível realizar mais de um curso simultaneamente, especialmente os online que oferecem flexibilidade de horários. No entanto, recomendamos avaliar sua disponibilidade de tempo para garantir um aprendizado de qualidade em todos os cursos. Nossa equipe pedagógica pode ajudar a montar um plano de estudos adequado às suas necessidades.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="contact-title">Entre em Contato</h2>
+                <div class="section-subtitle">
+                    <i class="fas fa-comments" aria-hidden="true"></i>
+                    <span>Estamos prontos para tirar suas dúvidas</span>
+                </div>
+            </div>
+            <div class="contact-cards fade-in">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <h3>Telefones</h3>
+                    <p>(94) 98439-4383<br>(91) 99291-1531</p>
+                    <a href="tel:94984394383" class="btn" aria-label="Ligar para (94) 98439-4383">Ligar Agora</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Atendimento rápido via WhatsApp</p>
+                    <a href="https://wa.me/55949984394383" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensagem no WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar Mensagem
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <h3>E-mail</h3>
+                    <p>contato@itvidas.com.br</p>
+                    <a href="mailto:contato@itvidas.com.br" class="btn" aria-label="Enviar e-mail para contato@itvidas.com.br">Enviar E-mail</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Instituto Transformar Vidas EAD</h3>
-                    <p>Educação de excelência para transformar vidas e construir carreiras de sucesso. Mais de 100 cursos com certificação reconhecida.</p>
+                    <h3>ITvidas</h3>
+                    <p>Educação que transforma vidas. Cursos online e presenciais com qualidade e acessibilidade.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/itvidas" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-column">
                     <h3>Links Rápidos</h3>
-                    <ul>
-                        <li><a href="#inicio">Início</a></li>
-                        <li><a href="#cursos">Cursos</a></li>
-                        <li><a href="#depoimentos">Depoimentos</a></li>
-                        <li><a href="#localizacao">Localização</a></li>
+                    <ul class="footer-links">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#services">Cursos</a></li>
+                        <li><a href="#products">Formações</a></li>
+                        <li><a href="#differentials">Diferenciais</a></li>
                         <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="#contact">Contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Cursos em Destaque</h3>
-                    <ul>
-                        <li><a href="#">Psicanálise Clínica Freudiana</a></li>
-                        <li><a href="#">Psicologia Analítica Junguiana</a></li>
-                        <li><a href="#">Terapia Cognitivo-Comportamental</a></li>
-                        <li><a href="#">Neuropsicologia</a></li>
-                        <li><a href="#">Psicopatologia</a></li>
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> (94) 98439-4383</li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> (91) 99291-1531</li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> contato@itvidas.com.br</li>
+                        <li><i class="fab fa-instagram" aria-hidden="true"></i> @itvidas</li>
                     </ul>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 Instituto Transformar Vidas EAD. Todos os direitos reservados. CNPJ: 12.345.678/0001-90</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ITvidas - Instituto Transformar Vidas - Todos os direitos reservados.</p>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.8);">
+                    Desenvolvido por 
+                    <a href="https://wa.me/5591998361022?text=Olá! Gostaria de informações sobre desenvolvimento de sites" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style="color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; font-weight: 600; transition: all 0.3s ease;"
+                    aria-label="Contatar desenvolvedor JR Dev">
+                        <i class="fab fa-whatsapp" style="color: #25D366;" aria-hidden="true"></i> 
+                        <span>JR Dev</span>
+                    </a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Botão WhatsApp Flutuante -->
-    <a href="https://wa.me/551134567890" class="whatsapp-float" target="_blank" aria-label="Entre em contato pelo WhatsApp">
+    <a href="https://wa.me/55949984394383" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar conosco no WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
     <script>
-        // Menu mobile
-        class MobileMenu {
-            constructor() {
-                this.menu = document.querySelector('.mobile-menu');
-                this.nav = document.querySelector('.mobile-nav');
-                this.init();
-            }
-            
-            init() {
-                this.menu.addEventListener('click', this.toggle.bind(this));
-                document.addEventListener('keydown', this.handleEscape.bind(this));
-                
-                // Fecha o menu ao clicar em um link
-                document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        this.close();
-                    });
-                });
-            }
-            
-            toggle() {
-                const isExpanded = this.menu.classList.toggle('active');
-                this.nav.classList.toggle('active');
-                this.menu.setAttribute('aria-expanded', isExpanded);
-                
-                // Impede o scroll do body quando o menu está aberto
-                if (isExpanded) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = 'auto';
-                }
-            }
-            
-            close() {
-                this.menu.classList.remove('active');
-                this.nav.classList.remove('active');
-                this.menu.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = 'auto';
-            }
-            
-            handleEscape(e) {
-                if (e.key === 'Escape' && this.nav.classList.contains('active')) {
-                    this.close();
-                }
-            }
+        // Menu Mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function toggleMobileMenu() {
+            const isActive = navMenu.classList.contains('active');
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', !isActive);
+            document.body.style.overflow = !isActive ? 'hidden' : '';
         }
 
-        // FAQ Accordion
-        function initFAQ() {
-            document.querySelectorAll('.faq-question').forEach(question => {
-                question.addEventListener('click', () => {
-                    const item = question.parentNode;
-                    item.classList.toggle('active');
-                    
-                    // Close other items
-                    document.querySelectorAll('.faq-item').forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
+        hamburger.addEventListener('click', toggleMobileMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+            
+            // Ativar link da seção atual
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
                         }
                     });
-                });
+                }
             });
-        }
+        });
 
-        // Scroll suave para links internos
-        function initSmoothScroll() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+        // Animação de entrada
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const appearOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElements.forEach(element => {
+            appearOnScroll.observe(element);
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Fechar todos os itens
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Abrir o item clicado se não estava ativo
+                if (!isActive) {
+                    item.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                }
+            });
+            
+            // Suporte a teclado
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
+                    question.click();
+                }
+            });
+        });
+
+        // Scroll suave para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
                     
-                    const targetId = this.getAttribute('href');
-                    if(targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if(targetElement) {
+                    if (target) {
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight;
+                        
                         window.scrollTo({
-                            top: targetElement.offsetTop - 100,
+                            top: targetPosition,
                             behavior: 'smooth'
                         });
                     }
-                });
-            });
-        }
-
-        // Header scroll effect
-        function initHeaderScroll() {
-            window.addEventListener('scroll', function() {
-                const header = document.querySelector('header');
-                if (window.scrollY > 100) {
-                    header.style.padding = '10px 0';
-                    header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
-                } else {
-                    header.style.padding = '0';
-                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
                 }
             });
-        }
+        });
 
-        // Animação de entrada dos elementos
-        function initAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.feature-card, .course-card').forEach(el => {
-                observer.observe(el);
-            });
-        }
-
-        // Inicialização segura de todos os componentes
+        // Animação do título do hero
         document.addEventListener('DOMContentLoaded', function() {
-            try {
-                const mobileMenu = new MobileMenu();
-                
-                // Inicializar funcionalidades
-                initSmoothScroll();
-                initHeaderScroll();
-                initAnimations();
-                initFAQ();
-                
-            } catch (error) {
-                console.error('Erro na inicialização:', error);
+            const heroTitleSpan = document.querySelector('.hero h1 span');
+            if (heroTitleSpan) {
+                setTimeout(() => {
+                    heroTitleSpan.classList.add('animate');
+                }, 1000);
             }
+            
+            // Prevenir overflow horizontal
+            document.body.style.overflowX = 'hidden';
         });
     </script>
 </body>
