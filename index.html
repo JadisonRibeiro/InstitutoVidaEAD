@@ -368,7 +368,7 @@
             border: none;
         }
 
-        /* Carrossel de Motivação */
+        /* Carrossel de Motivação - VELOCIDADE AUMENTADA */
         .carousel-section {
             padding: 60px 0;
             background-color: var(--dark-gray);
@@ -378,16 +378,14 @@
 
         .carousel-container {
             position: relative;
-            width: 100vw;
-            left: 50%;
-            transform: translateX(-50%);
+            width: 100%;
             overflow: hidden;
         }
 
         .carousel-track {
             display: flex;
-            animation: carousel-scroll 40s linear infinite;
             width: max-content;
+            animation: carousel-scroll 25s linear infinite; /* Velocidade aumentada de 40s para 25s */
         }
 
         .carousel-item {
@@ -422,6 +420,117 @@
             font-size: 1.1rem;
             font-weight: 500;
             color: var(--text-dark);
+        }
+
+        /* Carrossel de Depoimentos */
+        .testimonials-section {
+            padding: 80px 0;
+            background-color: var(--dark-gray);
+        }
+
+        .testimonials-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            flex: 0 0 calc(25% - 23px);
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--secondary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent);
+        }
+
+        .testimonial-video {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .testimonial-video iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .testimonial-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--secondary) 0%, #333333 100%);
+            color: white;
+        }
+
+        .testimonial-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .testimonial-info {
+            padding: 20px;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        .testimonial-course {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .testimonials-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .testimonial-nav-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .testimonial-nav-btn.active {
+            background-color: var(--accent);
         }
 
         /* Seções comuns */
@@ -549,7 +658,7 @@
             color: var(--secondary);
         }
 
-        /* Diferenciais */
+        /* Diferenciais - IMAGEM OCUPANDO TODO O TOPO DO CARTÃO */
         .floating-differentials {
             position: relative;
             margin-top: 40px;
@@ -568,14 +677,14 @@
         .differential-card {
             background-color: white;
             border-radius: 15px;
-            padding: 30px 20px;
-            text-align: center;
+            overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
-            overflow: hidden;
             box-shadow: var(--shadow-hover);
             animation: float 6s ease-in-out infinite;
             border: 2px solid var(--secondary);
+            display: flex;
+            flex-direction: column;
         }
         
         .differential-card:nth-child(2) {
@@ -593,10 +702,34 @@
             border-color: var(--accent);
         }
         
-        .differential-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 20px;
+        .differential-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--dark-gray);
+        }
+        
+        .differential-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .differential-card:hover .differential-image img {
+            transform: scale(1.05);
+        }
+        
+        .differential-content {
+            padding: 25px 20px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
         /* Sobre */
@@ -1089,7 +1222,7 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(calc(-300px * 16));
+                transform: translateX(-50%);
             }
         }
         
@@ -1105,6 +1238,12 @@
         }
         
         /* Responsividade */
+        @media (max-width: 1200px) {
+            .testimonial-card {
+                flex: 0 0 calc(33.333% - 20px);
+            }
+        }
+        
         @media (max-width: 992px) {
             .footer-content {
                 flex-direction: column;
@@ -1142,6 +1281,10 @@
             
             .hero-image {
                 order: -1;
+            }
+            
+            .testimonial-card {
+                flex: 0 0 calc(50% - 15px);
             }
         }
         
@@ -1263,6 +1406,10 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .testimonial-card {
+                flex: 0 0 100%;
+            }
         }
         
         @media (max-width: 480px) {
@@ -1340,7 +1487,7 @@
             <nav class="nav-container" aria-label="Navegação principal">
                 <div class="logo">
                     <img src="image/graduate.png" alt="ITvidas - Instituto Transformar Vidas" class="logo-img" width="50" height="50" loading="lazy">
-                    <div class="logo-text">Instituto<span> transformar vidas</span></div>
+                    <div class="logo-text">Instituto<span> vidas-ead</span></div>
                 </div>
                 <ul class="nav-menu" role="menubar">
                     <li class="nav-item" role="none"><a href="#home" class="nav-link" role="menuitem"><i class="fas fa-home" aria-hidden="true"></i> <span>Início</span></a></li>
@@ -1348,6 +1495,7 @@
                     <li class="nav-item" role="none"><a href="#about" class="nav-link" role="menuitem"></i> <span>Sobre</span></a></li>
                     <li class="nav-item" role="none"><a href="#services" class="nav-link" role="menuitem"></i> <span>Cursos</span></a></li>
                     <li class="nav-item" role="none"><a href="#products" class="nav-link" role="menuitem"></i> <span>Formações</span></a></li>
+                    <li class="nav-item" role="none"><a href="#testimonials" class="nav-link" role="menuitem"></i> <span>Depoimentos</span></a></li>
                     <li class="nav-item" role="none"><a href="#map" class="nav-link" role="menuitem"></i> <span>Localização</span></a></li>
                     <li class="nav-item" role="none"><a href="#contact" class="nav-link" role="menuitem"></i> <span>Contato</span></a></li>
                 </ul>
@@ -1526,25 +1674,31 @@
             </div>
             <div class="differentials-grid">
                 <div class="differential-card fade-in">
-                    <div class="differential-icon">
-                        <i class="fas fa-user-graduate" aria-hidden="true"></i>
+                    <div class="differential-image">
+                        <img src="image/inovação.jpg" alt="Metodologia Inovadora" loading="lazy">
                     </div>
-                    <h3>Metodologia Inovadora</h3>
-                    <p>Utilizamos metodologias ativas que colocam o aluno no centro do processo de aprendizagem, garantindo melhor absorção do conhecimento.</p>
+                    <div class="differential-content">
+                        <h3>Metodologia Inovadora</h3>
+                        <p>Utilizamos metodologias ativas que colocam o aluno no centro do processo de aprendizagem, garantindo melhor absorção do conhecimento.</p>
+                    </div>
                 </div>
                 <div class="differential-card fade-in">
-                    <div class="differential-icon">
-                        <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+                    <div class="differential-image">
+                        <img src="image/professores.jpg" alt="Professores Qualificados" loading="lazy">
                     </div>
-                    <h3>Professores Qualificados</h3>
-                    <p>Nossa equipe é composta por profissionais experientes e com formação acadêmica sólida, preparados para oferecer o melhor ensino.</p>
+                    <div class="differential-content">
+                        <h3>Professores Qualificados</h3>
+                        <p>Nossa equipe é composta por profissionais experientes e com formação acadêmica sólida, preparados para oferecer o melhor ensino.</p>
+                    </div>
                 </div>
                 <div class="differential-card fade-in">
-                    <div class="differential-icon">
-                        <i class="fas fa-laptop-house" aria-hidden="true"></i>
+                    <div class="differential-image">
+                        <img src="image/horarios.jpg" alt="Flexibilidade de Horários" loading="lazy">
                     </div>
-                    <h3>Flexibilidade de Horários</h3>
-                    <p>Oferecemos cursos online e presenciais com horários flexíveis para se adaptar à sua rotina e necessidades.</p>
+                    <div class="differential-content">
+                        <h3>Flexibilidade de Horários</h3>
+                        <p>Oferecemos cursos online e presenciais com horários flexíveis para se adaptar à sua rotina e necessidades.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1799,6 +1953,83 @@
 
     <div class="section-divider"></div>
 
+    <!-- Carrossel de Depoimentos - VÍDEOS INSERIDOS -->
+    <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="testimonials-title">Depoimentos de Alunos</h2>
+                <div class="section-subtitle">
+                    <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                    <span>Veja o que nossos alunos dizem sobre a experiência ITvidas</span>
+                </div>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonials-track" id="testimonials-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <video width="100%" height="100%" controls>
+                                <source src="video/video1.mp4" type="video/mp4">
+                                Seu navegador não suporta o elemento de vídeo.
+                            </video>
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Maria Silva</div>
+                            <div class="testimonial-course">Curso de Tecnologia</div>
+                            <div class="testimonial-text">"O ITvidas transformou minha carreira. Em 6 meses já consegui meu primeiro emprego na área de TI!"</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <video width="100%" height="100%" controls>
+                                <source src="video/video2.mp4" type="video/mp4">
+                                Seu navegador não suporta o elemento de vídeo.
+                            </video>
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">João Santos</div>
+                            <div class="testimonial-course">Formação em Gestão</div>
+                            <div class="testimonial-text">"A metodologia do ITvidas é incrível. Consegui aplicar os conhecimentos no meu negócio desde as primeiras aulas."</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <video width="100%" height="100%" controls>
+                                <source src="video/video3.mp4" type="video/mp4">
+                                Seu navegador não suporta o elemento de vídeo.
+                            </video>
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Ana Costa</div>
+                            <div class="testimonial-course">Curso de Idiomas</div>
+                            <div class="testimonial-text">"Em apenas 4 meses já consigo me comunicar em inglês. Os professores são excelentes e a plataforma muito intuitiva."</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <video width="100%" height="100%" controls>
+                                <source src="video/video4.mp4" type="video/mp4">
+                                Seu navegador não suporta o elemento de vídeo.
+                            </video>
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Pedro Oliveira</div>
+                            <div class="testimonial-course">Formação em Saúde</div>
+                            <div class="testimonial-text">"O ITvidas me proporcionou conhecimento prático que uso diariamente no meu trabalho. Recomendo muito!"</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials-nav">
+                    <button class="testimonial-nav-btn active" data-index="0" aria-label="Ver depoimento 1"></button>
+                    <button class="testimonial-nav-btn" data-index="1" aria-label="Ver depoimento 2"></button>
+                    <button class="testimonial-nav-btn" data-index="2" aria-label="Ver depoimento 3"></button>
+                    <button class="testimonial-nav-btn" data-index="3" aria-label="Ver depoimento 4"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
     <section class="map" id="map" aria-labelledby="map-title">
         <div class="container">
             <div class="section-title">
@@ -1957,6 +2188,7 @@
                         <li><a href="#about">Sobre</a></li>
                         <li><a href="#services">Cursos</a></li>
                         <li><a href="#products">Formações</a></li>
+                        <li><a href="#testimonials">Depoimentos</a></li>
                         <li><a href="#differentials">Diferenciais</a></li>
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Contato</a></li>
@@ -2132,6 +2364,51 @@
             
             // Prevenir overflow horizontal
             document.body.style.overflowX = 'hidden';
+            
+            // Carrossel de depoimentos
+            const testimonialsTrack = document.getElementById('testimonials-track');
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            const testimonialNavBtns = document.querySelectorAll('.testimonial-nav-btn');
+            let currentTestimonial = 0;
+            
+            // Ajustar para mostrar 4 cards lado a lado em telas grandes
+            function updateTestimonialsDisplay() {
+                if (window.innerWidth >= 1200) {
+                    // Em telas grandes, mostrar todos os 4 cards
+                    testimonialsTrack.style.transform = 'translateX(0)';
+                    testimonialNavBtns.forEach(btn => btn.style.display = 'none');
+                } else {
+                    // Em telas menores, usar o carrossel
+                    testimonialNavBtns.forEach(btn => btn.style.display = 'inline-block');
+                    updateTestimonialPosition();
+                }
+            }
+            
+            function updateTestimonialPosition() {
+                if (window.innerWidth >= 1200) return;
+                
+                const cardWidth = testimonialCards[0].offsetWidth + 30; // Largura do card + gap
+                testimonialsTrack.style.transform = `translateX(-${currentTestimonial * cardWidth}px)`;
+                
+                // Atualizar botões de navegação
+                testimonialNavBtns.forEach((btn, index) => {
+                    btn.classList.toggle('active', index === currentTestimonial);
+                });
+            }
+            
+            // Navegação por botões
+            testimonialNavBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    currentTestimonial = parseInt(this.getAttribute('data-index'));
+                    updateTestimonialPosition();
+                });
+            });
+            
+            // Inicializar
+            updateTestimonialsDisplay();
+            
+            // Atualizar na redimensionamento da tela
+            window.addEventListener('resize', updateTestimonialsDisplay);
         });
     </script>
 </body>
