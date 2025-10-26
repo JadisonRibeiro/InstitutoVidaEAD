@@ -575,6 +575,40 @@
             transform: scale(1.2);
         }
 
+        /* NOVO: Setas de navegação para depoimentos */
+        .testimonial-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+            backdrop-filter: blur(5px);
+        }
+
+        .testimonial-arrow:hover {
+            background-color: var(--accent);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .testimonial-arrow-left {
+            left: 20px;
+        }
+
+        .testimonial-arrow-right {
+            right: 20px;
+        }
+
         /* Seções comuns */
         section {
             padding: 80px 0;
@@ -700,7 +734,7 @@
             color: var(--secondary);
         }
 
-        /* Diferenciais */
+        /* AJUSTE: Diferenciais - Borda mais minimalista e animação elegante */
         .floating-differentials {
             position: relative;
             margin-top: 40px;
@@ -724,7 +758,8 @@
             position: relative;
             box-shadow: var(--shadow-hover);
             animation: float 6s ease-in-out infinite;
-            border: 2px solid var(--secondary);
+            /* Borda mais minimalista */
+            border: 1px solid rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
         }
@@ -741,7 +776,9 @@
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             animation-play-state: paused;
+            /* Animação de borda elegante */
             border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(167, 11, 11, 0.15);
         }
         
         .differential-image {
@@ -828,7 +865,7 @@
             justify-content: center;
         }
         
-        /* MELHORIA 1: Cursos Presenciais - 4 cartões lado a lado com botão padronizado */
+        /* AJUSTE: Cursos Presenciais - Borda mais minimalista e animação elegante */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -843,7 +880,8 @@
             transition: all 0.3s ease;
             box-shadow: var(--shadow);
             border-top: 4px solid var(--accent);
-            border: 2px solid var(--secondary);
+            /* Borda mais minimalista */
+            border: 1px solid rgba(0, 0, 0, 0.08);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -854,7 +892,9 @@
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
+            /* Animação de borda elegante */
             border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(167, 11, 11, 0.15);
         }
         
         .service-image {
@@ -899,7 +939,7 @@
             color: var(--accent);
         }
         
-        /* Produtos (Cursos) */
+        /* AJUSTE: Produtos (Cursos) - Borda mais minimalista e animação elegante */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -915,13 +955,16 @@
             display: flex;
             flex-direction: column;
             box-shadow: var(--shadow);
-            border: 2px solid var(--secondary);
+            /* Borda mais minimalista */
+            border: 1px solid rgba(0, 0, 0, 0.08);
         }
         
         .product-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
+            /* Animação de borda elegante */
             border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(167, 11, 11, 0.15);
         }
         
         .product-image {
@@ -1012,7 +1055,7 @@
             color: var(--accent);
         }
         
-        /* Mapa */
+        /* AJUSTE: Mapa - Borda mais minimalista e animação elegante */
         .map-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1040,10 +1083,18 @@
             background-color: white;
             border-radius: 10px;
             box-shadow: var(--shadow);
-            border: 2px solid var(--secondary);
+            /* Borda mais minimalista */
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
         }
         
-        /* FAQ */
+        .map-info:hover {
+            /* Animação de borda elegante */
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(167, 11, 11, 0.15);
+        }
+        
+        /* AJUSTE: FAQ - Borda mais minimalista e animação elegante */
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
@@ -1056,13 +1107,16 @@
             background-color: white;
             transition: transform 0.3s ease;
             box-shadow: var(--shadow);
-            border: 2px solid var(--secondary);
+            /* Borda mais minimalista */
+            border: 1px solid rgba(0, 0, 0, 0.08);
         }
         
         .faq-item:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
+            /* Animação de borda elegante */
             border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(167, 11, 11, 0.15);
         }
         
         .faq-question {
@@ -1124,13 +1178,16 @@
             text-align: center;
             transition: transform 0.3s ease;
             box-shadow: var(--shadow);
-            border: 2px solid var(--secondary);
+            /* Borda mais minimalista */
+            border: 1px solid rgba(0, 0, 0, 0.08);
         }
         
         .contact-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
+            /* Animação de borda elegante */
             border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(167, 11, 11, 0.15);
         }
         
         .contact-icon {
@@ -1532,6 +1589,21 @@
             .testimonial-card {
                 flex: 0 0 calc(50% - 15px);
             }
+            
+            /* Ajuste das setas de navegação em telas menores */
+            .testimonial-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .testimonial-arrow-left {
+                left: 10px;
+            }
+            
+            .testimonial-arrow-right {
+                right: 10px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1717,6 +1789,11 @@
             
             .certificate-item {
                 width: 240px;
+            }
+            
+            /* Ocultar setas em telas muito pequenas */
+            .testimonial-arrow {
+                display: none;
             }
         }
         
@@ -2214,6 +2291,14 @@
                 </div>
             </div>
             <div class="testimonials-container">
+                <!-- Setas de navegação -->
+                <button class="testimonial-arrow testimonial-arrow-left" aria-label="Depoimento anterior">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button class="testimonial-arrow testimonial-arrow-right" aria-label="Próximo depoimento">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                
                 <div class="testimonials-track" id="testimonials-track">
                     <div class="testimonial-card">
                         <div class="testimonial-video">
@@ -2267,12 +2352,41 @@
                             <div class="testimonial-text">"O ITvidas me proporcionou conhecimento prático que uso diariamente no meu trabalho. Recomendo muito!"</div>
                         </div>
                     </div>
+                    <!-- NOVOS DEPOIMENTOS ADICIONADOS -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <video width="100%" height="100%" controls>
+                                <source src="video/video5.mp4" type="video/mp4">
+                                Seu navegador não suporta o elemento de vídeo.
+                            </video>
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Carla Mendes</div>
+                            <div class="testimonial-course">Supletivo EJA</div>
+                            <div class="testimonial-text">"Concluir meus estudos pelo ITvidas foi a melhor decisão que tomei. A flexibilidade do EAD permitiu que eu conciliasse trabalho e estudo."</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-video">
+                            <video width="100%" height="100%" controls>
+                                <source src="video/video6.mp4" type="video/mp4">
+                                Seu navegador não suporta o elemento de vídeo.
+                            </video>
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Roberto Alves</div>
+                            <div class="testimonial-course">Graduação em Teologia</div>
+                            <div class="testimonial-text">"A qualidade do ensino do ITvidas superou minhas expectativas. Os professores são extremamente capacitados e o material é excelente."</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="testimonials-nav">
                     <button class="testimonial-nav-btn active" data-index="0" aria-label="Ver depoimento 1"></button>
                     <button class="testimonial-nav-btn" data-index="1" aria-label="Ver depoimento 2"></button>
                     <button class="testimonial-nav-btn" data-index="2" aria-label="Ver depoimento 3"></button>
                     <button class="testimonial-nav-btn" data-index="3" aria-label="Ver depoimento 4"></button>
+                    <button class="testimonial-nav-btn" data-index="4" aria-label="Ver depoimento 5"></button>
+                    <button class="testimonial-nav-btn" data-index="5" aria-label="Ver depoimento 6"></button>
                 </div>
             </div>
         </div>
@@ -2944,7 +3058,10 @@
             const testimonialsTrack = document.getElementById('testimonials-track');
             const testimonialCards = document.querySelectorAll('.testimonial-card');
             const testimonialNavBtns = document.querySelectorAll('.testimonial-nav-btn');
+            const testimonialArrowLeft = document.querySelector('.testimonial-arrow-left');
+            const testimonialArrowRight = document.querySelector('.testimonial-arrow-right');
             let currentTestimonial = 0;
+            const totalTestimonials = testimonialCards.length;
             
             // Ajustar para mostrar 4 cards lado a lado em telas grandes
             function updateTestimonialsDisplay() {
@@ -2952,9 +3069,13 @@
                     // Em telas grandes, mostrar todos os 4 cards
                     testimonialsTrack.style.transform = 'translateX(0)';
                     testimonialNavBtns.forEach(btn => btn.style.display = 'none');
+                    testimonialArrowLeft.style.display = 'none';
+                    testimonialArrowRight.style.display = 'none';
                 } else {
                     // Em telas menores, usar o carrossel
                     testimonialNavBtns.forEach(btn => btn.style.display = 'inline-block');
+                    testimonialArrowLeft.style.display = 'flex';
+                    testimonialArrowRight.style.display = 'flex';
                     updateTestimonialPosition();
                 }
             }
@@ -2977,6 +3098,17 @@
                     currentTestimonial = parseInt(this.getAttribute('data-index'));
                     updateTestimonialPosition();
                 });
+            });
+            
+            // Navegação por setas
+            testimonialArrowLeft.addEventListener('click', function() {
+                currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+                updateTestimonialPosition();
+            });
+            
+            testimonialArrowRight.addEventListener('click', function() {
+                currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+                updateTestimonialPosition();
             });
             
             // Inicializar
