@@ -371,30 +371,17 @@
             border: none;
         }
 
-        /* Carrossel de Motivação */
+        /* MODIFICAÇÃO 1: Carrossel de Motivação - Fundo branco, sem bordas, sem destaque */
         .carousel-section {
             padding: 60px 0;
-            background-color: var(--dark-gray);
+            background-color: var(--primary); /* Alterado para branco */
             overflow: hidden;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
         }
 
         .carousel-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                rgba(167, 11, 11, 0.05) 0%, 
-                rgba(167, 11, 11, 0.1) 25%, 
-                rgba(167, 11, 11, 0.15) 50%, 
-                rgba(167, 11, 11, 0.1) 75%, 
-                rgba(167, 11, 11, 0.05) 100%);
-            animation: wave 15s ease-in-out infinite;
-            z-index: 0;
+            display: none; /* Removido o gradiente de fundo */
         }
 
         .carousel-container {
@@ -420,14 +407,16 @@
             text-align: center;
             transition: transform 0.3s ease;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
+            background-color: var(--primary); /* Alterado para branco */
+            border-radius: 0; /* Removidas as bordas arredondadas */
+            backdrop-filter: none; /* Removido o efeito de blur */
+            box-shadow: none; /* Removida a sombra */
+            border: none; /* Removida a borda */
         }
 
         .carousel-item:hover {
-            transform: scale(1.05);
-            background-color: white;
+            transform: none; /* Removida a transformação no hover */
+            background-color: var(--primary); /* Mantém o fundo branco */
         }
 
         .carousel-icon {
@@ -1269,206 +1258,203 @@
             font-size: 30px;
         }
         
-        /* MELHORIA 3: NOVA SEÇÃO DE ALUNOS CONCLUINTES - ATUALIZADA */
-.certificates-section {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    overflow: hidden;
-    position: relative;
-}
+        /* MODIFICAÇÃO 2: NOVA SEÇÃO DE ALUNOS CONCLUINTES - ATUALIZADA */
+        .certificates-section {
+            padding: 80px 0;
+            background-color: var(--primary); /* Alterado para branco */
+            overflow: hidden;
+            position: relative;
+        }
 
-.certificates-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(167, 11, 11, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(167, 11, 11, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(167, 11, 11, 0.03) 0%, transparent 50%);
-    z-index: 0;
-}
+        .certificates-section::before {
+            display: none; /* Removido o gradiente de fundo */
+        }
 
-.certificates-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    z-index: 1;
-}
+        .certificates-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
 
-.certificates-track {
-    display: flex;
-    width: max-content;
-    animation: certificates-scroll 40s linear infinite;
-}
+        .certificates-track {
+            display: flex;
+            width: max-content;
+            animation: certificates-scroll 40s linear infinite;
+        }
 
-.certificate-item {
-    flex: 0 0 auto;
-    width: 280px;
-    margin: 0 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: all 0.4s ease;
-    padding: 0;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    position: relative;
-}
+        .certificate-item {
+            flex: 0 0 auto;
+            width: 280px;
+            margin: 0 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.4s ease;
+            padding: 0;
+            background: white;
+            border-radius: 0; /* Removidas as bordas arredondadas */
+            box-shadow: none; /* Removida a sombra */
+            overflow: hidden;
+            position: relative;
+            border: none; /* Removida a borda */
+        }
 
-.certificate-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
+        .certificate-item:hover {
+            transform: none; /* Removida a transformação no hover */
+            box-shadow: none; /* Removida a sombra no hover */
+        }
 
-.certificate-image {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f8f9fa;
-    padding: 10px;
-}
+        .certificate-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            padding: 10px;
+        }
 
-.certificate-image img {
-    width: auto;
-    height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    object-position: center;
-}
+        .certificate-image img {
+            width: auto;
+            height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            object-position: center;
+            /* Adicionado para melhorar o carregamento em mobile */
+            display: block;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
 
-.certificate-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    background: var(--accent);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-    box-shadow: 0 3px 10px rgba(167, 11, 11, 0.3);
-    z-index: 2;
-}
+        /* Removido o badge dos certificados */
+        .certificate-badge {
+            display: none;
+        }
 
-.certificate-content {
-    padding: 20px 15px;
-    width: 100%;
-}
+        .certificate-content {
+            padding: 20px 15px;
+            width: 100%;
+        }
 
-.certificate-text {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
+        .certificate-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
 
-.certificate-text i {
-    color: var(--accent);
-    font-size: 1.1rem;
-}
+        .certificate-text i {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
 
-/* Responsividade para as imagens */
-@media (max-width: 768px) {
-    .certificate-item {
-        width: 250px;
-    }
-    
-    .certificate-image {
-        height: 220px;
-    }
-}
+        /* Responsividade para as imagens */
+        @media (max-width: 768px) {
+            .certificate-item {
+                width: 250px;
+            }
+            
+            .certificate-image {
+                height: 220px;
+            }
+            
+            /* Melhorias para carregamento em mobile */
+            .certificate-image img {
+                width: 100%;
+                height: auto;
+                max-height: 100%;
+            }
+        }
 
-@media (max-width: 480px) {
-    .certificate-item {
-        width: 220px;
-    }
-    
-    .certificate-image {
-        height: 200px;
-        padding: 8px;
-    }
-}
+        @media (max-width: 480px) {
+            .certificate-item {
+                width: 220px;
+            }
+            
+            .certificate-image {
+                height: 200px;
+                padding: 8px;
+            }
+            
+            /* Melhorias para carregamento em mobile */
+            .certificate-image img {
+                width: 100%;
+                height: auto;
+                max-height: 100%;
+            }
+        }
 
-/* Animações */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) translateX(-50%);
-    }
-    40% {
-        transform: translateY(-10px) translateX(-50%);
-    }
-    60% {
-        transform: translateY(-5px) translateX(-50%);
-    }
-}
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
 
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-    }
-}
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
 
-@keyframes carousel-scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
+        @keyframes carousel-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
 
-@keyframes certificates-scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
+        @keyframes certificates-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
         /* Nova animação para o carrossel */
         @keyframes wave {
             0% {
@@ -1879,7 +1865,7 @@
 
     <div class="section-divider"></div>
 
-    <!-- Carrossel de Motivação -->
+    <!-- Carrossel de Motivação - MODIFICADO -->
     <section class="carousel-section" aria-labelledby="carousel-title">
         <div class="container">
             <div class="section-title">
@@ -2294,7 +2280,7 @@
 
     <div class="section-divider"></div>
 
-    <!-- MELHORIA 3: NOVA SEÇÃO DE ALUNOS CONCLUINTES - ATUALIZADA -->
+    <!-- MODIFICAÇÃO 3: SEÇÃO DE ALUNOS CONCLUINTES - ATUALIZADA -->
     <section class="certificates-section" id="certificates" aria-labelledby="certificates-title">
         <div class="container">
             <div class="section-title">
@@ -2310,9 +2296,6 @@
             <div class="certificates-track" aria-live="polite">
                 <!-- Imagens dos alunos com certificados -->
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-trophy"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem1.jpeg" alt="Aluno 1 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2324,9 +2307,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-star"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem2.jpeg" alt="Aluno 2 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2338,9 +2318,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-crown"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem3.jpeg" alt="Aluno 3 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2352,9 +2329,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-trophy"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem4.jpeg" alt="Aluno 4 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2366,9 +2340,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-star"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem5.jpeg" alt="Aluno 5 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2380,9 +2351,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-crown"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem6.jpeg" alt="Aluno 6 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2394,9 +2362,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-trophy"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem7.jpeg" alt="Aluno 7 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2408,9 +2373,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-star"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem8.jpeg" alt="Aluno 8 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2422,9 +2384,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-crown"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem9.jpeg" alt="Aluno 9 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2436,9 +2395,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-trophy"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem10.jpeg" alt="Aluno 10 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2450,9 +2406,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-star"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem11.jpeg" alt="Aluno 11 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2464,9 +2417,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-crown"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem12.jpeg" alt="Aluno 12 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2478,9 +2428,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-trophy"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem13.jpeg" alt="Aluno 13 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2492,9 +2439,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-star"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem14.jpeg" alt="Aluno 14 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2506,9 +2450,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-crown"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem15.jpeg" alt="Aluno 15 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2520,9 +2461,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-trophy"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem16.jpeg" alt="Aluno 16 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2534,9 +2472,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-star"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem17.jpeg" alt="Aluno 17 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2548,9 +2483,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-crown"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem18.jpeg" alt="Aluno 18 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2562,9 +2494,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-trophy"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem19.jpeg" alt="Aluno 19 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2578,9 +2507,6 @@
                 
                 <!-- Duplicação para criar loop infinito -->
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-trophy"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem1.jpeg" alt="Aluno 1 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2592,9 +2518,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-star"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem2.jpeg" alt="Aluno 2 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2606,9 +2529,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-crown"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem3.jpeg" alt="Aluno 3 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2620,9 +2540,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-trophy"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem4.jpeg" alt="Aluno 4 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2634,9 +2551,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-star"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem5.jpeg" alt="Aluno 5 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2648,9 +2562,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-crown"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem6.jpeg" alt="Aluno 6 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2662,9 +2573,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-trophy"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem7.jpeg" alt="Aluno 7 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2676,9 +2584,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-star"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem8.jpeg" alt="Aluno 8 com certificado ITvidas" loading="lazy">
                     </div>
@@ -2690,9 +2595,6 @@
                     </div>
                 </div>
                 <div class="certificate-item">
-                    <div class="certificate-badge">
-                        <i class="fas fa-crown"></i>
-                    </div>
                     <div class="certificate-image">
                         <img src="image/imagem9.jpeg" alt="Aluno 9 com certificado ITvidas" loading="lazy">
                     </div>
